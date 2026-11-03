@@ -95,3 +95,7 @@ def load_secret_registry(explicit: Path | str | None = None) -> SecretRegistry:
     except tomllib.TOMLDecodeError as exc:
         raise SecretsError(f"the secrets file is not valid TOML: {exc}") from exc
     return SecretRegistry.model_validate(data)
+
+
+def send_allowed(cli_flag: bool, config_enabled: bool) -> bool:
+    return cli_flag and config_enabled and send_enabled()

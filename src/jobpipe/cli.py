@@ -6,6 +6,7 @@ import typer
 
 from jobpipe.apply.cli import apply_app
 from jobpipe.documents.cli import generate_command, review_app
+from jobpipe.submission.cli import submit_app
 from jobpipe.browser.session import BrowserError
 from jobpipe.canonical import CanonicalKeyer
 from jobpipe.companies import careers_url_for, resolve_company, slugify
@@ -36,6 +37,7 @@ company_app = typer.Typer(no_args_is_help=True, help="Company registry.")
 app.add_typer(company_app, name="company")
 app.add_typer(apply_app, name="apply-plan")
 app.add_typer(review_app, name="review")
+app.add_typer(submit_app, name="submit")
 app.command("generate")(generate_command)
 
 ConfigOption = Annotated[
@@ -441,3 +443,47 @@ def evaluate(
 
 if __name__ == "__main__":
     app()
+
+
+@app.command("recall")
+def recall_command(
+    query: Annotated[str, typer.Argument(help="Employer, domain, contact name, phone number or job title.")],
+    config: ConfigOption = Path("config"),
+) -> None:
+    """Find the applications sent to whoever calls you back, with the path of each dossier."""
+    import time
+
+    from jobpipe.db.submission_store import SubmissionStore
+    from jobpipe.submission.dossier import recall
+
+    app_config = _load(config)
+    started = time.perf_counter()
+    with Store.open(app_config.database_path) as store:
+        results = recall(SubmissionStore(store.connection, app_config.data_dir / "artifacts"), query, app_config.data_dir / "dossiers")
+    if not results:
+        typer.echo("no application matches")
+    for application, path, company, title in results:
+        sent = application.sent_at.date().isoformat() if application.sent_at else "not sent"
+        typer.echo(f"{sent}  {company or ''} — {title or ''}  [{application.state.value}]  {path / 'dossier.html'}")
+    typer.echo(f"({time.perf_counter() - started:.2f}s)")
+
+
+@app.command("export")
+def export_command(
+    job_search_log: Annotated[bool, typer.Option("--job-search-log", help="Write the dated list of applications as a CSV file.")] = False,
+    out: Annotated[Path | None, typer.Option("--out", help="Destination file.")] = None,
+    config: ConfigOption = Path("config"),
+) -> None:
+    """Export proof of job-search activity."""
+    from datetime import datetime, timezone
+
+    from jobpipe.db.submission_store import SubmissionStore
+    from jobpipe.submission.dossier import export_log
+
+    if not job_search_log:
+        _fail("choose an export: --job-search-log")
+    app_config = _load(config)
+    target = out or app_config.reports_dir / f"job-search-log-{datetime.now(timezone.utc).strftime('%Y-%m-%d')}.csv"
+    with Store.open(app_config.database_path) as store:
+        count = export_log(SubmissionStore(store.connection, app_config.data_dir / "artifacts"), target)
+    typer.echo(f"{count} applications written to {target}")

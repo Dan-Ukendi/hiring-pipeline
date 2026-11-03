@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planned submissions</title>
+<style>
+:root { --bg: #f6f7f9; --card: #fff; --text: #1c2430; --muted: #5d6b7e; --line: #dde2ea; --ok: #1b7f4b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #12161c; --card: #1b212b; --text: #e6e9ee; --muted: #9aa6b6; --line: #2c3544; --ok: #4cc38a; } }
+body { margin: 0; padding: 24px 16px 64px; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, sans-serif; }
+main { max-width: 900px; margin: 0 auto; }
+article { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; margin-bottom: 16px; }
+pre { white-space: pre-wrap; background: var(--bg); padding: 10px; border-radius: 6px; }
+.badge { color: var(--ok); border: 1px solid var(--ok); border-radius: 999px; padding: 1px 10px; font-size: 12px; }
+table { border-collapse: collapse; width: 100%; } td, th { border-bottom: 1px solid var(--line); padding: 4px 8px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+<h1>Planned submissions</h1>
+<p>{{ planned|length }} submissions, generated {{ generated_at }}. <span class="badge">simulation: nothing was sent</span></p>
+{% for p in planned %}
+<article>
+<h2>{{ titles.get(p.job_id, p.job_id) }}</h2>
+<p>Route <b>{{ p.route.value }}</b> via {{ p.method }} to <b>{{ p.target }}</b></p>
+{% if p.recipient %}<p>To: {{ p.recipient }}{% if p.reply_to %} · Reply-To: {{ p.reply_to }}{% endif %}</p>{% endif %}
+{% if p.subject %}<p>Subject: {{ p.subject }}</p><pre>{{ p.body }}</pre>{% endif %}
+<table><tr><th>Document</th><th>File</th><th>SHA-256</th><th>Bytes</th></tr>
+{% for f in p.files %}<tr><td>{{ f.role }}</td><td>{{ f.filename }}</td><td>{{ f.sha256[:16] }}…</td><td>{{ f.bytes }}</td></tr>{% endfor %}
+</table>
+{% if p.fields %}<table><tr><th>Field</th><th>Value</th><th>Source</th></tr>
+{% for f in p.fields %}<tr><td>{{ f.label or f.field_key }}</td><td>{{ f.value }}</td><td>{{ f.source }}</td></tr>{% endfor %}
+</table>{% endif %}
+<p>Idempotency key {{ p.idempotency_key[:16] }}…</p>
+</article>
+{% endfor %}
+</main>
+</body>
+</html>

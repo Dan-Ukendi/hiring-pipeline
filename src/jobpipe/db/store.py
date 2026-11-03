@@ -72,13 +72,27 @@ def _dt(value: str | None) -> datetime | None:
 
 
 def _split_statements(script: str) -> list[str]:
-    statements = []
-    for chunk in script.split(";"):
-        lines = [line for line in chunk.splitlines() if not line.strip().startswith("--")]
-        statement = "\n".join(lines).strip()
-        if statement:
-            statements.append(statement)
-    return statements
+    statements: list[str] = []
+    buffer: list[str] = []
+    in_trigger = False
+    for line in script.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("--") or (not buffer and not stripped):
+            continue
+        if not buffer and stripped.upper().startswith("CREATE TRIGGER"):
+            in_trigger = True
+        buffer.append(line)
+        if in_trigger:
+            if re.fullmatch(r"END\s*;?", stripped, re.IGNORECASE):
+                statements.append("\n".join(buffer).strip().rstrip(";").strip())
+                buffer, in_trigger = [], False
+        elif stripped.endswith(";"):
+            statements.append("\n".join(buffer).strip().rstrip(";").strip())
+            buffer = []
+    tail = "\n".join(buffer).strip().rstrip(";").strip()
+    if tail:
+        statements.append(tail)
+    return [s for s in statements if s]
 
 
 def _schema_statements() -> list[str]:

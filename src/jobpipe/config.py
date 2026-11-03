@@ -139,6 +139,25 @@ class DocumentsConfig(_Strict):
     watchlist: list[str] = Field(default_factory=list)
 
 
+class SendConfig(_Strict):
+    enabled: bool = False
+    hosted_forms_enabled: bool = False
+    cooldown_days: int = Field(default=14, ge=0)
+    quota: int = Field(default=3, ge=1)
+    quota_days: int = Field(default=90, ge=1)
+    spacing_min_seconds: int = Field(default=90, ge=0)
+    spacing_max_seconds: int = Field(default=420, ge=0)
+    window_start_hour: int = Field(default=8, ge=0, le=23)
+    window_end_hour: int = Field(default=19, ge=1, le=24)
+    lease_seconds: int = Field(default=900, gt=0)
+
+    @model_validator(mode="after")
+    def _ordered(self) -> "SendConfig":
+        if self.spacing_max_seconds < self.spacing_min_seconds:
+            raise ValueError("send.spacing_max_seconds is below send.spacing_min_seconds")
+        return self
+
+
 class Settings(_Strict):
     paths: PathsConfig
     ollama: OllamaConfig
@@ -150,6 +169,7 @@ class Settings(_Strict):
     apply: ApplyConfig = Field(default_factory=ApplyConfig)
     review: ReviewConfig = Field(default_factory=ReviewConfig)
     documents: DocumentsConfig = Field(default_factory=DocumentsConfig)
+    send: SendConfig = Field(default_factory=SendConfig)
 
 
 class SourceConfig(_Strict):

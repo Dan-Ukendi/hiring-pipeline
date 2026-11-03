@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ job["title"] if job else app.job_id }} — {{ job["company_name"] if job else "" }}</title>
+<style>
+:root { --bg: #f6f7f9; --card: #fff; --text: #1c2430; --muted: #5d6b7e; --line: #dde2ea; }
+@media (prefers-color-scheme: dark) { :root { --bg: #12161c; --card: #1b212b; --text: #e6e9ee; --muted: #9aa6b6; --line: #2c3544; } }
+body { margin: 0; padding: 24px 16px 64px; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, sans-serif; }
+main { max-width: 900px; margin: 0 auto; }
+section { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 18px; margin-bottom: 14px; }
+h2 { font-size: 16px; margin: 0 0 6px; } table { width: 100%; border-collapse: collapse; font-size: 14px; }
+td, th { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+pre { white-space: pre-wrap; max-height: 360px; overflow: auto; }
+</style>
+</head>
+<body>
+<main>
+<h1>{{ job["title"] if job else app.job_id }}</h1>
+<section><h2>Employer and contact</h2>
+<p><b>{{ job["company_name"] if job else "" }}</b> · state {{ app.state.value }} · route {{ app.route }}</p>
+{% for c in contacts %}<p>{{ c["name"] or "" }} {{ c["email"] or "" }} {{ c["phone"] or "" }}</p>{% else %}<p>No contact was extracted from the offer.</p>{% endfor %}
+{% if job %}<p><a href="{{ job["url"] }}">{{ job["url"] }}</a></p>{% endif %}
+<p>Sent: {{ app.sent_at.isoformat() if app.sent_at else "not sent" }} · confirmed: {{ app.confirmed_at.isoformat() if app.confirmed_at else "no" }}</p></section>
+<section><h2>Documents sent</h2><table>
+{% for d in documents %}<tr><td>{{ d.role }}</td><td><a href="{{ d.filename }}">{{ d.filename }}</a></td><td>{{ d.sha256[:16] }}…</td></tr>{% endfor %}
+</table></section>
+{% if fields %}<section><h2>Submitted values</h2><table>
+{% for f in fields %}<tr><td>{{ f["field_label"] or f["field_key"] }}</td><td>{{ f["value_text"] }}</td><td>{{ f["value_source"] }}</td></tr>{% endfor %}
+</table></section>{% endif %}
+<section><h2>Attempts and evidence</h2>
+{% for a in attempts %}<p>#{{ a.id }} {{ a.route }} → {{ a.target }} · {{ "simulation" if a.dry_run else "real" }} · {{ a.status or "" }}</p><ul>
+{% for e in a.evidence %}<li>{{ e.kind }}: {{ e.summary }}{% if e.file %} (<a href="{{ e.file }}">{{ e.file }}</a>){% endif %}</li>{% endfor %}</ul>{% endfor %}
+</section>
+<section><h2>History</h2><table>
+{% for e in events %}<tr><td>{{ e["occurred_at"] }}</td><td>{{ e["from_state"] or "" }} → {{ e["to_state"] }}</td><td>{{ e["event_type"] }} {{ e["reason_code"] or "" }}</td></tr>{% endfor %}
+</table></section>
+{% if inbound %}<section><h2>Replies</h2><table>
+{% for m in inbound %}<tr><td>{{ m["received_at"] }}</td><td>{{ m["from_address"] }}</td><td>{{ m["subject"] }}</td><td>{{ m["classification"] or "" }}</td></tr>{% endfor %}
+</table></section>{% endif %}
+{% if job and job["description_text"] %}<section><h2>Offer text as captured</h2><pre>{{ job["description_text"] }}</pre></section>{% endif %}
+</main>
+</body>
+</html>

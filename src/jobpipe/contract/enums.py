@@ -204,6 +204,16 @@ class HoldReason(StrEnum):
     ANSWER_NEEDS_HUMAN = "answer_needs_human"
     PLAN_REJECTED = "plan_rejected"
     RENDER_MISMATCH = "render_mismatch"
+    LANGUAGE_MISMATCH = "language_mismatch"
+    NEW_TEMPLATE = "new_template"
+    AWAITING_REVIEW = "awaiting_review"
+    ROUTE_NOT_AUTOMATABLE = "route_not_automatable"
+    FEASIBILITY_NOT_AUTOMATABLE = "feasibility_not_automatable"
+    EMPLOYER_COOLDOWN = "employer_cooldown"
+    LIKELY_REPOST = "likely_repost"
+    BUNDLE_HASH_MISMATCH = "bundle_hash_mismatch"
+    VENDOR_DISABLED = "vendor_disabled"
+    NO_RECIPIENT = "no_recipient"
 
 
 class RunPhase(StrEnum):
