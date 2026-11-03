@@ -1,0 +1,618 @@
+{
+ "jobs": [
+  {
+   "id": "d8f0c7ad-a6e5-45b3-913a-430eb4a21f4f",
+   "title": "Head of Marketing (Director)",
+   "department": "Marketing",
+   "team": "Marketing",
+   "employmentType": "FullTime",
+   "location": "London",
+   "shouldDisplayCompensationOnJobPostings": false,
+   "secondaryLocations": [
+    {
+     "location": "Geneva",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Geneva",
+       "addressCountry": "Switzerland",
+       "addressLocality": "Geneva"
+      }
+     }
+    },
+    {
+     "location": "Amsterdam",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Amsterdam",
+       "addressCountry": "Netherlands",
+       "addressLocality": "Amsterdam"
+      }
+     }
+    },
+    {
+     "location": "Madrid",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Comunidad de Madrid",
+       "addressCountry": "Spain",
+       "addressLocality": "Madrid"
+      }
+     }
+    },
+    {
+     "location": "Berlin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Berlin",
+       "addressCountry": "Germany",
+       "addressLocality": "Berlin"
+      }
+     }
+    },
+    {
+     "location": "Paris",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "France",
+       "addressCountry": "France",
+       "addressLocality": "Paris"
+      }
+     }
+    },
+    {
+     "location": "Dublin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Dublin",
+       "addressCountry": "Ireland",
+       "addressLocality": "Dublin"
+      }
+     }
+    },
+    {
+     "location": "Luxembourg",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Luxembourg",
+       "addressCountry": "Luxembourg",
+       "addressLocality": "Luxembourg"
+      }
+     }
+    },
+    {
+     "location": "Brussels",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Belgium",
+       "addressCountry": "Belgium",
+       "addressLocality": "Brussels"
+      }
+     }
+    },
+    {
+     "location": "Zurich",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Zurich",
+       "addressCountry": "Switzerland",
+       "addressLocality": "Zurich"
+      }
+     }
+    }
+   ],
+   "publishedAt": "2026-08-13T07:51:38.412+00:00",
+   "isListed": true,
+   "isRemote": true,
+   "workplaceType": "Remote",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "London",
+     "addressCountry": "United Kingdom",
+     "addressLocality": "England"
+    }
+   },
+   "jobUrl": "https://jobs.ashbyhq.com/keyrock/d8f0c7ad-a6e5-45b3-913a-430eb4a21f4f",
+   "applyUrl": "https://jobs.ashbyhq.com/keyrock/d8f0c7ad-a6e5-45b3-913a-430eb4a21f4f/application",
+   "descriptionHtml": "<h1><strong>About Keyrock</strong></h1><p style=\"min-height:1.5em\">Since 2017, Keyrock has been a change-maker in digital assets. We're a global, remote-first team of 200+ people across 40+ nationalities, with hubs in Brussels, London, Paris and New York.</p><p style=\"min-height:1.5em\">We provide liquidity across 80+ centralized and decentralized exchanges - a position cemented by our Series C, led by SC Ventures. Today we run a full spectrum of capital markets businesses across centralized and on-chain venues: market making, high-frequency trading, options, OTC, DeFi trading desks, advisory, and asset management.</p><p style=\"min-height:1.5em\">We're building toward the agentic investment banking capabilities for the era of digital finance. A proprietary agentic layer runs the mechanics of the market, so our people can focus on the work code cannot do: the deal, the relationship, and the judgement.</p><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><p style=\"min-height:1.5em\">We're not just envisioning the future of finance - we're building it.</p><p style=\"min-height:1.5em\"></p><h1><strong>The Opportunity</strong></h1><p style=\"min-height:1.5em\">We are hiring a Head of Marketing to take full ownership of our marketing strategy, rebrand Keyrock and reposition us as the market evolves from crypto-native to institutional, merging with traditional finance.</p><p style=\"min-height:1.5em\">This is not a maintenance role. It is a transformation mandate with full discretionary decision-making on how to implement our commercial strategy. You will work as a close strategic partner to the CCO, operating almost as co-marketeers.</p><p style=\"min-height:1.5em\">The team is lean by design: 2-3 direct reports plus heavy use of AI and agentic tooling. We are looking for someone who inspires and sets direction, not someone who runs campaigns. Operational execution will increasingly be handled by AI agents.</p><p style=\"min-height:1.5em\"></p><h1><strong>What You Will Do</strong></h1><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Own and execute the complete rebrand and repositioning of Keyrock in the market</p></li><li><p style=\"min-height:1.5em\">Define and drive the marketing strategy across institutional and crypto-native audiences</p></li><li><p style=\"min-height:1.5em\">Build a premium, forward-looking brand identity. Think distinctive, audacious, credible to both institutional allocators and crypto-native operators</p></li><li><p style=\"min-height:1.5em\">Push information into the market in ways that make people pay attention and take Keyrock seriously</p></li><li><p style=\"min-height:1.5em\">Partner closely with the CCO and commercial team to drive measurable commercial impact</p></li><li><p style=\"min-height:1.5em\">Build and lead a small, high-impact team augmented by AI tooling</p></li><li><p style=\"min-height:1.5em\">Shape how Keyrock is perceived as the industry converges with traditional finance</p></li></ul><p style=\"min-height:1.5em\"></p><h1><strong>Who You Are</strong></h1><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\"><strong>Crypto-native. </strong>You have been through market cycles. You understand blockchain technology deeply but you are pragmatic, not ideological. You know this is not a binary world.</p></li><li><p style=\"min-height:1.5em\"><strong>A brand-builder, not an ops person. </strong>You are inspiring, not operational. You set direction, tone and creative vision.</p></li><li><p style=\"min-height:1.5em\"><strong>An exceptional communicator. </strong>You can face institutional allocators who care about regulation and licensing, and crypto-native counterparties who value speed and edge. You switch between both with ease.</p></li><li><p style=\"min-height:1.5em\"><strong>Confident and assertive. </strong>You project authority. You bring conviction and directness - you challenge constructively and don't default to consensus. You bring edge, energy and a slightly audacious style.</p></li><li><p style=\"min-height:1.5em\"><strong>Human-centric. </strong>You connect with people, build followership and bring teams along.</p></li><li><p style=\"min-height:1.5em\"><strong>Detail-oriented. </strong>Despite the strategic focus, you sweat the details on brand consistency, messaging precision and design quality.</p></li><li><p style=\"min-height:1.5em\"><strong>A challenger mindset. </strong>You dare to think differently, question the status quo and push things forward through constructive tension.</p></li></ul><p style=\"min-height:1.5em\"></p><h1><strong>Our Recruitment Philosophy</strong></h1><p style=\"min-height:1.5em\">We look for self-aware candidates who bring both the core skills required for the role and a deep alignment with our performance principles. We seek fiercely passionate, mission-driven people who communicate with purpose and practice proactive ownership. The perfect fit? A crypto enthusiast who prioritizes mission over ego, maintains a commercial mindset, and delivers long-term value through pragmatic flexibility.</p><p style=\"min-height:1.5em\"></p><h1><strong>Experience and Background</strong></h1><h2><strong>Required</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Significant experience in marketing leadership at a crypto or digital-asset firm</p></li><li><p style=\"min-height:1.5em\">Deep understanding of the crypto market, its participants and its culture</p></li><li><p style=\"min-height:1.5em\">Track record of building or transforming a brand in a fast-moving, commercially-driven environment</p></li><li><p style=\"min-height:1.5em\">Strong communication skills Exceptional fluency in English, both written and spoken.</p></li><li><p style=\"min-height:1.5em\">Based in or closely aligned with the CET time zone.</p></li></ul><h2><strong>Preferred</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Experience positioning a firm through a TradFi/crypto convergence narrative</p></li><li><p style=\"min-height:1.5em\">Exposure to publicly listed or IPO-track companies</p></li><li><p style=\"min-height:1.5em\">Familiarity with EU regulatory environment (MiCA) and how it shapes marketing and financial promotions</p></li><li><p style=\"min-height:1.5em\">Experience working with or building AI-augmented marketing functions</p></li></ul><p style=\"min-height:1.5em\"></p><h1><strong>Why Keyrock</strong></h1><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\"><strong>Step-up opportunity. </strong>Own the function globally, report directly to the CCO, shape the brand from scratch.</p></li><li><p style=\"min-height:1.5em\"><strong>Transformation moment. </strong>Keyrock is pivoting from appreciated-but-underrated to a firm that commands respect. This is a before-and-after career story.</p></li><li><p style=\"min-height:1.5em\"><strong>Commercial partnership. </strong>Not a siloed marketing role. Deeply embedded in commercial strategy with commission upside.</p></li><li><p style=\"min-height:1.5em\"><strong>Lean and AI-augmented. </strong>Small team, big impact. No bureaucratic bloat. Use agents and tools to move fast.</p></li><li><p style=\"min-height:1.5em\"><strong>Global footprint. </strong>Offices across EU, UK, US and Switzerland. International exposure from day one.</p></li><li><p style=\"min-height:1.5em\"><strong>Competitive offer</strong>. A competitive compensation package, attractive global benefits, and a performance-based variable.</p></li><li><p style=\"min-height:1.5em\"><strong>Annual Team Retreats</strong>. A yearly offsite dedicated to strategy, celebration of our wins and fun team activities</p></li></ul>",
+   "descriptionPlain": "ABOUT KEYROCK\n\nSince 2017, Keyrock has been a change-maker in digital assets. We're a global, remote-first team of 200+ people across 40+ nationalities, with hubs in Brussels, London, Paris and New York.\n\nWe provide liquidity across 80+ centralized and decentralized exchanges - a position cemented by our Series C, led by SC Ventures. Today we run a full spectrum of capital markets businesses across centralized and on-chain venues: market making, high-frequency trading, options, OTC, DeFi trading desks, advisory, and asset management.\n\nWe're building toward the agentic investment banking capabilities for the era of digital finance. A proprietary agentic layer runs the mechanics of the market, so our people can focus on the work code cannot do: the deal, the relationship, and the judgement.\n\n \n\nWe're not just envisioning the future of finance - we're building it.\n\n\n\n\nTHE OPPORTUNITY\n\nWe are hiring a Head of Marketing to take full ownership of our marketing strategy, rebrand Keyrock and reposition us as the market evolves from crypto-native to institutional, merging with traditional finance.\n\nThis is not a maintenance role. It is a transformation mandate with full discretionary decision-making on how to implement our commercial strategy. You will work as a close strategic partner to the CCO, operating almost as co-marketeers.\n\nThe team is lean by design: 2-3 direct reports plus heavy use of AI and agentic tooling. We are looking for someone who inspires and sets direction, not someone who runs campaigns. Operational execution will increasingly be handled by AI agents.\n\n\n\n\nWHAT YOU WILL DO\n\n - Own and execute the complete rebrand and repositioning of Keyrock in the market\n\n - Define and drive the marketing strategy across institutional and crypto-native audiences\n\n - Build a premium, forward-looking brand identity. Think distinctive, audacious, credible to both institutional allocators and crypto-native operators\n\n - Push information into the market in ways that make people pay attention and take Keyrock seriously\n\n - Partner closely with the CCO and commercial team to drive measurable commercial impact\n\n - Build and lead a small, high-impact team augmented by AI tooling\n\n - Shape how Keyrock is perceived as the industry converges with traditional finance\n\n\n\n\nWHO YOU ARE\n\n - Crypto-native. You have been through market cycles. You understand blockchain technology deeply but you are pragmatic, not ideological. You know this is not a binary world.\n\n - A brand-builder, not an ops person. You are inspiring, not operational. You set direction, tone and creative vision.\n\n - An exceptional communicator. You can face institutional allocators who care about regulation and licensing, and crypto-native counterparties who value speed and edge. You switch between both with ease.\n\n - Confident and assertive. You project authority. You bring conviction and directness - you challenge constructively and don't default to consensus. You bring edge, energy and a slightly audacious style.\n\n - Human-centric. You connect with people, build followership and bring teams along.\n\n - Detail-oriented. Despite the strategic focus, you sweat the details on brand consistency, messaging precision and design quality.\n\n - A challenger mindset. You dare to think differently, question the status quo and push things forward through constructive tension.\n\n\n\n\nOUR RECRUITMENT PHILOSOPHY\n\nWe look for self-aware candidates who bring both the core skills required for the role and a deep alignment with our performance principles. We seek fiercely passionate, mission-driven people who communicate with purpose and practice proactive ownership. The perfect fit? A crypto enthusiast who prioritizes mission over ego, maintains a commercial mindset, and delivers long-term value through pragmatic flexibility.\n\n\n\n\nEXPERIENCE AND BACKGROUND\n\n\nREQUIRED\n\n - Significant experience in marketing leadership at a crypto or digital-asset firm\n\n - Deep understanding of the crypto market, its participants and its culture\n\n - Track record of building or transforming a brand in a fast-moving, commercially-driven environment\n\n - Strong communication skills Exceptional fluency in English, both written and spoken.\n\n - Based in or closely aligned with the CET time zone.\n\n\nPREFERRED\n\n - Experience positioning a firm through a TradFi/crypto convergence narrative\n\n - Exposure to publicly listed or IPO-track companies\n\n - Familiarity with EU regulatory environment (MiCA) and how it shapes marketing and financial promotions\n\n - Experience working with or building AI-augmented marketing functions\n\n\n\n\nWHY KEYROCK\n\n - Step-up opportunity. Own the function globally, report directly to the CCO, shape the brand from scratch.\n\n - Transformation moment. Keyrock is pivoting from appreciated-but-underrated to a firm that commands respect. This is a before-and-after career story.\n\n - Commercial partnership. Not a siloed marketing role. Deeply embedded in commercial strategy with commission upside.\n\n - Lean and AI-augmented. Small team, big impact. No bureaucratic bloat. Use agents and tools to move fast.\n\n - Global footprint. Offices across EU, UK, US and Switzerland. International exposure from day one.\n\n - Competitive offer. A competitive compensation package, attractive global benefits, and a performance-based variable.\n\n - Annual Team Retreats. A yearly offsite dedicated to strategy, celebration of our wins and fun team activities",
+   "compensation": {
+    "compensationTierSummary": null,
+    "scrapeableCompensationSalarySummary": null,
+    "compensationTiers": [],
+    "summaryComponents": []
+   }
+  },
+  {
+   "id": "d21747c4-510c-4fd4-ade3-0c9cc1304e53",
+   "title": "Senior Data Engineer",
+   "department": "Data",
+   "team": "Data",
+   "employmentType": "FullTime",
+   "location": "Brussels",
+   "shouldDisplayCompensationOnJobPostings": false,
+   "secondaryLocations": [
+    {
+     "location": "Rome",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Rome",
+       "addressCountry": "Italy",
+       "addressLocality": "Rome"
+      }
+     }
+    },
+    {
+     "location": "Barcelona",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Catalonia",
+       "addressCountry": "Spain",
+       "addressLocality": "Barcelona"
+      }
+     }
+    },
+    {
+     "location": "Zug",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Zug",
+       "addressCountry": "Switzerland",
+       "addressLocality": "Zug"
+      }
+     }
+    },
+    {
+     "location": "Porto",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Porto",
+       "addressCountry": "Portugal",
+       "addressLocality": "Porto"
+      }
+     }
+    },
+    {
+     "location": "Cape Town",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Cape Town",
+       "addressCountry": "South Africa",
+       "addressLocality": "Cape Town"
+      }
+     }
+    },
+    {
+     "location": "Istanbul",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Istanbul",
+       "addressCountry": "Turkey",
+       "addressLocality": "Istanbul"
+      }
+     }
+    },
+    {
+     "location": "Eindhoven",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Eindhoven",
+       "addressCountry": "Netherlands",
+       "addressLocality": "Eindhoven"
+      }
+     }
+    },
+    {
+     "location": "Geneva",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Geneva",
+       "addressCountry": "Switzerland",
+       "addressLocality": "Geneva"
+      }
+     }
+    },
+    {
+     "location": "Milan",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Milan",
+       "addressCountry": "Italy",
+       "addressLocality": "Milan"
+      }
+     }
+    },
+    {
+     "location": "Amsterdam",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Amsterdam",
+       "addressCountry": "Netherlands",
+       "addressLocality": "Amsterdam"
+      }
+     }
+    },
+    {
+     "location": "Manama",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Bahrain",
+       "addressCountry": "Bahrain",
+       "addressLocality": "Bahrain"
+      }
+     }
+    },
+    {
+     "location": "Madrid",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Comunidad de Madrid",
+       "addressCountry": "Spain",
+       "addressLocality": "Madrid"
+      }
+     }
+    },
+    {
+     "location": "London",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "London",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "London"
+      }
+     }
+    },
+    {
+     "location": "Dubai",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Dubai",
+       "addressCountry": "United Arab Emirates",
+       "addressLocality": "Dubai"
+      }
+     }
+    },
+    {
+     "location": "Berlin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Berlin",
+       "addressCountry": "Germany",
+       "addressLocality": "Berlin"
+      }
+     }
+    },
+    {
+     "location": "Antwerp",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Antwerp",
+       "addressCountry": "Belgium",
+       "addressLocality": "Antwerp"
+      }
+     }
+    },
+    {
+     "location": "Copenhagen",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Copenhagen",
+       "addressCountry": "Denmark",
+       "addressLocality": "Copenhagen"
+      }
+     }
+    },
+    {
+     "location": "Vienna ",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Vienna",
+       "addressCountry": "Austria",
+       "addressLocality": "Vienna"
+      }
+     }
+    },
+    {
+     "location": "Prague",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Prague",
+       "addressCountry": "Czech Republic",
+       "addressLocality": "Prague"
+      }
+     }
+    },
+    {
+     "location": "Athens",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Athens",
+       "addressCountry": "Greece",
+       "addressLocality": "Athens"
+      }
+     }
+    },
+    {
+     "location": "Budapest",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Budapest",
+       "addressCountry": "Hungary",
+       "addressLocality": "Budapest"
+      }
+     }
+    },
+    {
+     "location": "Paris",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "France",
+       "addressCountry": "France",
+       "addressLocality": "Paris"
+      }
+     }
+    },
+    {
+     "location": "Frankfurt",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Frankfurt",
+       "addressCountry": "Germany",
+       "addressLocality": "Frankfurt"
+      }
+     }
+    },
+    {
+     "location": "Dublin",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Dublin",
+       "addressCountry": "Ireland",
+       "addressLocality": "Dublin"
+      }
+     }
+    },
+    {
+     "location": "Warsaw",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Warsaw",
+       "addressCountry": "Poland",
+       "addressLocality": "Warsaw"
+      }
+     }
+    },
+    {
+     "location": "Sofia",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Bulgaria",
+       "addressCountry": "Bulgaria",
+       "addressLocality": "Sofia"
+      }
+     }
+    },
+    {
+     "location": "Luxembourg",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Luxembourg",
+       "addressCountry": "Luxembourg",
+       "addressLocality": "Luxembourg"
+      }
+     }
+    },
+    {
+     "location": "Remote",
+     "address": {
+      "postalAddress": {}
+     }
+    },
+    {
+     "location": "Zurich",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Zurich",
+       "addressCountry": "Switzerland",
+       "addressLocality": "Zurich"
+      }
+     }
+    },
+    {
+     "location": "Abu Dhabi",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Abu Dhabi",
+       "addressCountry": "United Arab Emirates",
+       "addressLocality": "Abu Dhabi"
+      }
+     }
+    },
+    {
+     "location": "Lisbon",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Lisbon",
+       "addressCountry": "Portugal",
+       "addressLocality": "Lisbon"
+      }
+     }
+    },
+    {
+     "location": "London",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "London",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "England"
+      }
+     }
+    },
+    {
+     "location": "Tallinn",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Tallin",
+       "addressCountry": "Estonia",
+       "addressLocality": "Tallin"
+      }
+     }
+    },
+    {
+     "location": "London OR Brussels",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "City of London",
+       "addressCountry": "United Kingdom",
+       "addressLocality": "London"
+      }
+     }
+    },
+    {
+     "location": "Seychelles",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Seychelles",
+       "addressCountry": "Seychelles",
+       "addressLocality": "Seychelles"
+      }
+     }
+    },
+    {
+     "location": "Rotterdam",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Rotterdam",
+       "addressCountry": "Netherlands",
+       "addressLocality": "Rotterdam"
+      }
+     }
+    },
+    {
+     "location": "Krakow",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Krakow ",
+       "addressCountry": "Poland",
+       "addressLocality": "Krakow"
+      }
+     }
+    },
+    {
+     "location": "Johannesburg",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Johannesburg",
+       "addressCountry": "South Africa",
+       "addressLocality": "Johannesburg"
+      }
+     }
+    },
+    {
+     "location": "Zagreb",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Zagreb",
+       "addressCountry": "Croatia",
+       "addressLocality": "Zagreb"
+      }
+     }
+    }
+   ],
+   "publishedAt": "2026-10-15T16:08:23.041+00:00",
+   "isListed": true,
+   "isRemote": null,
+   "workplaceType": null,
+   "address": {
+    "postalAddress": {
+     "addressRegion": "Belgium",
+     "addressCountry": "Belgium",
+     "addressLocality": "Brussels"
+    }
+   },
+   "jobUrl": "https://jobs.ashbyhq.com/keyrock/d21747c4-510c-4fd4-ade3-0c9cc1304e53",
+   "applyUrl": "https://jobs.ashbyhq.com/keyrock/d21747c4-510c-4fd4-ade3-0c9cc1304e53/application",
+   "descriptionHtml": "<h1><strong>Senior Data Engineer</strong></h1><p style=\"min-height:1.5em\"></p><h1><strong>About Keyrock</strong></h1><p style=\"min-height:1.5em\">Since our beginnings in 2017, we've grown to be a leading change-maker in the digital asset space, renowned for our partnerships and innovation.</p><p style=\"min-height:1.5em\">Today, we partner with over 250 team members around the world. Our diverse team hails from 42 nationalities, with backgrounds ranging from self-taught DeFi natives to PhDs. Predominantly remote, we have hubs in London, Brussels, and Singapore, and host regular online and offline hangouts to keep the crew tight.</p><p style=\"min-height:1.5em\">We are trading on more than 80 trading venues, and working with a wide array of asset issuers. As a well-established market maker, our distinctive expertise led us to expand rapidly. Today, our services span market making, options trading, high-frequency trading, OTC, and DeFi trading desks.</p><p style=\"min-height:1.5em\">But we’re more than a service provider. We’re an initiator. We're pioneers in adopting the Rust Development language for our algorithmic trading, and champions of its use in the industry. We support the growth of Web3 startups through our Accelerator Program. We upgrade ecosystems by injecting liquidity into promising DeFi, RWA, and NFT protocols. And we push the industry's progress with our research and governance initiatives.</p><p style=\"min-height:1.5em\">At Keyrock, we're not just envisioning the future of digital assets. We're actively building it.</p><p style=\"min-height:1.5em\"></p><h2><strong>About the team and why the role exists</strong></h2><p style=\"min-height:1.5em\">The Central Data Team (CDT) is only a few months old, but data has been Keyrock's lifeblood since day one. We're now building the Keyrock Data Platform to give Keyrockers, and the AI agents working alongside them, the data and context they need to act fast and autonomously within agreed boundaries and aligned with our shared goals. Doing that means taking data from across the company and making sense of it in real time for all the functions that depend on it: trading desks, wealth and asset management, product, risk, finance, compliance, and research to name a few.</p><p style=\"min-height:1.5em\">You'd be one of the early hires in CDT and we expect you to contribute to most of the bigger decisions and build work. The standards we settle on and the way the team ends up working are still open.</p><p style=\"min-height:1.5em\"></p><h2><strong>What You’ll Do</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Build streaming and batch pipelines that ingest, normalise, and distribute market, trading, and portfolio data, resilient to feed and exchange failures.</p></li><li><p style=\"min-height:1.5em\">Build the self-serve tooling (SDKs, patterns, templates, AI agents) so other teams publish, consume, and build on data products without waiting on us.</p></li><li><p style=\"min-height:1.5em\">Own data contracts and schema evolution. Keep schema changes from turning into multi-team coordination events.</p></li><li><p style=\"min-height:1.5em\">Design the lakehouse and time-series layer around consumer query patterns.</p></li><li><p style=\"min-height:1.5em\">Build and evolve the Data Governance and Data Quality Framework: stale-feed detection, schema validation, range checks, idempotent writes, lineage, ownership, self-healing.</p></li><li><p style=\"min-height:1.5em\">Build the derived analytics the business runs on: cross-exchange spreads, VWAP at depth, order book microstructure for the desks; portfolio views, exposure, performance for wealth and asset management.</p></li><li><p style=\"min-height:1.5em\">Make observability, cost, and performance first-class from day one.</p></li><li><p style=\"min-height:1.5em\">Treat infrastructure as code (Docker, Terraform, CI/CD) alongside our Central Infrastructure Team.</p></li><li><p style=\"min-height:1.5em\">Work in the open: write things down, partner closely with Architecture, Infrastructure, Platform, and the rest of the teams.</p></li></ul><p style=\"min-height:1.5em\"></p><h2><strong>What We’re Looking For</strong></h2><p style=\"min-height:1.5em\">Tools matter less to us than how you think about problems. That said, here's the shape of the person we have in mind.</p><p style=\"min-height:1.5em\">Engineering Craft</p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">8+ years of building production data systems that other people rely on.</p></li><li><p style=\"min-height:1.5em\">Strong proficiency in Python and SQL: not just being able to write a query, but being able to reason about what the engine is doing with it.</p></li><li><p style=\"min-height:1.5em\">Code that's easy for someone else to read, test, and delete later.</p></li><li><p style=\"min-height:1.5em\">Strong understanding of data modelling for both streaming and analytical workloads.</p></li><li><p style=\"min-height:1.5em\">Efficiency, quality, idempotency, and observability are taken seriously by default.</p></li></ul><p style=\"min-height:1.5em\">Systems Design</p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">You've designed and operated streaming systems on Kafka, Redpanda, MSK, or Kinesis, and you have opinions about partitioning, consumer groups, offsets, and schema registries.</p></li><li><p style=\"min-height:1.5em\">You've used a time-series store in production (ClickHouse ideally; TimescaleDB, QuestDB, or similar are fine too) and can talk about table design as a function of query patterns.</p></li><li><p style=\"min-height:1.5em\">You've worked with a lakehouse architecture and reason about table layout, partitioning, and compaction as design choices that shape query performance and storage cost.</p></li><li><p style=\"min-height:1.5em\">You build for self-healing and idempotency. Reprocessing is safe, retries don't double-write, and the system recovers without a human in the loop.</p></li></ul><p style=\"min-height:1.5em\">Operational Readiness</p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Docker, Terraform, and CI/CD are how you work, not a separate \"DevOps\" thing.</p></li><li><p style=\"min-height:1.5em\">You think about cost and performance early.</p></li><li><p style=\"min-height:1.5em\">You instrument as you build: logs, metrics, and traces are part of the system from day one.</p></li><li><p style=\"min-height:1.5em\">You design for data quality and governance up front covering contracts, validation, lineage, and ownership</p></li></ul><p style=\"min-height:1.5em\">How You Think and Work</p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">You reason from first principles when a problem is new, stay pragmatic when it isn't, and update your view when you learn more.</p></li><li><p style=\"min-height:1.5em\">You treat the trading desks, wealth and asset management, product, risk, finance, compliance, and research as customers of what you build, and communicate with them that way.</p></li><li><p style=\"min-height:1.5em\">You optimise for outcomes over output. A smaller, simpler thing that ships and works beats a bigger thing that doesn't.</p></li><li><p style=\"min-height:1.5em\">You take ownership end-to-end: design, ship, operate, improve.</p></li><li><p style=\"min-height:1.5em\">You say what you think including when it's an unpopular take. You change your mind when the argument is better.</p></li><li><p style=\"min-height:1.5em\">You make the people around you better. Reviews are real, juniors grow from working with you, and peers want to work with you again.</p></li><li><p style=\"min-height:1.5em\">You're curious about how markets work. Data engineering on its own won't keep you interested here.</p></li><li><p style=\"min-height:1.5em\">You're honest about what you know and what you don't, and quick to close the gap.</p></li><li><p style=\"min-height:1.5em\">You understand financial market data: order books, trades, reference data, portfolios, exposures. Crypto, TradFi, or both are a strong plus.</p></li></ul><p style=\"min-height:1.5em\"></p><h2><strong>Nice to Have</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Lakehouse experience with Apache Iceberg or Delta Lake.</p></li><li><p style=\"min-height:1.5em\">Familiarity with DataHub or similar metadata/lineage platforms.</p></li><li><p style=\"min-height:1.5em\">Rust. Some of our performance-critical services are written in it. Interest is welcome; fluency isn't required.</p></li></ul><p style=\"min-height:1.5em\"></p><h2><strong>What You’ll Get</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">A from-scratch mandate. You'll be among the first hires in CDT, and the platform, the standards, and the team culture are yours to shape with us.</p></li><li><p style=\"min-height:1.5em\">Strong partners. Close working relationships with Architecture, Infrastructure, Platform, and the desks themselves. You won't be building data in a vacuum.</p></li><li><p style=\"min-height:1.5em\">Autonomy on how you work. Flexible hours, remote-first, business-hours on-call shared across the team.</p></li><li><p style=\"min-height:1.5em\">A competitive salary package, with various benefits.</p></li><li><p style=\"min-height:1.5em\">A team that likes each other. Regular online get-togethers and a yearly onsite where everyone's in the same room.</p></li></ul><p style=\"min-height:1.5em\"></p><h2><strong>Our Recruitment Process</strong></h2><p style=\"min-height:1.5em\">We’re after those with the right skills and a conscious choice to join our field. The perfect fit? Someone who’s driven, collaborative, acts with ownership and delivers solid, scalable outcomes. As an employer we are committed to building a positive and collaborative work environment. We welcome employees of all backgrounds, and hire, reward and promote entirely based on merit and performance. Due to the nature of our business and external requirements, we perform background checks on all potential employees, passing which is a prerequisite to join Key</p>",
+   "descriptionPlain": "SENIOR DATA ENGINEER\n\n\n\n\nABOUT KEYROCK\n\nSince our beginnings in 2017, we've grown to be a leading change-maker in the digital asset space, renowned for our partnerships and innovation.\n\nToday, we partner with over 250 team members around the world. Our diverse team hails from 42 nationalities, with backgrounds ranging from self-taught DeFi natives to PhDs. Predominantly remote, we have hubs in London, Brussels, and Singapore, and host regular online and offline hangouts to keep the crew tight.\n\nWe are trading on more than 80 trading venues, and working with a wide array of asset issuers. As a well-established market maker, our distinctive expertise led us to expand rapidly. Today, our services span market making, options trading, high-frequency trading, OTC, and DeFi trading desks.\n\nBut we’re more than a service provider. We’re an initiator. We're pioneers in adopting the Rust Development language for our algorithmic trading, and champions of its use in the industry. We support the growth of Web3 startups through our Accelerator Program. We upgrade ecosystems by injecting liquidity into promising DeFi, RWA, and NFT protocols. And we push the industry's progress with our research and governance initiatives.\n\nAt Keyrock, we're not just envisioning the future of digital assets. We're actively building it.\n\n\n\n\nABOUT THE TEAM AND WHY THE ROLE EXISTS\n\nThe Central Data Team (CDT) is only a few months old, but data has been Keyrock's lifeblood since day one. We're now building the Keyrock Data Platform to give Keyrockers, and the AI agents working alongside them, the data and context they need to act fast and autonomously within agreed boundaries and aligned with our shared goals. Doing that means taking data from across the company and making sense of it in real time for all the functions that depend on it: trading desks, wealth and asset management, product, risk, finance, compliance, and research to name a few.\n\nYou'd be one of the early hires in CDT and we expect you to contribute to most of the bigger decisions and build work. The standards we settle on and the way the team ends up working are still open.\n\n\n\n\nWHAT YOU’LL DO\n\n - Build streaming and batch pipelines that ingest, normalise, and distribute market, trading, and portfolio data, resilient to feed and exchange failures.\n\n - Build the self-serve tooling (SDKs, patterns, templates, AI agents) so other teams publish, consume, and build on data products without waiting on us.\n\n - Own data contracts and schema evolution. Keep schema changes from turning into multi-team coordination events.\n\n - Design the lakehouse and time-series layer around consumer query patterns.\n\n - Build and evolve the Data Governance and Data Quality Framework: stale-feed detection, schema validation, range checks, idempotent writes, lineage, ownership, self-healing.\n\n - Build the derived analytics the business runs on: cross-exchange spreads, VWAP at depth, order book microstructure for the desks; portfolio views, exposure, performance for wealth and asset management.\n\n - Make observability, cost, and performance first-class from day one.\n\n - Treat infrastructure as code (Docker, Terraform, CI/CD) alongside our Central Infrastructure Team.\n\n - Work in the open: write things down, partner closely with Architecture, Infrastructure, Platform, and the rest of the teams.\n\n\n\n\nWHAT WE’RE LOOKING FOR\n\nTools matter less to us than how you think about problems. That said, here's the shape of the person we have in mind.\n\nEngineering Craft\n\n - 8+ years of building production data systems that other people rely on.\n\n - Strong proficiency in Python and SQL: not just being able to write a query, but being able to reason about what the engine is doing with it.\n\n - Code that's easy for someone else to read, test, and delete later.\n\n - Strong understanding of data modelling for both streaming and analytical workloads.\n\n - Efficiency, quality, idempotency, and observability are taken seriously by default.\n\nSystems Design\n\n - You've designed and operated streaming systems on Kafka, Redpanda, MSK, or Kinesis, and you have opinions about partitioning, consumer groups, offsets, and schema registries.\n\n - You've used a time-series store in production (ClickHouse ideally; TimescaleDB, QuestDB, or similar are fine too) and can talk about table design as a function of query patterns.\n\n - You've worked with a lakehouse architecture and reason about table layout, partitioning, and compaction as design choices that shape query performance and storage cost.\n\n - You build for self-healing and idempotency. Reprocessing is safe, retries don't double-write, and the system recovers without a human in the loop.\n\nOperational Readiness\n\n - Docker, Terraform, and CI/CD are how you work, not a separate \"DevOps\" thing.\n\n - You think about cost and performance early.\n\n - You instrument as you build: logs, metrics, and traces are part of the system from day one.\n\n - You design for data quality and governance up front covering contracts, validation, lineage, and ownership\n\nHow You Think and Work\n\n - You reason from first principles when a problem is new, stay pragmatic when it isn't, and update your view when you learn more.\n\n - You treat the trading desks, wealth and asset management, product, risk, finance, compliance, and research as customers of what you build, and communicate with them that way.\n\n - You optimise for outcomes over output. A smaller, simpler thing that ships and works beats a bigger thing that doesn't.\n\n - You take ownership end-to-end: design, ship, operate, improve.\n\n - You say what you think including when it's an unpopular take. You change your mind when the argument is better.\n\n - You make the people around you better. Reviews are real, juniors grow from working with you, and peers want to work with you again.\n\n - You're curious about how markets work. Data engineering on its own won't keep you interested here.\n\n - You're honest about what you know and what you don't, and quick to close the gap.\n\n - You understand financial market data: order books, trades, reference data, portfolios, exposures. Crypto, TradFi, or both are a strong plus.\n\n\n\n\nNICE TO HAVE\n\n - Lakehouse experience with Apache Iceberg or Delta Lake.\n\n - Familiarity with DataHub or similar metadata/lineage platforms.\n\n - Rust. Some of our performance-critical services are written in it. Interest is welcome; fluency isn't required.\n\n\n\n\nWHAT YOU’LL GET\n\n - A from-scratch mandate. You'll be among the first hires in CDT, and the platform, the standards, and the team culture are yours to shape with us.\n\n - Strong partners. Close working relationships with Architecture, Infrastructure, Platform, and the desks themselves. You won't be building data in a vacuum.\n\n - Autonomy on how you work. Flexible hours, remote-first, business-hours on-call shared across the team.\n\n - A competitive salary package, with various benefits.\n\n - A team that likes each other. Regular online get-togethers and a yearly onsite where everyone's in the same room.\n\n\n\n\nOUR RECRUITMENT PROCESS\n\nWe’re after those with the right skills and a conscious choice to join our field. The perfect fit? Someone who’s driven, collaborative, acts with ownership and delivers solid, scalable outcomes. As an employer we are committed to building a positive and collaborative work environment. We welcome employees of all backgrounds, and hire, reward and promote entirely based on merit and performance. Due to the nature of our business and external requirements, we perform background checks on all potential employees, passing which is a prerequisite to join Key",
+   "compensation": {
+    "compensationTierSummary": null,
+    "scrapeableCompensationSalarySummary": null,
+    "compensationTiers": [],
+    "summaryComponents": []
+   }
+  },
+  {
+   "id": "df19a5b1-1fab-4c85-b702-1a1ac8bbb9ac",
+   "title": "Head of Marketing (Director)",
+   "department": "Marketing",
+   "team": "Marketing",
+   "employmentType": "FullTime",
+   "location": "Chicago",
+   "shouldDisplayCompensationOnJobPostings": false,
+   "secondaryLocations": [],
+   "publishedAt": "2026-08-13T15:43:45.395+00:00",
+   "isListed": true,
+   "isRemote": true,
+   "workplaceType": "Hybrid",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "USA",
+     "addressCountry": "USA",
+     "addressLocality": "Chicago"
+    }
+   },
+   "jobUrl": "https://jobs.ashbyhq.com/keyrock/df19a5b1-1fab-4c85-b702-1a1ac8bbb9ac",
+   "applyUrl": "https://jobs.ashbyhq.com/keyrock/df19a5b1-1fab-4c85-b702-1a1ac8bbb9ac/application",
+   "descriptionHtml": "<h1><strong>About Keyrock</strong></h1><p style=\"min-height:1.5em\">Since 2017, Keyrock has been a change-maker in digital assets. We're a global, remote-first team of 200+ people across 40+ nationalities, with hubs in Brussels, London, Paris and New York.</p><p style=\"min-height:1.5em\">We provide liquidity across 80+ centralized and decentralized exchanges - a position cemented by our Series C, led by SC Ventures. Today we run a full spectrum of capital markets businesses across centralized and on-chain venues: market making, high-frequency trading, options, OTC, DeFi trading desks, advisory, and asset management.</p><p style=\"min-height:1.5em\">We're building toward the agentic investment banking capabilities for the era of digital finance. A proprietary agentic layer runs the mechanics of the market, so our people can focus on the work code cannot do: the deal, the relationship, and the judgement.</p><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><p style=\"min-height:1.5em\">We're not just envisioning the future of finance - we're building it.</p><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><h1><strong>The Opportunity</strong></h1><p style=\"min-height:1.5em\">We are hiring a Head of Marketing to take full ownership of our marketing strategy, rebrand Keyrock and reposition us as the market evolves from crypto-native to institutional, merging with traditional finance.</p><p style=\"min-height:1.5em\">This is not a maintenance role. It is a transformation mandate with full discretionary decision-making on how to implement our commercial strategy. You will work as a close strategic partner to the CCO, operating almost as co-marketeers.</p><p style=\"min-height:1.5em\">The team is lean by design: 2-3 direct reports plus heavy use of AI and agentic tooling. We are looking for someone who inspires and sets direction, not someone who runs campaigns. Operational execution will increasingly be handled by AI agents.</p><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><h1><strong>What You Will Do</strong></h1><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Own and execute the complete rebrand and repositioning of Keyrock in the market</p></li><li><p style=\"min-height:1.5em\">Define and drive the marketing strategy across institutional and crypto-native audiences</p></li><li><p style=\"min-height:1.5em\">Build a premium, forward-looking brand identity. Think distinctive, audacious, credible to both institutional allocators and crypto-native operators</p></li><li><p style=\"min-height:1.5em\">Push information into the market in ways that make people pay attention and take Keyrock seriously</p></li><li><p style=\"min-height:1.5em\">Partner closely with the CCO and commercial team to drive measurable commercial impact</p></li><li><p style=\"min-height:1.5em\">Build and lead a small, high-impact team augmented by AI tooling</p></li><li><p style=\"min-height:1.5em\">Shape how Keyrock is perceived as the industry converges with traditional finance</p></li></ul><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><h1><strong>Who You Are</strong></h1><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\"><strong>Crypto-native. </strong>You have been through market cycles. You understand blockchain technology deeply but you are pragmatic, not ideological. You know this is not a binary world.</p></li><li><p style=\"min-height:1.5em\"><strong>A brand-builder, not an ops person. </strong>You are inspiring, not operational. You set direction, tone and creative vision.</p></li><li><p style=\"min-height:1.5em\"><strong>An exceptional communicator. </strong>You can face institutional allocators who care about regulation and licensing, and crypto-native counterparties who value speed and edge. You switch between both with ease.</p></li><li><p style=\"min-height:1.5em\"><strong>Confident and assertive. </strong>You project authority. You bring conviction and directness - you challenge constructively and don't default to consensus. You bring edge, energy and a slightly audacious style.</p></li><li><p style=\"min-height:1.5em\"><strong>Human-centric. </strong>You connect with people, build followership and bring teams along.</p></li><li><p style=\"min-height:1.5em\"><strong>Detail-oriented. </strong>Despite the strategic focus, you sweat the details on brand consistency, messaging precision and design quality.</p></li><li><p style=\"min-height:1.5em\"><strong>A challenger mindset. </strong>You dare to think differently, question the status quo and push things forward through constructive tension.</p></li></ul><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><h1><strong>Our Recruitment Philosophy</strong></h1><p style=\"min-height:1.5em\">We look for self-aware candidates who bring both the core skills required for the role and a deep alignment with our performance principles. We seek fiercely passionate, mission-driven people who communicate with purpose and practice proactive ownership. The perfect fit? A crypto enthusiast who prioritizes mission over ego, maintains a commercial mindset, and delivers long-term value through pragmatic flexibility.</p><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><h1><strong>Experience and Background</strong></h1><h2><strong>Required</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Significant experience in marketing leadership at a crypto or digital-asset firm</p></li><li><p style=\"min-height:1.5em\">Deep understanding of the crypto market, its participants and its culture</p></li><li><p style=\"min-height:1.5em\">Track record of building or transforming a brand in a fast-moving, commercially-driven environment</p></li><li><p style=\"min-height:1.5em\">Strong communication skills Exceptional fluency in English, both written and spoken.</p></li></ul><h2><strong>Preferred</strong></h2><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Experience positioning a firm through a TradFi/crypto convergence narrative</p></li><li><p style=\"min-height:1.5em\">Exposure to publicly listed or IPO-track companies</p></li><li><p style=\"min-height:1.5em\">Familiarity with EU regulatory environment (MiCA) and how it shapes marketing and financial promotions</p></li><li><p style=\"min-height:1.5em\">Experience working with or building AI-augmented marketing functions</p></li></ul><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><h1><strong>Why Keyrock</strong></h1><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\"><strong>Step-up opportunity. </strong>Own the function globally, report directly to the CCO, shape the brand from scratch.</p></li><li><p style=\"min-height:1.5em\"><strong>Transformation moment. </strong>Keyrock is pivoting from appreciated-but-underrated to a firm that commands respect. This is a before-and-after career story.</p></li><li><p style=\"min-height:1.5em\"><strong>Commercial partnership. </strong>Not a siloed marketing role. Deeply embedded in commercial strategy with commission upside.</p></li><li><p style=\"min-height:1.5em\"><strong>Lean and AI-augmented. </strong>Small team, big impact. No bureaucratic bloat. Use agents and tools to move fast.</p></li><li><p style=\"min-height:1.5em\"><strong>Global footprint. </strong>Offices across EU, UK, US and Switzerland. International exposure from day one.</p></li><li><p style=\"min-height:1.5em\"><strong>Competitive offer</strong>. A base compensation package ranging from $145.000 to $215.000 p/a, attractive global benefits, and a performance-based variable.</p></li><li><p style=\"min-height:1.5em\"><strong>Annual Team Retreats</strong>. A yearly offsite dedicated to strategy, celebration of our wins and fun team activities</p></li></ul>",
+   "descriptionPlain": "ABOUT KEYROCK\n\nSince 2017, Keyrock has been a change-maker in digital assets. We're a global, remote-first team of 200+ people across 40+ nationalities, with hubs in Brussels, London, Paris and New York.\n\nWe provide liquidity across 80+ centralized and decentralized exchanges - a position cemented by our Series C, led by SC Ventures. Today we run a full spectrum of capital markets businesses across centralized and on-chain venues: market making, high-frequency trading, options, OTC, DeFi trading desks, advisory, and asset management.\n\nWe're building toward the agentic investment banking capabilities for the era of digital finance. A proprietary agentic layer runs the mechanics of the market, so our people can focus on the work code cannot do: the deal, the relationship, and the judgement.\n\n \n\nWe're not just envisioning the future of finance - we're building it.\n\n \n\n\nTHE OPPORTUNITY\n\nWe are hiring a Head of Marketing to take full ownership of our marketing strategy, rebrand Keyrock and reposition us as the market evolves from crypto-native to institutional, merging with traditional finance.\n\nThis is not a maintenance role. It is a transformation mandate with full discretionary decision-making on how to implement our commercial strategy. You will work as a close strategic partner to the CCO, operating almost as co-marketeers.\n\nThe team is lean by design: 2-3 direct reports plus heavy use of AI and agentic tooling. We are looking for someone who inspires and sets direction, not someone who runs campaigns. Operational execution will increasingly be handled by AI agents.\n\n \n\n\nWHAT YOU WILL DO\n\n - Own and execute the complete rebrand and repositioning of Keyrock in the market\n\n - Define and drive the marketing strategy across institutional and crypto-native audiences\n\n - Build a premium, forward-looking brand identity. Think distinctive, audacious, credible to both institutional allocators and crypto-native operators\n\n - Push information into the market in ways that make people pay attention and take Keyrock seriously\n\n - Partner closely with the CCO and commercial team to drive measurable commercial impact\n\n - Build and lead a small, high-impact team augmented by AI tooling\n\n - Shape how Keyrock is perceived as the industry converges with traditional finance\n\n \n\n\nWHO YOU ARE\n\n - Crypto-native. You have been through market cycles. You understand blockchain technology deeply but you are pragmatic, not ideological. You know this is not a binary world.\n\n - A brand-builder, not an ops person. You are inspiring, not operational. You set direction, tone and creative vision.\n\n - An exceptional communicator. You can face institutional allocators who care about regulation and licensing, and crypto-native counterparties who value speed and edge. You switch between both with ease.\n\n - Confident and assertive. You project authority. You bring conviction and directness - you challenge constructively and don't default to consensus. You bring edge, energy and a slightly audacious style.\n\n - Human-centric. You connect with people, build followership and bring teams along.\n\n - Detail-oriented. Despite the strategic focus, you sweat the details on brand consistency, messaging precision and design quality.\n\n - A challenger mindset. You dare to think differently, question the status quo and push things forward through constructive tension.\n\n \n\n\nOUR RECRUITMENT PHILOSOPHY\n\nWe look for self-aware candidates who bring both the core skills required for the role and a deep alignment with our performance principles. We seek fiercely passionate, mission-driven people who communicate with purpose and practice proactive ownership. The perfect fit? A crypto enthusiast who prioritizes mission over ego, maintains a commercial mindset, and delivers long-term value through pragmatic flexibility.\n\n \n\n\nEXPERIENCE AND BACKGROUND\n\n\nREQUIRED\n\n - Significant experience in marketing leadership at a crypto or digital-asset firm\n\n - Deep understanding of the crypto market, its participants and its culture\n\n - Track record of building or transforming a brand in a fast-moving, commercially-driven environment\n\n - Strong communication skills Exceptional fluency in English, both written and spoken.\n\n\nPREFERRED\n\n - Experience positioning a firm through a TradFi/crypto convergence narrative\n\n - Exposure to publicly listed or IPO-track companies\n\n - Familiarity with EU regulatory environment (MiCA) and how it shapes marketing and financial promotions\n\n - Experience working with or building AI-augmented marketing functions\n\n \n\n\nWHY KEYROCK\n\n - Step-up opportunity. Own the function globally, report directly to the CCO, shape the brand from scratch.\n\n - Transformation moment. Keyrock is pivoting from appreciated-but-underrated to a firm that commands respect. This is a before-and-after career story.\n\n - Commercial partnership. Not a siloed marketing role. Deeply embedded in commercial strategy with commission upside.\n\n - Lean and AI-augmented. Small team, big impact. No bureaucratic bloat. Use agents and tools to move fast.\n\n - Global footprint. Offices across EU, UK, US and Switzerland. International exposure from day one.\n\n - Competitive offer. A base compensation package ranging from $145.000 to $215.000 p/a, attractive global benefits, and a performance-based variable.\n\n - Annual Team Retreats. A yearly offsite dedicated to strategy, celebration of our wins and fun team activities",
+   "compensation": {
+    "compensationTierSummary": null,
+    "scrapeableCompensationSalarySummary": null,
+    "compensationTiers": [],
+    "summaryComponents": []
+   }
+  },
+  {
+   "id": "8866e34a-248b-4ee3-9c5d-2df175463920",
+   "title": "Compliance Officer / MLRO Switzerland & Liechtenstein",
+   "department": "Legal & Governance",
+   "team": "Legal & Governance",
+   "employmentType": "FullTime",
+   "location": "Zurich",
+   "shouldDisplayCompensationOnJobPostings": false,
+   "secondaryLocations": [
+    {
+     "location": "Zug",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Zug",
+       "addressCountry": "Switzerland",
+       "addressLocality": "Zug"
+      }
+     }
+    }
+   ],
+   "publishedAt": "2026-05-12T13:51:38.030+00:00",
+   "isListed": true,
+   "isRemote": true,
+   "workplaceType": "Remote",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "Zurich",
+     "addressCountry": "Switzerland",
+     "addressLocality": "Zurich"
+    }
+   },
+   "jobUrl": "https://jobs.ashbyhq.com/keyrock/8866e34a-248b-4ee3-9c5d-2df175463920",
+   "applyUrl": "https://jobs.ashbyhq.com/keyrock/8866e34a-248b-4ee3-9c5d-2df175463920/application",
+   "descriptionHtml": "<p style=\"min-height:1.5em\"><strong>Compliance Officer / MLRO - Switzerland &amp; Liechtenstein</strong></p><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><p style=\"min-height:1.5em\"><strong><u>About Keyrock</u></strong></p><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><p style=\"min-height:1.5em\">Since our beginnings in 2017, we've grown to be a leading change-maker in the digital asset space, renowned for our partnerships and innovation.</p><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><p style=\"min-height:1.5em\">Today, we rock with over 200 team members around the world. Our diverse team hails from 42 nationalities, with backgrounds ranging from DeFi natives to PhDs. Predominantly remote, we have entities in the UK, France, Liechtenstein, the US, Switzerland, Brazil, Seychelles and Singapore, and host regular online and offline hangouts to keep the crew tight.</p><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><p style=\"min-height:1.5em\">We are trading on more than 80 exchanges, and working with a wide array of asset issuers. As a well-established market maker, our distinctive expertise led us to expand rapidly. Today, our services span market making, options trading, high-frequency trading, OTC, and DeFi trading desks as well as asset and wealth management. Keyrock is looking to expand and establish itself as a full-service capital markets and asset &amp; wealth management financial institution through both organic innovation and inorganic growth.</p><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><p style=\"min-height:1.5em\">At Keyrock, we're not just envisioning the future of digital assets. We're actively building it.</p><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><p style=\"min-height:1.5em\"><strong><u>Mission statement</u></strong><br /></p><p style=\"min-height:1.5em\">We are looking for an experienced and driven Compliance Officer and MLRO for our Switzerland and Liechtenstein based entities. You will join a dynamic and dedicated Group Compliance team, operating as a key member while focusing primarily on our Switzerland and Liechtenstein operational entities. This role offers an exciting opportunity to make a wider impact across the organization by working on broader, group-level projects, allowing you to contribute to the global compliance framework and help grow the group as a whole.</p><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><p style=\"min-height:1.5em\"><strong><u>Job description</u></strong></p><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Ensuring compliance with all relevant laws and regulations applicable to Switzerland and Liechtenstein by developing and implementing the policies and procedures ;</p></li><li><p style=\"min-height:1.5em\">Conducting compliance risk assessments and elaborating an annual compliance plan;</p></li><li><p style=\"min-height:1.5em\">Developing and implementing a plan of second-line controls and conducting the tests;</p></li><li><p style=\"min-height:1.5em\">Assessing future business activities to identify potential compliance risks;</p></li></ul><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Ensuring the firm’s policies and procedures are being communicated effectively to all relevant employees;</p></li><li><p style=\"min-height:1.5em\">Ensuring the compliance trainings are effective and up to date;</p></li><li><p style=\"min-height:1.5em\">Keeping abreast with regulatory changes and maintaining the policies and procedures up to date;</p></li><li><p style=\"min-height:1.5em\">Collaborate with internal departments such as Trading Operations, Finance, Risk management, IT &amp; Security, etc… to integrate compliance requirements into business processes.</p></li><li><p style=\"min-height:1.5em\">Being responsible for oversight of Keyrock CH and LI compliance with its AML obligations and acting as a focal point for the firm’s AML activity (MLRO).</p></li><li><p style=\"min-height:1.5em\">Carrying out the duties of a MLRO as per the AML/CTF Framework</p></li><li><p style=\"min-height:1.5em\">Representing Keyrock CH and LI in all matters of money laundering prevention internally and externally;</p></li><li><p style=\"min-height:1.5em\">Serving as a subject matter expert on AML/CTF matters, providing guidance and support to the compliance team and other departments;</p></li><li><p style=\"min-height:1.5em\">Conducting regular audits and reviews to ensure compliance with AML/CTF requirements and internal policies</p></li><li><p style=\"min-height:1.5em\">Drafting of compliance points of attention and recommendations and assisting the Group Head of Compliance or Group General Counsel (Group level) with management information reports;</p></li></ul><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><p style=\"min-height:1.5em\"><u>Background and experience<br /></u></p><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Solid experience as a Compliance officer (2nd line of defense)  in a regulated financial institution in Switzerland and/or Liechtenstein, ideally with exposure to MLRO responsibilities or similar</p></li><li><p style=\"min-height:1.5em\">Experience in engaging with Swiss and Liechtenstein regulatory authorities;</p></li><li><p style=\"min-height:1.5em\">Excellent knowledge of financial regulations such as  MiCAR, AML/CTF, market abuse , data privacy;</p></li><li><p style=\"min-height:1.5em\">Understanding of the digital assets ecosystem is a major plus;</p></li><li><p style=\"min-height:1.5em\">A relevant degree, preferably in business or law, is required;</p></li><li><p style=\"min-height:1.5em\">Extensive experience in implementation of monitoring and control processes to support policies and procedures;</p></li><li><p style=\"min-height:1.5em\">A compliance qualification for example ACAMS or a Masters in a related field would be an advantage;</p></li></ul><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><p style=\"min-height:1.5em\"><u>Our recruitment philosophy</u></p><p style=\"min-height:1.5em\"></p><p style=\"min-height:1.5em\">We value self-awareness and powerful communication skills in our recruitment process. We seek fiercely passionate people who understand themselves and their career goals. We're after those with the right skills and a conscious choice to join our field. The perfect fit? A crypto enthusiast who’s driven, collaborative, acts with ownership and delivers solid, scalable outcomes.</p><p style=\"min-height:1.5em\"></p><p style=\"min-height:1.5em\"><u>Our offer</u></p><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">A competitive salary package, with various benefits</p></li></ul><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">Autonomy in your time management thanks to flexible working hours and the opportunity to work remotely</p></li></ul><ul style=\"min-height:1.5em\"><li><p style=\"min-height:1.5em\">The freedom to create your own entrepreneurial experience by being part of a team of people in search of excellence</p></li></ul><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><p style=\"min-height:1.5em\">As an employer we are committed to building a positive and collaborative work environment. We welcome employees of all backgrounds, and hire, reward and promote entirely based on merit and performance.</p><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><p style=\"min-height:1.5em\">Due to the nature of our business and external requirements, we perform background checks on all potential employees, passing which is a prerequisite to join Keyrock.</p><div style=\"min-height:1.2em;margin-top:0;margin-bottom:0\"> </div><p style=\"min-height:1.5em\"><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://keyrock.com/careers/\"><u>https://keyrock.com/careers/</u></a></p>",
+   "descriptionPlain": "Compliance Officer / MLRO - Switzerland & Liechtenstein\n\n \n\nAbout Keyrock\n\n \n\nSince our beginnings in 2017, we've grown to be a leading change-maker in the digital asset space, renowned for our partnerships and innovation.\n\n \n\nToday, we rock with over 200 team members around the world. Our diverse team hails from 42 nationalities, with backgrounds ranging from DeFi natives to PhDs. Predominantly remote, we have entities in the UK, France, Liechtenstein, the US, Switzerland, Brazil, Seychelles and Singapore, and host regular online and offline hangouts to keep the crew tight.\n\n \n\nWe are trading on more than 80 exchanges, and working with a wide array of asset issuers. As a well-established market maker, our distinctive expertise led us to expand rapidly. Today, our services span market making, options trading, high-frequency trading, OTC, and DeFi trading desks as well as asset and wealth management. Keyrock is looking to expand and establish itself as a full-service capital markets and asset & wealth management financial institution through both organic innovation and inorganic growth.\n\n \n\nAt Keyrock, we're not just envisioning the future of digital assets. We're actively building it.\n\n \n \n\nMission statement\n\n\nWe are looking for an experienced and driven Compliance Officer and MLRO for our Switzerland and Liechtenstein based entities. You will join a dynamic and dedicated Group Compliance team, operating as a key member while focusing primarily on our Switzerland and Liechtenstein operational entities. This role offers an exciting opportunity to make a wider impact across the organization by working on broader, group-level projects, allowing you to contribute to the global compliance framework and help grow the group as a whole.\n\n \n\nJob description\n\n \n\n - Ensuring compliance with all relevant laws and regulations applicable to Switzerland and Liechtenstein by developing and implementing the policies and procedures ;\n\n - Conducting compliance risk assessments and elaborating an annual compliance plan;\n\n - Developing and implementing a plan of second-line controls and conducting the tests;\n\n - Assessing future business activities to identify potential compliance risks;\n\n - Ensuring the firm’s policies and procedures are being communicated effectively to all relevant employees;\n\n - Ensuring the compliance trainings are effective and up to date;\n\n - Keeping abreast with regulatory changes and maintaining the policies and procedures up to date;\n\n - Collaborate with internal departments such as Trading Operations, Finance, Risk management, IT & Security, etc… to integrate compliance requirements into business processes.\n\n - Being responsible for oversight of Keyrock CH and LI compliance with its AML obligations and acting as a focal point for the firm’s AML activity (MLRO).\n\n - Carrying out the duties of a MLRO as per the AML/CTF Framework\n\n - Representing Keyrock CH and LI in all matters of money laundering prevention internally and externally;\n\n - Serving as a subject matter expert on AML/CTF matters, providing guidance and support to the compliance team and other departments;\n\n - Conducting regular audits and reviews to ensure compliance with AML/CTF requirements and internal policies\n\n - Drafting of compliance points of attention and recommendations and assisting the Group Head of Compliance or Group General Counsel (Group level) with management information reports;\n\n \n\nBackground and experience\n\n\n - Solid experience as a Compliance officer (2nd line of defense)  in a regulated financial institution in Switzerland and/or Liechtenstein, ideally with exposure to MLRO responsibilities or similar\n\n - Experience in engaging with Swiss and Liechtenstein regulatory authorities;\n\n - Excellent knowledge of financial regulations such as  MiCAR, AML/CTF, market abuse , data privacy;\n\n - Understanding of the digital assets ecosystem is a major plus;\n\n - A relevant degree, preferably in business or law, is required;\n\n - Extensive experience in implementation of monitoring and control processes to support policies and procedures;\n\n - A compliance qualification for example ACAMS or a Masters in a related field would be an advantage;\n\n \n\nOur recruitment philosophy\n\n\n\nWe value self-awareness and powerful communication skills in our recruitment process. We seek fiercely passionate people who understand themselves and their career goals. We're after those with the right skills and a conscious choice to join our field. The perfect fit? A crypto enthusiast who’s driven, collaborative, acts with ownership and delivers solid, scalable outcomes.\n\n\n\nOur offer\n\n \n\n - A competitive salary package, with various benefits\n\n - Autonomy in your time management thanks to flexible working hours and the opportunity to work remotely\n\n - The freedom to create your own entrepreneurial experience by being part of a team of people in search of excellence\n\n \n\nAs an employer we are committed to building a positive and collaborative work environment. We welcome employees of all backgrounds, and hire, reward and promote entirely based on merit and performance.\n\n \n\nDue to the nature of our business and external requirements, we perform background checks on all potential employees, passing which is a prerequisite to join Keyrock.\n\n \n\nhttps://keyrock.com/careers/",
+   "compensation": {
+    "compensationTierSummary": null,
+    "scrapeableCompensationSalarySummary": null,
+    "compensationTiers": [],
+    "summaryComponents": []
+   }
+  }
+ ],
+ "apiVersion": "1"
+}

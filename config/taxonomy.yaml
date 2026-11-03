@@ -1,0 +1,319 @@
+region:
+  markers:
+    - brussels
+    - bruxelles
+    - brussel
+    - brussels-capital
+    - bruxelles-capitale
+    - brussels hoofdstedelijk gewest
+  country_markers:
+    - belgium
+    - belgique
+    - belgie
+    - belgië
+    - belgien
+
+communes:
+  - name: Anderlecht
+    aliases: []
+    postal_codes: ["1070"]
+  - name: Auderghem
+    aliases: [Oudergem]
+    postal_codes: ["1160"]
+  - name: Berchem-Sainte-Agathe
+    aliases: [Sint-Agatha-Berchem]
+    postal_codes: ["1082"]
+  - name: Bruxelles
+    aliases: [Brussels, Brussel, Laeken, Neder-Over-Heembeek, Haren]
+    postal_codes: ["1000", "1020", "1120", "1130"]
+  - name: Etterbeek
+    aliases: []
+    postal_codes: ["1040"]
+  - name: Evere
+    aliases: []
+    postal_codes: ["1140"]
+    ambiguous: true
+  - name: Forest
+    aliases: [Vorst]
+    postal_codes: ["1190"]
+    ambiguous: true
+  - name: Ganshoren
+    aliases: []
+    postal_codes: ["1083"]
+  - name: Ixelles
+    aliases: [Elsene]
+    postal_codes: ["1050"]
+  - name: Jette
+    aliases: []
+    postal_codes: ["1090"]
+    ambiguous: true
+  - name: Koekelberg
+    aliases: []
+    postal_codes: ["1081"]
+  - name: Molenbeek-Saint-Jean
+    aliases: [Sint-Jans-Molenbeek, Molenbeek]
+    postal_codes: ["1080"]
+  - name: Saint-Gilles
+    aliases: [Sint-Gillis]
+    postal_codes: ["1060"]
+    ambiguous: true
+  - name: Saint-Josse-ten-Noode
+    aliases: [Sint-Joost-ten-Node]
+    postal_codes: ["1210"]
+  - name: Schaerbeek
+    aliases: [Schaarbeek]
+    postal_codes: ["1030"]
+  - name: Uccle
+    aliases: [Ukkel]
+    postal_codes: ["1180"]
+  - name: Watermael-Boitsfort
+    aliases: [Watermaal-Bosvoorde]
+    postal_codes: ["1170"]
+  - name: Woluwe-Saint-Lambert
+    aliases: [Sint-Lambrechts-Woluwe]
+    postal_codes: ["1200"]
+  - name: Woluwe-Saint-Pierre
+    aliases: [Sint-Pieters-Woluwe]
+    postal_codes: ["1150"]
+
+domains:
+  ai:
+    - artificial intelligence
+    - ai engineer
+    - ai
+    - machine learning
+    - deep learning
+    - nlp
+    - natural language processing
+    - computer vision
+    - data scientist
+    - applied scientist
+    - ml
+    - apprentissage automatique
+    - intelligence artificielle
+    - ia
+    - kunstmatige intelligentie
+    - science des données
+    - datawetenschapper
+    - mlops
+  genai:
+    - generative ai
+    - ia générative
+    - generatieve ai
+    - gen ai
+    - genai
+    - llm
+    - large language model
+    - rag
+    - prompt engineering
+    - langchain
+  data_engineering:
+    - data engineer
+    - ingénieur données
+    - ingénieur data
+    - data-ingenieur
+    - data ingenieur
+    - data engineering
+    - etl
+    - data pipeline
+    - data platform
+    - analytics engineer
+    - dbt
+    - spark
+    - airflow
+    - data warehouse
+
+seniority:
+  exclude_patterns:
+    - '\bsenior\b'
+    - '\bsr\.?\s'
+    - '\blead\b'
+    - '\bprincipal\b'
+    - '\bstaff\b'
+    - '\bhead of\b'
+    - '\bdirector\b'
+    - '\bmanager\b'
+    - '\barchitect\b'
+    - '\bvp\b'
+    - '\b(?:[5-9]|1\d)\s*\+?\s*(?:years|yrs|ans|jaar)\b'
+  junior_markers:
+    - junior
+    - graduate
+    - entry level
+    - entry-level
+    - early career
+    - early-career
+    - trainee
+    - internship
+    - intern
+    - apprentice
+    - stagiaire
+    - débutant
+    - starter
+    - no experience
+    - traineeship
+    - graduate programme
+    - graduate program
+    - jeune diplômé
+    - jeunes diplômés
+    - afgestudeerde
+    - afstudeerder
+    - stagiair
+    - stage
+
+filters:
+  geography:
+    postal_min: 1000
+    postal_max: 1212
+    foreign_country_markers:
+      - switzerland
+      - suisse
+      - schweiz
+      - france
+      - frankrijk
+      - netherlands
+      - nederland
+      - pays-bas
+      - germany
+      - deutschland
+      - allemagne
+      - luxembourg
+      - united kingdom
+      - spain
+      - italy
+      - portugal
+      - poland
+      - united states
+    remote_markers:
+      - remote
+      - télétravail
+      - teletravail
+      - home office
+      - homeoffice
+      - work from home
+      - thuiswerk
+      - telewerk
+  seniority:
+    experience_patterns:
+      - '(?P<low>\d{1,2})\s*(?:(?:-|–|to|à|tot|bis)\s*(?P<high>\d{1,2}))?\s*\+?\s*(?:years?|yrs?|ans?|jaar|jaren|jahre)\b[^.\n;]{0,40}?(?:experience|expérience|ervaring|erfahrung)'
+      - '(?:experience|expérience|ervaring|erfahrung)[^.\n;\d]{0,40}?(?P<low>\d{1,2})\s*(?:(?:-|–|to|à|tot|bis)\s*(?P<high>\d{1,2}))?\s*\+?\s*(?:years?|yrs?|ans?|jaar|jaren|jahre)\b'
+    desirable_markers:
+      - nice to have
+      - is a plus
+      - a plus
+      - preferred
+      - desirable
+      - ideally
+      - an asset
+      - souhaité
+      - souhaitée
+      - un plus
+      - atout
+      - idéalement
+      - de préférence
+      - bij voorkeur
+      - een pluspunt
+      - idealiter
+      - is een plus
+      - voorkeur
+      - wenselijk
+      - gewenst
+      - souhaitable
+      - préférable
+      - préféré
+    no_experience_markers:
+      - no experience required
+      - no prior experience
+      - no previous experience
+      - without experience
+      - sans expérience
+      - aucune expérience
+      - expérience non requise
+      - geen ervaring
+      - zonder ervaring
+      - ervaring is niet vereist
+    fail_floor_years: 3
+    borderline_floor_years: 1
+  domain:
+    adjacent_terms:
+      - data analyst
+      - data analytics
+      - analytics
+      - business intelligence
+      - bi developer
+      - big data
+      - data lake
+      - lakehouse
+      - data science
+      - neural network
+      - recommender
+      - pytorch
+      - tensorflow
+      - scikit-learn
+      - research scientist
+      - data steward
+      - data quality
+      - data governance
+    hard_exclude_title:
+      - '\b(?:sales|account (?:executive|manager)|business development|bdr|sdr|recruiter|recruitment|talent acquisition|sourcer)\b'
+    soft_exclude_title:
+      - '\bbusiness analyst\b'
+      - '\bfunctional analyst\b'
+      - '\banalyste (?:métier|fonctionnel)\b'
+      - '\bbedrijfsanalist\b'
+      - '\breporting\b'
+      - '\bmarketing\b'
+      - '\b(?:human resources|hr)\b'
+      - '\blegal\b'
+      - '\b(?:accountant|comptable|accounting)\b'
+      - '\bcustomer success\b'
+      - '\bpayroll\b'
+    description_min_hits: 3
+  language:
+    accepted: [fr, en]
+    sample_chars: 1500
+    min_words: 12
+    margin: 1.5
+    stopwords:
+      en: [the, and, with, you, will, our, are, your, we, of, to, for, team, skills, have, this, that, work]
+      fr: [le, les, des, du, et, pour, vous, nous, avec, dans, une, est, votre, notre, au, aux, que, sur]
+      nl: [het, een, van, voor, met, wij, jij, je, onze, ervaring, bij, naar, zijn, kennis, wordt, ook, bent, als]
+      de: [der, die, das, und, mit, für, wir, sie, eine, ist, von, zu, erfahrung, im, den, dem, auf]
+  freshness:
+    max_age_days: 30
+
+languages:
+  - en
+  - fr
+  - nl
+  - de
+
+queries:
+  en:
+    - junior data engineer
+    - junior machine learning engineer
+    - junior ai engineer
+    - graduate data scientist
+    - data engineer
+    - machine learning engineer
+    - ai engineer
+    - generative ai engineer
+    - llm engineer
+    - mlops engineer
+    - analytics engineer
+    - nlp engineer
+  fr:
+    - ingénieur données junior
+    - ingénieur machine learning junior
+    - ingénieur intelligence artificielle
+    - ingénieur ia générative
+    - data scientist débutant
+    - ingénieur data
+    - ingénieur apprentissage automatique
+  nl:
+    - junior data-ingenieur
+    - junior machine learning ingenieur
+    - ingenieur artificiële intelligentie
+    - datawetenschapper junior
+    - data-ingenieur
+    - ingenieur generatieve ai

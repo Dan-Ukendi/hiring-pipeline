@@ -1,0 +1,58 @@
+paths:
+  data_dir: data
+  database: data/jobpipe.db
+  archive_dir: data/archive
+  reports_dir: data/reports
+
+ollama:
+  host: http://localhost:11434
+  model: qwen2.5:7b
+  temperature: 0.0
+  context_limit: 8192
+  keep_alive: 30m
+  think: false
+  request_timeout_seconds: 600
+  schema_retries: 2
+
+audit:
+  max_description_tokens: 3000
+  chars_per_token: 3.5
+  second_opinion:
+    enabled: false
+    model: null
+    confidence_below: 0.6
+    on_borderline: true
+
+http:
+  user_agent: "jobpipe/0.1 (personal job-search tool, low volume, one request per second per host; contact: {contact})"
+  contact: danukendi1@gmail.com
+  connect_timeout_seconds: 10
+  read_timeout_seconds: 30
+  max_retries: 4
+  backoff_base_seconds: 1.0
+  backoff_max_seconds: 30.0
+  default_rate_per_second: 1.0
+  rate_limits:
+    boards-api.greenhouse.io: 1.0
+    boards.eu.greenhouse.io: 1.0
+    api.lever.co: 1.0
+    api.eu.lever.co: 1.0
+    www.actiris.brussels: 0.5
+    localhost: 1000.0
+
+pipeline:
+  default_cooldown_days: 14
+  daily_cap: 20
+  max_consecutive_empty: 3
+
+browser:
+  viewport_width: 1366
+  viewport_height: 900
+  locale: fr-BE
+  navigation_timeout_seconds: 45
+  settle_seconds: 2
+  min_interval_seconds: 2
+  max_pages_per_run: 60
+
+archive:
+  retention_days: 90

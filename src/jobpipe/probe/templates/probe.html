@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source probe report</title>
+<style>
+:root {
+  --bg: #f6f7f9; --card: #ffffff; --text: #1c2430; --muted: #5d6b7e; --line: #dde2ea;
+  --keep: #1b7f4b; --degraded: #a86a00; --drop: #b3261e; --pass: #1b7f4b; --warn: #a86a00; --fail: #b3261e;
+  --bar: #3b6fd4; --bar-bg: #e6ebf3;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12161c; --card: #1b212b; --text: #e6e9ee; --muted: #9aa6b6; --line: #2c3544;
+    --keep: #4cc38a; --degraded: #e0a33b; --drop: #f07167; --pass: #4cc38a; --warn: #e0a33b; --fail: #f07167;
+    --bar: #6c99f0; --bar-bg: #2a3342;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px 16px 48px; background: var(--bg); color: var(--text);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 980px; margin: 0 auto; }
+h1 { font-size: 22px; margin: 0 0 4px; }
+h2 { font-size: 18px; margin: 0; }
+h3 { font-size: 14px; margin: 24px 0 8px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.meta { color: var(--muted); margin: 0 0 24px; }
+section { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px; margin-bottom: 24px; }
+.head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-weight: 600; font-size: 13px;
+  border: 1px solid currentColor; text-transform: uppercase; letter-spacing: .04em; }
+.keep, .pass { color: var(--keep); } .degraded, .warn { color: var(--degraded); } .drop, .fail { color: var(--drop); }
+.reason { margin: 12px 0 0; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.scroll { overflow-x: auto; }
+.bar { background: var(--bar-bg); border-radius: 4px; height: 8px; min-width: 120px; }
+.bar > span { display: block; height: 8px; border-radius: 4px; background: var(--bar); }
+.kv { color: var(--muted); font-size: 13px; }
+code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 13px; }
+a { color: var(--bar); }
+</style>
+</head>
+<body>
+<main>
+<h1>Source probe report</h1>
+<p class="meta">Generated {{ generated_at }} &middot; configuration {{ config_hash }}</p>
+{% if comparison | length > 1 %}
+<section>
+  <h2>Comparison across sources</h2>
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr>
+        <th>Source</th><th>Verdict</th><th>Reachable</th><th class="num">Latency ms</th><th class="num">Sample</th>
+        <th class="num">Brussels</th><th class="num">Junior AI/data</th><th class="num">...in Brussels</th>
+        {% for name in coverage_fields %}<th class="num">{{ name }}</th>{% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+    {% for row in comparison %}
+      <tr>
+        <td><a href="#src-{{ row.source }}">{{ row.source }}</a></td>
+        <td><span class="{{ row.verdict }}">{{ row.verdict }}</span></td>
+        <td>{{ "yes" if row.reachable else "no" }}</td>
+        <td class="num">{{ row.latency_ms if row.latency_ms is not none else "-" }}</td>
+        <td class="num">{{ row.sample if row.sample is not none else "-" }}</td>
+        <td class="num">{{ row.brussels }}{% if row.brussels_pct is not none %} ({{ row.brussels_pct }}%){% endif %}</td>
+        <td class="num">{{ row.junior if row.junior is not none else "-" }}</td>
+        <td class="num">{{ row.profile if row.profile is not none else "-" }}</td>
+        {% for name, pct in row.coverage %}<td class="num">{{ pct ~ "%" if pct is not none else "-" }}</td>{% endfor %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  <p class="kv">Brussels and junior counts are measured over each source's own probe sample, so they compare sources, not volumes.</p>
+</section>
+{% endif %}
+{% for s in sections %}
+{% set o = s.outcome %}
+<section id="src-{{ o.source }}">
+  <div class="head">
+    <h2>{{ o.source }}</h2>
+    <span class="badge {{ o.verdict }}">{{ o.verdict }}</span>
+    <span class="kv">probed {{ o.probed_at.strftime("%Y-%m-%d %H:%M:%S") }} UTC</span>
+  </div>
+  <p class="reason">{{ o.reason }}</p>
+
+  {% if s.details %}
+  <h3>Source-specific measurements</h3>
+  <div class="scroll">
+  <table>
+    <tbody>
+    {% for key, value in s.details.items() %}
+      {% if value is mapping %}
+        <tr><td colspan="2"><strong>{{ key }}</strong></td></tr>
+        {% for inner_key, inner_value in value.items() %}
+        <tr><td><code>{{ inner_key }}</code></td><td>{{ inner_value }}</td></tr>
+        {% endfor %}
+      {% else %}
+        <tr><td><code>{{ key }}</code></td><td>{{ value if value is not none else "-" }}</td></tr>
+      {% endif %}
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% endif %}
+
+  <h3>Checks</h3>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Check</th><th>Result</th><th>Measured</th></tr></thead>
+    <tbody>
+    {% for c in s.checks %}
+      <tr>
+        <td>{{ c.name }}</td>
+        <td><span class="{{ c.status }}">{{ c.status }}</span></td>
+        <td>{{ c.summary }}
+          {% if c.measured %}<div class="kv">{% for k, v in c.measured.items() %}{{ k }}={{ v }}{% if not loop.last %}, {% endif %}{% endfor %}</div>{% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+
+  {% if s.boards %}
+  <h3>Targets</h3>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Board</th><th>Status</th><th>Host</th><th class="num">HTTP</th><th class="num">Postings</th><th class="num">ms</th><th>Attempts</th><th>Error</th></tr></thead>
+    <tbody>
+    {% for b in s.boards %}
+      <tr>
+        <td><code>{{ b.board }}</code></td>
+        <td>{{ b.status }}</td>
+        <td>{{ b.host if b.host else "-" }}</td>
+        <td class="num">{{ b.http_status if b.http_status else "-" }}</td>
+        <td class="num">{{ b.postings }}</td>
+        <td class="num">{{ b.duration_ms }}</td>
+        <td><code>{{ b.attempts }}</code></td>
+        <td>{{ b.error if b.error else "" }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% endif %}
+
+  <h3>Relevance over the sample</h3>
+  <table>
+    <tbody>
+      <tr><td>Sample size</td><td class="num">{{ o.sample_size }}</td></tr>
+      <tr><td>Located in Brussels-Capital</td><td class="num">{{ o.brussels_hits }}</td></tr>
+      <tr><td>AI/data domain at junior level (anywhere)</td><td class="num">{{ o.junior_hits }}</td></tr>
+      <tr><td>AI/data domain at junior level in Brussels-Capital</td><td class="num">{{ o.profile_hits }}</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Field coverage</h3>
+  {% if s.coverage %}
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Field</th><th class="num">Filled</th><th>Fill rate</th></tr></thead>
+    <tbody>
+    {% for name, pct in s.coverage %}
+      <tr>
+        <td><code>{{ name }}</code></td>
+        <td class="num">{{ pct }}%</td>
+        <td><div class="bar"><span style="width: {{ pct }}%"></span></div></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% else %}
+  <p class="kv">No postings were sampled, so no coverage could be measured.</p>
+  {% endif %}
+
+  <h3>Application path</h3>
+  {% if s.apply_paths %}
+  <table>
+    <tbody>
+    {% for kind, count in s.apply_paths %}
+      <tr><td><code>{{ kind }}</code></td><td class="num">{{ count }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="kv">No postings were sampled.</p>
+  {% endif %}
+
+  <h3>Archived raw samples</h3>
+  <table>
+    <thead><tr><th>Target</th><th class="num">HTTP</th><th class="num">Postings</th><th>File</th></tr></thead>
+    <tbody>
+    {% for item in s.samples %}
+      <tr>
+        <td><code>{{ item.sample.target }}</code></td>
+        <td class="num">{{ item.sample.http_status if item.sample.http_status else "-" }}</td>
+        <td class="num">{{ item.sample.jobs if item.sample.jobs is not none else "-" }}</td>
+        <td>{% if item.link %}<a href="{{ item.link }}">{{ item.sample.path }}</a>{% else %}-{% endif %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% if s.manifest_link %}<p class="kv">Sample manifest: <a href="{{ s.manifest_link }}">{{ o.sample_path }}</a></p>{% endif %}
+</section>
+{% endfor %}
+</main>
+</body>
+</html>

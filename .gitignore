@@ -1,0 +1,16 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# local state: database, raw archive, reports and the probe samples
+data/
+
+# generated annotation exports contain scraped postings
+eval/unlabeled-*.jsonl
+
+# local tooling
+CLAUDE.md
+.claude/

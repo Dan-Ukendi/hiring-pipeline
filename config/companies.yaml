@@ -1,0 +1,51 @@
+companies:
+  - slug: collibra
+    name: Collibra
+    ats: greenhouse
+    ats_slug: collibra
+    discovered_by: manual
+  - slug: adyen
+    name: Adyen
+    ats: greenhouse
+    ats_slug: adyen
+    discovered_by: manual
+  - slug: sumup
+    name: SumUp
+    ats: greenhouse
+    ats_slug: sumup
+    discovered_by: manual
+  - slug: dataroots
+    name: Dataroots
+    ats: recruitee
+    ats_slug: dataroots
+    discovered_by: manual
+  - slug: nrb
+    name: NRB
+    ats: recruitee
+    ats_slug: keyes
+    discovered_by: manual
+  - slug: toreon
+    name: Toreon
+    ats: recruitee
+    ats_slug: toreon
+    discovered_by: manual
+  - slug: bosch
+    name: Bosch
+    ats: smartrecruiters
+    ats_slug: BoschGroup
+    discovered_by: manual
+  - slug: kpler
+    name: Kpler
+    ats: lever
+    ats_slug: kpler
+    discovered_by: manual
+  - slug: keyrock
+    name: Keyrock
+    ats: ashby
+    ats_slug: keyrock
+    discovered_by: manual
+  - slug: alan
+    name: Alan
+    ats: ashby
+    ats_slug: alan
+    discovered_by: manual

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jobpipe"
+version = "0.1.0"
+description = "Local job-application pipeline"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.27",
+    "selectolax>=0.3.21",
+    "pydantic>=2.6",
+    "typer>=0.12",
+    "jinja2>=3.1",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+browser = ["playwright>=1.44"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+jobpipe = "jobpipe.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/jobpipe"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+addopts = "-m 'not network'"
+markers = [
+    "network: test requires live network access and is skipped unless selected with -m network",
+]

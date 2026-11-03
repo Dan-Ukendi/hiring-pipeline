@@ -1,0 +1,39 @@
+{
+ "data": [
+  {
+   "slug": "second-page-job-1",
+   "company_name": "econex verkehrsconsult GmbH",
+   "title": "Interviewer (m/w/d) für Busse/Züge im ÖPNV gesucht (flexibler Nebenjob) - 4304",
+   "description": "<p>Sie sind gerne unterwegs und mögen es, offen auf Menschen zuzugehen? Sie möchten flexible Arbeitszeiten haben und eigenverantwortlich arbeiten?<br><br>Dann ist die econex marktforschung gmbh - ein in Wuppertal ansässiges Unternehmen, das deutschlandweit Fahrgastdatenerhebungen durchführt und auswertet - genau das Richtige für Sie. Aktuell sind wir auf der Suche nach Minijobbern, die Interesse an der Erhebung von Fahrgastdaten haben.<br></p><p>AUFGABEN</p><ul><li><p>Sie fahren mit Zügen des Nahverkehrs und zählen und befragen die Fahrgäste.</p></li><li><p>Die Daten werden anonym per Smartpho",
+   "remote": false,
+   "url": "https://www.arbeitnow.com/jobs/companies/econex-verkehrsconsult-gmbh/interviewer-fur-busse-zuge-im-opnv-gesucht-flexibler-nebenjob-4304-geithain-392040",
+   "tags": [
+    "Market Research",
+    "Analysis"
+   ],
+   "job_types": [
+    "Minijob (geringfügige beschäftigung)",
+    "side",
+    "hilfstätigkeit / student"
+   ],
+   "location": "Geithain",
+   "created_at": 1793106053
+  }
+ ],
+ "links": {
+  "first": "https://www.arbeitnow.com/api/job-board-api?page=1",
+  "last": null,
+  "prev": "https://www.arbeitnow.com/api/job-board-api?page=1",
+  "next": null
+ },
+ "meta": {
+  "current_page": 1,
+  "current_page_url": "https://www.arbeitnow.com/api/job-board-api?page=1",
+  "from": 1,
+  "path": "https://www.arbeitnow.com/api/job-board-api",
+  "per_page": 300,
+  "to": 300,
+  "terms": "This is a free public API for jobs, please do not abuse. I would appreciate linking back to the site. By using the API, you agree to the terms of service present on Arbeitnow.com",
+  "info": "Jobs are updated every hour and order by the `created_at` timestamp. Use `?page=` to paginate. Read more information here: https://www.arbeitnow.com/blog/job-board-api"
+ }
+}
