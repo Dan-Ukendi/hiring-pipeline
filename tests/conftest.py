@@ -34,6 +34,15 @@ def _offline_guard() -> Iterator[None]:
             os.environ[key] = value
 
 
+@pytest.fixture(scope="session", autouse=True)
+def _pdf_conversion_cache(tmp_path_factory: pytest.TempPathFactory) -> Iterator[None]:
+    from jobpipe.documents import render
+
+    render.CONVERSION_CACHE = tmp_path_factory.mktemp("pdf-cache")
+    yield
+    render.CONVERSION_CACHE = None
+
+
 class FakeClock:
     def __init__(self) -> None:
         self.now = 0.0

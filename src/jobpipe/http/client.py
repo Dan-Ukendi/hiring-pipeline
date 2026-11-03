@@ -21,8 +21,11 @@ _REDIRECT_CODES = {301, 302, 303, 307, 308}
 _SENSITIVE = re.compile(r"((?:^|[?&])(?:app_key|api_key|key|token|secret)=)[^&]*", re.IGNORECASE)
 
 
+_BOT_TOKEN = re.compile(r"(/bot)\d+:[A-Za-z0-9_-]+")
+
+
 def redact_url(url: str) -> str:
-    return _SENSITIVE.sub(r'\1REDACTED', url)
+    return _BOT_TOKEN.sub(r"\1REDACTED", _SENSITIVE.sub(r'\1REDACTED', url))
 
 
 class HttpTransportError(Exception):

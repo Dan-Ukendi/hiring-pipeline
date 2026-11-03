@@ -6,6 +6,15 @@ import typer
 
 from jobpipe.apply.cli import apply_app
 from jobpipe.documents.cli import generate_command, review_app
+from jobpipe.evaluate_cli import evaluate_command
+from jobpipe.observability.cli import (
+    backup_command,
+    chain_app,
+    dashboard_command,
+    followups_command,
+    notify_command,
+    purge_command,
+)
 from jobpipe.submission.cli import submit_app
 from jobpipe.browser.session import BrowserError
 from jobpipe.canonical import CanonicalKeyer
@@ -38,6 +47,10 @@ app.add_typer(company_app, name="company")
 app.add_typer(apply_app, name="apply-plan")
 app.add_typer(review_app, name="review")
 app.add_typer(submit_app, name="submit")
+app.add_typer(chain_app, name="chain")
+for _name, _command in (("dashboard", dashboard_command), ("followups", followups_command), ("notify", notify_command),
+                       ("backup", backup_command), ("purge", purge_command), ("evaluate", evaluate_command)):
+    app.command(_name)(_command)
 app.command("generate")(generate_command)
 
 ConfigOption = Annotated[

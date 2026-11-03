@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pipeline overview</title>
+<style>
+:root { --bg: #f6f7f9; --card: #fff; --text: #1c2430; --muted: #5d6b7e; --line: #dde2ea; --ok: #1b7f4b; --warn: #a86a00; --bad: #b3261e; }
+@media (prefers-color-scheme: dark) { :root { --bg: #12161c; --card: #1b212b; --text: #e6e9ee; --muted: #9aa6b6; --line: #2c3544; --ok: #4cc38a; --warn: #e0a33b; --bad: #f07167; } }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px 16px 64px; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, sans-serif; }
+main { max-width: 1000px; margin: 0 auto; } h1 { font-size: 22px; } h2 { font-size: 18px; margin: 26px 0 10px; }
+section { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 18px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; } th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; } .bar { display: inline-block; height: 10px; background: var(--ok); border-radius: 3px; }
+.headline { font-size: 26px; font-weight: 700; } .warn { color: var(--warn); } .bad { color: var(--bad); } .muted { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+<h1>Pipeline overview</h1>
+<p class="muted">Generated {{ data.generated_at }}. Every figure is a query over the factual tables.</p>
+<section>
+  <div class="headline">{{ "%.1f"|format(data.per_hundred.get("sent", 0)) }} sent and {{ "%.1f"|format(data.per_hundred.get("confirmed", 0)) }} confirmed per 100 offers discovered</div>
+  {% if data.low_automation %}<p class="bad">Fewer than 10% of plans are automatable: the submission phase is limited to email and prepared dossiers.</p>{% endif %}
+  <table><tr><th>Stage</th><th class="num">Offers</th><th class="num">Per 100 discovered</th><th></th></tr>
+  {% for label, count, ratio in data.funnel_rows %}
+  <tr><td>{{ label }}</td><td class="num">{{ count }}</td><td class="num">{{ "%.1f"|format(ratio) if ratio is not none else "" }}</td>
+  <td>{% if ratio is not none %}<span class="bar" style="width: {{ (ratio * 2)|round|int }}px"></span>{% endif %}</td></tr>
+  {% endfor %}</table>
+</section>
+<h2>Needs you</h2>
+<section>
+{% if data.reviews %}<h3>Packages awaiting review</h3><ul>{% for r in data.reviews %}<li>tier {{ r["tier"] }} · {{ r["company_name"] }} — {{ r["title"] }} · <code>jobpipe review approve {{ r["package_id"] }}</code></li>{% endfor %}</ul>{% endif %}
+{% if data.attention %}<h3>Applications to look at</h3><table><tr><th>#</th><th>State</th><th>Reason</th><th>Offer</th></tr>
+{% for a in data.attention %}<tr><td>{{ a["id"] }}</td><td>{{ a["state"] }}</td><td>{{ a["hold_reason"] or "" }}</td><td>{{ a["company_name"] }} — {{ a["title"] }}</td></tr>{% endfor %}</table>{% endif %}
+{% if data.followups %}<h3>Follow-ups to prepare</h3><ul>{% for f in data.followups %}<li>#{{ f["id"] }} {{ f["company_name"] }} — {{ f["title"] }} (sent {{ f["sent_at"][:10] }}) · <code>jobpipe followups</code></li>{% endfor %}</ul>{% endif %}
+{% if not data.reviews and not data.attention and not data.followups %}<p>Nothing is waiting for you.</p>{% endif %}
+</section>
+<h2>Where offers stop</h2>
+<section>
+{% for stage, rows in data.blockers.items() %}<h3>{{ stage }}</h3><table>{% for reason, count in rows %}<tr><td>{{ reason }}</td><td class="num">{{ count }}</td></tr>{% else %}<tr><td class="muted">none</td></tr>{% endfor %}</table>{% endfor %}
+<h3>Document packages</h3><table>{% for s, n in data.package_statuses %}<tr><td>{{ s }}</td><td class="num">{{ n }}</td></tr>{% endfor %}</table>
+{% if data.hold_reasons %}<h3>Why packages are held</h3><table>{% for s, n in data.hold_reasons %}<tr><td>{{ s }}</td><td class="num">{{ n }}</td></tr>{% endfor %}</table>{% endif %}
+<h3>Applications by state</h3><table>{% for s, n in data.states %}<tr><td>{{ s }}</td><td class="num">{{ n }}</td></tr>{% endfor %}</table>
+</section>
+<h2>Runs</h2>
+<section><table><tr><th>#</th><th>Phase</th><th>Started</th><th>Status</th><th>Chain</th></tr>
+{% for r in data.runs %}<tr><td>{{ r["id"] }}</td><td>{{ r["phase"] }}</td><td>{{ r["started_at"] }}</td><td>{{ r["status"] }}</td><td>{{ r["parent_run_id"] or "" }}</td></tr>{% endfor %}</table></section>
+</main>
+</body>
+</html>

@@ -1,7 +1,5 @@
-import json
 from collections import Counter
 from dataclasses import dataclass, field
-from pathlib import Path
 
 from jobpipe.contract.enums import Feasibility
 from jobpipe.contract.models import ApplyPlanBundle
@@ -20,10 +18,6 @@ class ApplyEvaluation:
     @property
     def false_auto_full_rate(self) -> float | None:
         return self.false_auto_full / self.auto_full_predicted if self.auto_full_predicted else None
-
-
-def load_cases(path: Path) -> list[dict]:
-    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
 def evaluate(cases: list[dict], bundles: dict[str, ApplyPlanBundle]) -> ApplyEvaluation:

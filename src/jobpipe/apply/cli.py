@@ -5,7 +5,6 @@ from typing import Annotated, NoReturn
 import typer
 
 from jobpipe.apply.builder import PlanBuilder, Renderer
-from jobpipe.apply.evaluation import evaluate, load_cases
 from jobpipe.apply.fetch import PageFetcher, polite_throttle
 from jobpipe.apply.report import LOW_AUTOMATION_THRESHOLD, write_apply_report
 from jobpipe.apply.rules import RulesError, load_apply_rules
@@ -213,24 +212,3 @@ def report(
     with open_runtime(app_config) as rt:
         path = write_apply_report(ApplyStore(rt.store.connection), app_config, SystemClock(), out)
     typer.echo(f"report: {path}")
-
-
-@apply_app.command("eval")
-def evaluation(
-    labeled: Annotated[Path, typer.Option("--labeled", help="JSONL of labelled cases: job_id, route, feasibility.")],
-    config: ConfigOption = Path("config"),
-) -> None:
-    """Compare stored plans with labelled cases; the operative figure is the false auto_full rate."""
-    app_config = _load(config)
-    cases = load_cases(labeled)
-    with open_runtime(app_config) as rt:
-        store = ApplyStore(rt.store.connection)
-        bundles = {c["job_id"]: b for c in cases if (b := store.get_bundle(c["job_id"])) is not None}
-    result = evaluate(cases, bundles)
-    typer.echo(f"cases evaluated: {result.cases} (missing plans: {len(result.missing)})")
-    if result.route_accuracy is not None:
-        typer.echo(f"route accuracy: {result.route_accuracy:.1%}")
-    rate = result.false_auto_full_rate
-    typer.echo("false auto_full rate: " + ("n/a (no auto_full prediction)" if rate is None else f"{rate:.1%}"))
-    for (expected, got), count in sorted(result.route_matrix.items()):
-        typer.echo(f"  route expected={expected} got={got}: {count}")

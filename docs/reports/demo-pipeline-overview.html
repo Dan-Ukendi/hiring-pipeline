@@ -1,0 +1,58 @@
+<!-- DEMONSTRATION generated from the fictional example profile; no real data -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pipeline overview</title>
+<style>
+:root { --bg: #f6f7f9; --card: #fff; --text: #1c2430; --muted: #5d6b7e; --line: #dde2ea; --ok: #1b7f4b; --warn: #a86a00; --bad: #b3261e; }
+@media (prefers-color-scheme: dark) { :root { --bg: #12161c; --card: #1b212b; --text: #e6e9ee; --muted: #9aa6b6; --line: #2c3544; --ok: #4cc38a; --warn: #e0a33b; --bad: #f07167; } }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px 16px 64px; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, sans-serif; }
+main { max-width: 1000px; margin: 0 auto; } h1 { font-size: 22px; } h2 { font-size: 18px; margin: 26px 0 10px; }
+section { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 18px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; } th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; } .bar { display: inline-block; height: 10px; background: var(--ok); border-radius: 3px; }
+.headline { font-size: 26px; font-weight: 700; } .warn { color: var(--warn); } .bad { color: var(--bad); } .muted { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+<h1>Pipeline overview</h1>
+<p class="muted">Generated 2026-11-03T09:30:00+00:00. Every figure is a query over the factual tables.</p>
+<section>
+  <div class="headline">0.0 sent and 0.0 confirmed per 100 offers discovered</div>
+  <table><tr><th>Stage</th><th class="num">Offers</th><th class="num">Per 100 discovered</th><th></th></tr>
+  <tr><td>Discovered</td><td class="num">3</td><td class="num"></td>
+  <td></td></tr>
+  <tr><td>Passed the filters</td><td class="num">3</td><td class="num">100.0</td>
+  <td><span class="bar" style="width: 200px"></span></td></tr>
+  <tr><td>Application plan built</td><td class="num">3</td><td class="num">100.0</td>
+  <td><span class="bar" style="width: 200px"></span></td></tr>
+  <tr><td>Automatable (auto_full or auto_assisted)</td><td class="num">3</td><td class="num">100.0</td>
+  <td><span class="bar" style="width: 200px"></span></td></tr>
+  <tr><td>Documents ready</td><td class="num">3</td><td class="num">100.0</td>
+  <td><span class="bar" style="width: 200px"></span></td></tr>
+  <tr><td>Queued or sent</td><td class="num">3</td><td class="num">100.0</td>
+  <td><span class="bar" style="width: 200px"></span></td></tr>
+  <tr><td>Sent</td><td class="num">0</td><td class="num">0.0</td>
+  <td><span class="bar" style="width: 0px"></span></td></tr>
+  <tr><td>Confirmed</td><td class="num">0</td><td class="num">0.0</td>
+  <td><span class="bar" style="width: 0px"></span></td></tr>
+</table>
+</section>
+<h2>Needs you</h2>
+<section>
+<p>Nothing is waiting for you.</p></section>
+<h2>Where offers stop</h2>
+<section>
+<h3>apply_plan</h3><table><tr><td class="muted">none</td></tr></table><h3>submission</h3><table><tr><td class="muted">none</td></tr></table><h3>Document packages</h3><table><tr><td>ready</td><td class="num">3</td></tr></table>
+<h3>Applications by state</h3><table><tr><td>queued</td><td class="num">3</td></tr></table>
+</section>
+<h2>Runs</h2>
+<section><table><tr><th>#</th><th>Phase</th><th>Started</th><th>Status</th><th>Chain</th></tr>
+<tr><td>4</td><td>discovery</td><td>2026-11-03T11:11:49.596290+00:00</td><td>running</td><td></td></tr><tr><td>3</td><td>documents</td><td>2026-11-03T09:30:00+00:00</td><td>ok</td><td></td></tr><tr><td>2</td><td>apply_plan</td><td>2026-11-03T09:30:00+00:00</td><td>ok</td><td></td></tr><tr><td>1</td><td>discovery</td><td>2026-11-03T11:11:40.623125+00:00</td><td>running</td><td></td></tr></table></section>
+</main>
+</body>
+</html>

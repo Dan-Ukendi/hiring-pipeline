@@ -2,6 +2,7 @@ import json
 import sqlite3
 from dataclasses import dataclass
 from datetime import datetime
+from pathlib import Path
 
 from jobpipe.contract.clock import parse_iso, to_iso
 from jobpipe.contract.enums import ApprovedBy, PackageStatus, Tier
@@ -205,3 +206,10 @@ class DocumentsStore:
             query += " LIMIT ?"
             params.append(limit)
         return [r["job_id"] for r in self._conn.execute(query, params)]
+
+    def protected_run_directories(self) -> set[Path]:
+        rows = self._conn.execute(
+            "SELECT manifest_path FROM application_packages WHERE status IN ('ready', 'awaiting_review') UNION "
+            "SELECT p.manifest_path FROM application_packages p JOIN application a ON a.package_id = p.package_id "
+            "WHERE a.state IN ('queued', 'submitting', 'submitted', 'submitted_unconfirmed', 'awaiting_approval')")
+        return {Path(r["manifest_path"]).parent.resolve() for r in rows}

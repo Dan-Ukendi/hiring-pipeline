@@ -1,9 +1,12 @@
+import hashlib
 import os
 import re
 import shutil
 import subprocess
 import tempfile
+import zipfile
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 
 from docx import Document
@@ -25,6 +28,8 @@ _WINDOWS_CANDIDATES = (
     r"C:\Program Files (x86)\LibreOffice\program\soffice.exe",
 )
 _BULLET_PREFIX = "• "
+_FIXED_STAMP = datetime(2000, 1, 1, tzinfo=timezone.utc)
+CONVERSION_CACHE: Path | None = None
 
 
 class RendererUnavailable(Exception):
@@ -101,13 +106,33 @@ def write_docx(doc: RenderDoc, path: Path) -> None:
             _style(paragraph, BODY_PT, False, WD_ALIGN_PARAGRAPH.LEFT)
         else:
             _style(paragraph, BODY_PT, space_after=4.0 if doc.kind == "letter" else 2.0)
+    properties = document.core_properties
+    properties.author = properties.last_modified_by = "jobpipe"
+    properties.created = properties.modified = properties.last_printed = _FIXED_STAMP
+    properties.title = properties.subject = properties.comments = ""
     path.parent.mkdir(parents=True, exist_ok=True)
     document.save(path)
+
+
+def _content_digest(path: Path) -> str:
+    digest = hashlib.sha256()
+    with zipfile.ZipFile(path) as archive:
+        for name in sorted(archive.namelist()):
+            digest.update(name.encode("utf-8"))
+            digest.update(archive.read(name))
+    return digest.hexdigest()
 
 
 def convert_to_pdf(docx_path: Path, out_dir: Path, timeout: float = 120.0) -> Path:
     soffice = find_soffice()
     out_dir.mkdir(parents=True, exist_ok=True)
+    target = out_dir / (docx_path.stem + ".pdf")
+    cached = None
+    if CONVERSION_CACHE is not None:
+        cached = CONVERSION_CACHE / (_content_digest(docx_path) + ".pdf")
+        if cached.is_file():
+            shutil.copyfile(cached, target)
+            return target
     with tempfile.TemporaryDirectory(prefix="jobpipe-lo-") as profile_dir:
         command = [soffice, f"-env:UserInstallation={Path(profile_dir).as_uri()}", "--headless", "--convert-to", "pdf",
                    "--outdir", str(out_dir), str(docx_path)]
@@ -115,9 +140,10 @@ def convert_to_pdf(docx_path: Path, out_dir: Path, timeout: float = 120.0) -> Pa
             completed = subprocess.run(command, capture_output=True, text=True, timeout=timeout, check=False)
         except subprocess.TimeoutExpired as exc:
             raise RenderError(f"PDF conversion timed out after {timeout:.0f}s") from exc
-    target = out_dir / (docx_path.stem + ".pdf")
     if completed.returncode != 0 or not target.is_file():
         raise RenderError(f"PDF conversion failed: {completed.stderr.strip() or completed.stdout.strip()}")
+    if cached is not None:
+        shutil.copyfile(target, cached)
     return target
 
 
