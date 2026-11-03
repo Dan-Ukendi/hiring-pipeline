@@ -1,0 +1,69 @@
+[[vendor]]
+name = "greenhouse"
+kind = "hosted_form"
+patterns = [
+  '^(?:job-boards|boards)(?:\.eu)?\.greenhouse\.io/(?P<tenant>[^/]+)/jobs/(?P<external_id>\d+)',
+  '^(?:job-boards|boards)(?:\.eu)?\.greenhouse\.io/embed/job_app\?.*for=(?P<tenant>[^&]+)&.*token=(?P<external_id>\d+)',
+]
+
+[[vendor]]
+name = "lever"
+kind = "hosted_form"
+patterns = ['^jobs(?:\.eu)?\.lever\.co/(?P<tenant>[^/]+)/(?P<external_id>[0-9a-f-]{36})']
+
+[[vendor]]
+name = "ashby"
+kind = "hosted_form"
+patterns = ['^jobs\.ashbyhq\.com/(?P<tenant>[^/]+)/(?P<external_id>[0-9a-f-]{36})']
+
+[[vendor]]
+name = "workable"
+kind = "hosted_form"
+patterns = ['^apply\.workable\.com/(?P<tenant>[^/]+)/j/(?P<external_id>[A-Za-z0-9]+)']
+
+[[vendor]]
+name = "smartrecruiters"
+kind = "hosted_form"
+patterns = ['^(?:jobs|careers)\.smartrecruiters\.com/(?P<tenant>[^/]+)/(?P<external_id>\d+)']
+
+[[vendor]]
+name = "recruitee"
+kind = "hosted_form"
+patterns = ['^(?P<tenant>[a-z0-9-]+)\.recruitee\.com/o/(?P<external_id>[^/?#]+)']
+
+[[vendor]]
+name = "personio"
+kind = "hosted_form"
+patterns = ['^(?P<tenant>[a-z0-9-]+)\.jobs\.personio\.(?:de|com)/job/(?P<external_id>\d+)']
+
+[[vendor]]
+name = "teamtailor"
+kind = "hosted_form"
+patterns = ['^(?P<tenant>[a-z0-9-]+)\.teamtailor\.com/jobs/(?P<external_id>\d+)']
+
+[[vendor]]
+name = "workday"
+kind = "account_portal"
+patterns = ['^(?P<tenant>[a-z0-9-]+)\.wd\d+\.myworkdayjobs\.com/']
+
+[[vendor]]
+name = "successfactors"
+kind = "account_portal"
+patterns = ['^(?:[a-z0-9-]+\.)?(?:successfactors\.(?:eu|com)|sapsf\.(?:eu|com))/']
+
+[[vendor]]
+name = "taleo"
+kind = "account_portal"
+patterns = ['^(?P<tenant>[a-z0-9-]+)\.taleo\.net/']
+
+[[vendor]]
+name = "icims"
+kind = "account_portal"
+patterns = ['^(?P<tenant>[a-z0-9-]+)\.icims\.com/']
+
+[aggregators]
+hosts = [
+  "adzuna.be", "adzuna.com", "adzuna.co.uk", "arbeitnow.com", "indeed.com", "linkedin.com", "glassdoor.com",
+  "jooble.org", "careerjet.be", "talent.com", "jobijoba.be", "stepstone.be", "monster.be", "jobat.be",
+  "vdab.be", "actiris.brussels", "bruxellesemploi.be",
+]

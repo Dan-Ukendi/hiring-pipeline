@@ -1,0 +1,12 @@
+[defaults]
+unknown_policy_blocks = false
+
+[vendors]
+greenhouse = "unknown"
+lever = "unknown"
+ashby = "unknown"
+workable = "unknown"
+smartrecruiters = "unknown"
+recruitee = "unknown"
+personio = "unknown"
+teamtailor = "unknown"

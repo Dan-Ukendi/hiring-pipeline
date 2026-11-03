@@ -4,6 +4,7 @@ from typing import Annotated, NoReturn
 
 import typer
 
+from jobpipe.apply.cli import apply_app
 from jobpipe.browser.session import BrowserError
 from jobpipe.canonical import CanonicalKeyer
 from jobpipe.companies import careers_url_for, resolve_company, slugify
@@ -32,6 +33,7 @@ from jobpipe.sources.registry import SourceDisabled, SourceRegistry, UnknownSour
 app = typer.Typer(add_completion=False, no_args_is_help=True, help="Local job-application pipeline.")
 company_app = typer.Typer(no_args_is_help=True, help="Company registry.")
 app.add_typer(company_app, name="company")
+app.add_typer(apply_app, name="apply-plan")
 
 ConfigOption = Annotated[
     Path,

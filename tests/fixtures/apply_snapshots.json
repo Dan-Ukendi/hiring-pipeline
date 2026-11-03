@@ -1,0 +1,881 @@
+{
+ "aggregator_resolved": {
+  "evidence": "static_form",
+  "feasibility": "auto_assisted",
+  "fields": [
+   [
+    "first_name",
+    "standard",
+    "text",
+    "first_name"
+   ],
+   [
+    "last_name",
+    "standard",
+    "text",
+    "last_name"
+   ],
+   [
+    "email",
+    "standard",
+    "email",
+    "email"
+   ],
+   [
+    "phone",
+    "standard",
+    "phone",
+    "phone"
+   ],
+   [
+    "resume",
+    "document",
+    "file",
+    "resume"
+   ],
+   [
+    "cover_letter",
+    "document",
+    "file",
+    "cover_letter"
+   ],
+   [
+    "linkedin",
+    "standard",
+    "text",
+    "linkedin_url"
+   ],
+   [
+    "website_url_confirm",
+    "standard",
+    "text",
+    "first_name"
+   ]
+  ],
+  "form_hash": "66421a16ce51e5e57e60e823b33e23f0d68df5df8ce3a40dd099c9469e6e9497",
+  "obstacles": [],
+  "reason": "ok",
+  "required": 4,
+  "route": "employer_site_form",
+  "unmapped": 0
+ },
+ "aggregator_stuck": {
+  "evidence": "http_probe",
+  "feasibility": "manual_only",
+  "fields": [],
+  "form_hash": "2330cf5af7e0a9210ed2f61c07e424b8c0fdc534bd83705897c121561e061213",
+  "obstacles": [],
+  "reason": "aggregator_unresolved",
+  "required": 0,
+  "route": "aggregator_redirect",
+  "unmapped": 0
+ },
+ "clean_form": {
+  "evidence": "static_form",
+  "feasibility": "auto_assisted",
+  "fields": [
+   [
+    "first_name",
+    "standard",
+    "text",
+    "first_name"
+   ],
+   [
+    "last_name",
+    "standard",
+    "text",
+    "last_name"
+   ],
+   [
+    "email",
+    "standard",
+    "email",
+    "email"
+   ],
+   [
+    "phone",
+    "standard",
+    "phone",
+    "phone"
+   ],
+   [
+    "resume",
+    "document",
+    "file",
+    "resume"
+   ],
+   [
+    "cover_letter",
+    "document",
+    "file",
+    "cover_letter"
+   ],
+   [
+    "linkedin",
+    "standard",
+    "text",
+    "linkedin_url"
+   ],
+   [
+    "website_url_confirm",
+    "standard",
+    "text",
+    "first_name"
+   ]
+  ],
+  "form_hash": "66421a16ce51e5e57e60e823b33e23f0d68df5df8ce3a40dd099c9469e6e9497",
+  "obstacles": [],
+  "reason": "ok",
+  "required": 4,
+  "route": "employer_site_form",
+  "unmapped": 0
+ },
+ "closed_text": {
+  "evidence": "http_probe",
+  "feasibility": "blocked",
+  "fields": [],
+  "form_hash": "0af6e062db6ee8ebb7e7eef6f0964b63e4e776def69f3fcac83b22f704ba99a1",
+  "obstacles": [],
+  "reason": "posting_closed",
+  "required": 0,
+  "route": "closed",
+  "unmapped": 0
+ },
+ "cloudflare": {
+  "evidence": "exhausted",
+  "feasibility": "manual_only",
+  "fields": [],
+  "form_hash": "0af6e062db6ee8ebb7e7eef6f0964b63e4e776def69f3fcac83b22f704ba99a1",
+  "obstacles": [
+   [
+    "bot_shield",
+    "blocking"
+   ]
+  ],
+  "reason": "bot_shield_present",
+  "required": 0,
+  "route": "unknown",
+  "unmapped": 0
+ },
+ "custom_questions": {
+  "evidence": "static_form",
+  "feasibility": "manual_only",
+  "fields": [
+   [
+    "first_name",
+    "standard",
+    "text",
+    "first_name"
+   ],
+   [
+    "email",
+    "standard",
+    "email",
+    "email"
+   ],
+   [
+    "cv_upload",
+    "document",
+    "file",
+    "resume"
+   ],
+   [
+    "q_why",
+    "custom_question",
+    "textarea",
+    null
+   ],
+   [
+    "q_lunch",
+    "custom_question",
+    "text",
+    null
+   ],
+   [
+    "q_weekend",
+    "custom_question",
+    "text",
+    null
+   ],
+   [
+    "q_auth",
+    "custom_question",
+    "select",
+    "work_authorization_be"
+   ],
+   [
+    "gdpr",
+    "consent",
+    "consent",
+    null
+   ]
+  ],
+  "form_hash": "f909e1b81a02c7c1696e8a65d6114f55f05bfbcb4a7b715baffb801ed4af6a4c",
+  "obstacles": [],
+  "reason": "unmapped_required_fields",
+  "required": 8,
+  "route": "employer_site_form",
+  "unmapped": 3
+ },
+ "email_page": {
+  "evidence": "email_fallback",
+  "feasibility": "auto_full",
+  "fields": [],
+  "form_hash": "0af6e062db6ee8ebb7e7eef6f0964b63e4e776def69f3fcac83b22f704ba99a1",
+  "obstacles": [],
+  "reason": "ok",
+  "required": 0,
+  "route": "email_apply",
+  "unmapped": 0
+ },
+ "email_text": {
+  "evidence": "email_fallback",
+  "feasibility": "manual_only",
+  "fields": [],
+  "form_hash": "0af6e062db6ee8ebb7e7eef6f0964b63e4e776def69f3fcac83b22f704ba99a1",
+  "obstacles": [],
+  "reason": "route_undetermined",
+  "required": 0,
+  "route": "email_apply",
+  "unmapped": 0
+ },
+ "gone": {
+  "evidence": "http_probe",
+  "feasibility": "blocked",
+  "fields": [],
+  "form_hash": "0af6e062db6ee8ebb7e7eef6f0964b63e4e776def69f3fcac83b22f704ba99a1",
+  "obstacles": [],
+  "reason": "posting_closed",
+  "required": 0,
+  "route": "closed",
+  "unmapped": 0
+ },
+ "greenhouse_api": {
+  "evidence": "vendor_metadata",
+  "feasibility": "auto_assisted",
+  "fields": [
+   [
+    "first_name",
+    "standard",
+    "text",
+    "first_name"
+   ],
+   [
+    "last_name",
+    "standard",
+    "text",
+    "last_name"
+   ],
+   [
+    "email",
+    "standard",
+    "text",
+    "email"
+   ],
+   [
+    "phone",
+    "standard",
+    "text",
+    "phone"
+   ],
+   [
+    "resume",
+    "document",
+    "file",
+    "resume"
+   ],
+   [
+    "cover_letter",
+    "document",
+    "file",
+    "cover_letter"
+   ],
+   [
+    "question_100",
+    "custom_question",
+    "select",
+    "work_authorization_be"
+   ],
+   [
+    "question_101",
+    "custom_question",
+    "text",
+    null
+   ],
+   [
+    "gender",
+    "compliance",
+    "select",
+    null
+   ],
+   [
+    "data_compliance_gdpr",
+    "consent",
+    "consent",
+    null
+   ]
+  ],
+  "form_hash": "89f96456c59b337c556cf3774f702e50a001bf6f351dd35808ea76cd76668f89",
+  "obstacles": [],
+  "reason": "ok",
+  "required": 6,
+  "route": "ats_hosted_form",
+  "unmapped": 0
+ },
+ "greenhouse_protected": {
+  "evidence": "vendor_metadata",
+  "feasibility": "manual_only",
+  "fields": [
+   [
+    "first_name",
+    "standard",
+    "text",
+    "first_name"
+   ],
+   [
+    "last_name",
+    "standard",
+    "text",
+    "last_name"
+   ],
+   [
+    "email",
+    "standard",
+    "text",
+    "email"
+   ],
+   [
+    "phone",
+    "standard",
+    "text",
+    "phone"
+   ],
+   [
+    "resume",
+    "document",
+    "file",
+    "resume"
+   ],
+   [
+    "cover_letter",
+    "document",
+    "file",
+    "cover_letter"
+   ],
+   [
+    "question_100",
+    "custom_question",
+    "select",
+    "work_authorization_be"
+   ],
+   [
+    "question_101",
+    "custom_question",
+    "text",
+    null
+   ],
+   [
+    "gender",
+    "compliance",
+    "select",
+    null
+   ],
+   [
+    "data_compliance_gdpr",
+    "consent",
+    "consent",
+    null
+   ]
+  ],
+  "form_hash": "89f96456c59b337c556cf3774f702e50a001bf6f351dd35808ea76cd76668f89",
+  "obstacles": [
+   [
+    "protection_uncertain",
+    "blocking"
+   ]
+  ],
+  "reason": "protection_uncertain",
+  "required": 6,
+  "route": "ats_hosted_form",
+  "unmapped": 0
+ },
+ "hcaptcha": {
+  "evidence": "static_form",
+  "feasibility": "manual_only",
+  "fields": [
+   [
+    "first_name",
+    "standard",
+    "text",
+    "first_name"
+   ],
+   [
+    "last_name",
+    "standard",
+    "text",
+    "last_name"
+   ],
+   [
+    "email",
+    "standard",
+    "email",
+    "email"
+   ],
+   [
+    "phone",
+    "standard",
+    "phone",
+    "phone"
+   ],
+   [
+    "resume",
+    "document",
+    "file",
+    "resume"
+   ],
+   [
+    "cover_letter",
+    "document",
+    "file",
+    "cover_letter"
+   ],
+   [
+    "linkedin",
+    "standard",
+    "text",
+    "linkedin_url"
+   ],
+   [
+    "website_url_confirm",
+    "standard",
+    "text",
+    "first_name"
+   ]
+  ],
+  "form_hash": "66421a16ce51e5e57e60e823b33e23f0d68df5df8ce3a40dd099c9469e6e9497",
+  "obstacles": [
+   [
+    "captcha",
+    "blocking"
+   ]
+  ],
+  "reason": "captcha_present",
+  "required": 4,
+  "route": "employer_site_form",
+  "unmapped": 0
+ },
+ "image_only_accept": {
+  "evidence": "static_form",
+  "feasibility": "auto_assisted",
+  "fields": [
+   [
+    "email",
+    "standard",
+    "email",
+    "email"
+   ],
+   [
+    "first_name",
+    "standard",
+    "text",
+    "first_name"
+   ],
+   [
+    "resume",
+    "document",
+    "file",
+    "resume"
+   ]
+  ],
+  "form_hash": "a72d3c8de902082064ebf075230c7494782c0ee51b4beaa4df22393daafa1830",
+  "obstacles": [
+   [
+    "file_type_restricted",
+    "degrading"
+   ]
+  ],
+  "reason": "ok",
+  "required": 3,
+  "route": "employer_site_form",
+  "unmapped": 0
+ },
+ "js_shell": {
+  "evidence": "exhausted",
+  "feasibility": "manual_only",
+  "fields": [],
+  "form_hash": "0af6e062db6ee8ebb7e7eef6f0964b63e4e776def69f3fcac83b22f704ba99a1",
+  "obstacles": [],
+  "reason": "route_undetermined",
+  "required": 0,
+  "route": "unknown",
+  "unmapped": 0
+ },
+ "js_shell_rendered": {
+  "evidence": "rendered_form",
+  "feasibility": "auto_assisted",
+  "fields": [
+   [
+    "first_name",
+    "standard",
+    "text",
+    "first_name"
+   ],
+   [
+    "last_name",
+    "standard",
+    "text",
+    "last_name"
+   ],
+   [
+    "email",
+    "standard",
+    "email",
+    "email"
+   ],
+   [
+    "phone",
+    "standard",
+    "phone",
+    "phone"
+   ],
+   [
+    "resume",
+    "document",
+    "file",
+    "resume"
+   ],
+   [
+    "cover_letter",
+    "document",
+    "file",
+    "cover_letter"
+   ],
+   [
+    "linkedin",
+    "standard",
+    "text",
+    "linkedin_url"
+   ],
+   [
+    "website_url_confirm",
+    "standard",
+    "text",
+    "first_name"
+   ]
+  ],
+  "form_hash": "66421a16ce51e5e57e60e823b33e23f0d68df5df8ce3a40dd099c9469e6e9497",
+  "obstacles": [
+   [
+    "js_required",
+    "degrading"
+   ]
+  ],
+  "reason": "ok",
+  "required": 4,
+  "route": "employer_site_form",
+  "unmapped": 0
+ },
+ "mailto": {
+  "evidence": "mailto",
+  "feasibility": "auto_full",
+  "fields": [],
+  "form_hash": "d0ab1f0e43968a314a0fa94ef3686e2ee6788f6a925ba0a09d9401b0f9a1dda5",
+  "obstacles": [],
+  "reason": "ok",
+  "required": 0,
+  "route": "email_apply",
+  "unmapped": 0
+ },
+ "multi_step": {
+  "evidence": "static_form",
+  "feasibility": "auto_assisted",
+  "fields": [
+   [
+    "first_name",
+    "standard",
+    "text",
+    "first_name"
+   ],
+   [
+    "last_name",
+    "standard",
+    "text",
+    "last_name"
+   ],
+   [
+    "email",
+    "standard",
+    "email",
+    "email"
+   ],
+   [
+    "phone",
+    "standard",
+    "phone",
+    "phone"
+   ],
+   [
+    "resume",
+    "document",
+    "file",
+    "resume"
+   ],
+   [
+    "cover_letter",
+    "document",
+    "file",
+    "cover_letter"
+   ],
+   [
+    "linkedin",
+    "standard",
+    "text",
+    "linkedin_url"
+   ],
+   [
+    "website_url_confirm",
+    "standard",
+    "text",
+    "first_name"
+   ]
+  ],
+  "form_hash": "66421a16ce51e5e57e60e823b33e23f0d68df5df8ce3a40dd099c9469e6e9497",
+  "obstacles": [
+   [
+    "multi_step",
+    "degrading"
+   ]
+  ],
+  "reason": "ok",
+  "required": 4,
+  "route": "employer_site_form",
+  "unmapped": 0
+ },
+ "no_accept": {
+  "evidence": "static_form",
+  "feasibility": "auto_assisted",
+  "fields": [
+   [
+    "email",
+    "standard",
+    "email",
+    "email"
+   ],
+   [
+    "first_name",
+    "standard",
+    "text",
+    "first_name"
+   ],
+   [
+    "resume",
+    "document",
+    "file",
+    "resume"
+   ]
+  ],
+  "form_hash": "a72d3c8de902082064ebf075230c7494782c0ee51b4beaa4df22393daafa1830",
+  "obstacles": [],
+  "reason": "ok",
+  "required": 3,
+  "route": "employer_site_form",
+  "unmapped": 0
+ },
+ "not_found": {
+  "evidence": "http_probe",
+  "feasibility": "blocked",
+  "fields": [],
+  "form_hash": "0af6e062db6ee8ebb7e7eef6f0964b63e4e776def69f3fcac83b22f704ba99a1",
+  "obstacles": [],
+  "reason": "posting_closed",
+  "required": 0,
+  "route": "closed",
+  "unmapped": 0
+ },
+ "password": {
+  "evidence": "static_form",
+  "feasibility": "manual_only",
+  "fields": [
+   [
+    "username",
+    "custom_question",
+    "text",
+    null
+   ],
+   [
+    "password",
+    "custom_question",
+    "text",
+    null
+   ]
+  ],
+  "form_hash": "eaaa14cf8f751032d2f9e05b6d1e65723932957b10dbc7aa22296ea1b978ccf0",
+  "obstacles": [
+   [
+    "auth_required",
+    "blocking"
+   ]
+  ],
+  "reason": "auth_required",
+  "required": 2,
+  "route": "account_portal",
+  "unmapped": 2
+ },
+ "recaptcha": {
+  "evidence": "static_form",
+  "feasibility": "manual_only",
+  "fields": [
+   [
+    "first_name",
+    "standard",
+    "text",
+    "first_name"
+   ],
+   [
+    "last_name",
+    "standard",
+    "text",
+    "last_name"
+   ],
+   [
+    "email",
+    "standard",
+    "email",
+    "email"
+   ],
+   [
+    "phone",
+    "standard",
+    "phone",
+    "phone"
+   ],
+   [
+    "resume",
+    "document",
+    "file",
+    "resume"
+   ],
+   [
+    "cover_letter",
+    "document",
+    "file",
+    "cover_letter"
+   ],
+   [
+    "linkedin",
+    "standard",
+    "text",
+    "linkedin_url"
+   ],
+   [
+    "website_url_confirm",
+    "standard",
+    "text",
+    "first_name"
+   ]
+  ],
+  "form_hash": "66421a16ce51e5e57e60e823b33e23f0d68df5df8ce3a40dd099c9469e6e9497",
+  "obstacles": [
+   [
+    "captcha",
+    "blocking"
+   ]
+  ],
+  "reason": "captcha_present",
+  "required": 4,
+  "route": "employer_site_form",
+  "unmapped": 0
+ },
+ "robots": {
+  "evidence": "robots",
+  "feasibility": "manual_only",
+  "fields": [],
+  "form_hash": "0af6e062db6ee8ebb7e7eef6f0964b63e4e776def69f3fcac83b22f704ba99a1",
+  "obstacles": [],
+  "reason": "robots_disallowed",
+  "required": 0,
+  "route": "unknown",
+  "unmapped": 0
+ },
+ "uncertain": {
+  "evidence": "static_form",
+  "feasibility": "manual_only",
+  "fields": [
+   [
+    "first_name",
+    "standard",
+    "text",
+    "first_name"
+   ],
+   [
+    "last_name",
+    "standard",
+    "text",
+    "last_name"
+   ],
+   [
+    "email",
+    "standard",
+    "email",
+    "email"
+   ],
+   [
+    "phone",
+    "standard",
+    "phone",
+    "phone"
+   ],
+   [
+    "resume",
+    "document",
+    "file",
+    "resume"
+   ],
+   [
+    "cover_letter",
+    "document",
+    "file",
+    "cover_letter"
+   ],
+   [
+    "linkedin",
+    "standard",
+    "text",
+    "linkedin_url"
+   ],
+   [
+    "website_url_confirm",
+    "standard",
+    "text",
+    "first_name"
+   ]
+  ],
+  "form_hash": "66421a16ce51e5e57e60e823b33e23f0d68df5df8ce3a40dd099c9469e6e9497",
+  "obstacles": [
+   [
+    "protection_uncertain",
+    "blocking"
+   ]
+  ],
+  "reason": "protection_uncertain",
+  "required": 4,
+  "route": "employer_site_form",
+  "unmapped": 0
+ },
+ "workday": {
+  "evidence": "host_fingerprint",
+  "feasibility": "manual_only",
+  "fields": [],
+  "form_hash": "b024c09e6015899c4fc85d563aa29b2ab3ad71d59c25a2b05bb5e7099ab57a4e",
+  "obstacles": [
+   [
+    "auth_required",
+    "blocking"
+   ]
+  ],
+  "reason": "auth_required",
+  "required": 0,
+  "route": "account_portal",
+  "unmapped": 0
+ }
+}

@@ -1,0 +1,3 @@
+contact_keys = ["first_name", "last_name", "email", "phone", "city", "country", "linkedin_url", "github_url", "portfolio_url"]
+question_keys = ["work_authorization_be", "requires_sponsorship", "notice_period_days", "salary_expectation_eur", "languages", "education_level", "years_experience"]
+document_keys = ["resume", "cover_letter"]

@@ -118,6 +118,12 @@ class AuditConfig(_Strict):
     second_opinion: SecondOpinionConfig = Field(default_factory=SecondOpinionConfig)
 
 
+class ApplyConfig(_Strict):
+    stale_after_days: int = Field(default=7, gt=0)
+    llm_context_limit: int = Field(default=4096, gt=0, le=4096)
+    max_plans_per_run: int = Field(default=100, gt=0)
+
+
 class Settings(_Strict):
     paths: PathsConfig
     ollama: OllamaConfig
@@ -126,6 +132,7 @@ class Settings(_Strict):
     archive: ArchiveConfig
     browser: BrowserConfig = Field(default_factory=BrowserConfig)
     audit: AuditConfig = Field(default_factory=AuditConfig)
+    apply: ApplyConfig = Field(default_factory=ApplyConfig)
 
 
 class SourceConfig(_Strict):
