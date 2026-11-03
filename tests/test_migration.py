@@ -37,14 +37,14 @@ def test_the_migration_backfills_a_populated_stage_one_database(tmp_path: Path) 
     path = tmp_path / "stage1.db"
     stage_one_database(path)
     with Store.open(path) as store:
-        assert store.migrate() == ["001_canonical_key", "002_company_status_reason", "003_filters_audit_incidents", "004_phase2_apply_plan"]
+        assert store.migrate() == ["001_canonical_key", "002_company_status_reason", "003_filters_audit_incidents", "004_phase2_apply_plan", "005_phase3_documents"]
         assert store.count_unkeyed_jobs() == 0
         jobs = store.list_jobs()
         assert sorted(j.native_id for j in jobs) == ["100", "200", "300"]
         keys = {j.native_id: j.canonical_key for j in jobs}
         assert keys["100"] == keys["200"] != keys["300"]
         assert len(store.canonical_groups(min_size=2)) == 1
-        assert store.applied_migrations() == ["001_canonical_key", "002_company_status_reason", "003_filters_audit_incidents", "004_phase2_apply_plan"]
+        assert store.applied_migrations() == ["001_canonical_key", "002_company_status_reason", "003_filters_audit_incidents", "004_phase2_apply_plan", "005_phase3_documents"]
 
 
 def test_the_migration_is_idempotent(tmp_path: Path) -> None:
@@ -58,7 +58,7 @@ def test_the_migration_is_idempotent(tmp_path: Path) -> None:
         assert store.count_jobs() == 3
     connection = sqlite3.connect(path)
     assert connection.execute("PRAGMA foreign_key_check").fetchall() == []
-    assert connection.execute("SELECT COUNT(*) FROM schema_migration").fetchone()[0] == 4
+    assert connection.execute("SELECT COUNT(*) FROM schema_migration").fetchone()[0] == 5
     assert connection.execute("SELECT COUNT(*) FROM job_alias").fetchone()[0] == 3
     connection.close()
 

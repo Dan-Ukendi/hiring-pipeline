@@ -279,7 +279,6 @@ class Declarations(_Strict):
     remote_preference: str | None = None
     highest_completed_level: str = Field(min_length=1)
     salary_expectation: SalaryRange
-    hard_filter_years_policy: dict[str, Literal["skip", "held"]] = Field(default_factory=lambda: {"a": "held", "b": "held", "c": "held"})
 
 
 class LoadedProfile(_Strict):

@@ -15,7 +15,3 @@ salary_expectation:
   maximum: 46000
   currency: EUR
   period: year
-hard_filter_years_policy:
-  a: held
-  b: held
-  c: held

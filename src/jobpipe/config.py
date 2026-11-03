@@ -3,7 +3,7 @@ import json
 import os
 import re
 from pathlib import Path
-from typing import Any, TypeVar
+from typing import Any, Literal, TypeVar
 
 import yaml
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator, model_validator
@@ -124,6 +124,21 @@ class ApplyConfig(_Strict):
     max_plans_per_run: int = Field(default=100, gt=0)
 
 
+class ReviewConfig(_Strict):
+    required_tiers: list[Literal["a", "b", "c"]] = Field(default_factory=lambda: ["a"])
+
+
+class DocumentsConfig(_Strict):
+    root: Path = Path("documents")
+    profile_path: Path = Path("profile/profile.yaml")
+    declarations_path: Path = Path("profile/declarations.yaml")
+    l4_unsupported_limit: int = Field(default=2, ge=0)
+    allow_nl_generation: bool = False
+    prompt_version: str = Field(default="1", min_length=1)
+    max_fit_iterations: int = Field(default=12, ge=1)
+    watchlist: list[str] = Field(default_factory=list)
+
+
 class Settings(_Strict):
     paths: PathsConfig
     ollama: OllamaConfig
@@ -133,6 +148,8 @@ class Settings(_Strict):
     browser: BrowserConfig = Field(default_factory=BrowserConfig)
     audit: AuditConfig = Field(default_factory=AuditConfig)
     apply: ApplyConfig = Field(default_factory=ApplyConfig)
+    review: ReviewConfig = Field(default_factory=ReviewConfig)
+    documents: DocumentsConfig = Field(default_factory=DocumentsConfig)
 
 
 class SourceConfig(_Strict):

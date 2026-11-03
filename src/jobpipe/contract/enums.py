@@ -198,6 +198,12 @@ class HoldReason(StrEnum):
     UNSUPPORTED_CLAIMS = "unsupported_claims"
     PLAN_STALE = "plan_stale"
     PLAN_PARTIAL = "plan_partial"
+    LAYOUT_OVERFLOW = "layout_overflow"
+    LETTER_UNAVAILABLE = "letter_unavailable"
+    FORMAT_UNSUPPORTED = "format_unsupported"
+    ANSWER_NEEDS_HUMAN = "answer_needs_human"
+    PLAN_REJECTED = "plan_rejected"
+    RENDER_MISMATCH = "render_mismatch"
 
 
 class RunPhase(StrEnum):
