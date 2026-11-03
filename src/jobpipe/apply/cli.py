@@ -142,6 +142,7 @@ def build(
     refresh: Annotated[bool, typer.Option("--refresh", help="Rebuild plans older than the staleness threshold.")] = False,
     include_rejected: Annotated[bool, typer.Option("--include-rejected", help="Also analyse offers the filters rejected.")] = False,
     render: Annotated[bool, typer.Option("--render/--no-render", help="Use the browser when a page has no static form.")] = True,
+    no_audit: Annotated[bool, typer.Option("--no-audit", help="Skip the advisory LLM pass.")] = False,
     config: ConfigOption = Path("config"),
 ) -> None:
     """Build or rebuild application plans and print the automation figure."""
@@ -165,7 +166,10 @@ def build(
             )
         finally:
             http.close()
+        advisory = None if no_audit else _advisory(rt, app_config, rules, clock)
         path = write_apply_report(ApplyStore(rt.store.connection), app_config, clock)
+    if advisory is not None:
+        typer.echo(f"advisory pass: {advisory}")
     typer.echo(f"run {summary.run_id}: selected={summary.selected} built={summary.built} failed={summary.failed}")
     for name, count in summary.routes.most_common():
         typer.echo(f"  route {name}: {count}")
@@ -179,6 +183,24 @@ def build(
     typer.echo(f"report: {path}")
     if summary.failed and not summary.built:
         raise typer.Exit(code=1)
+
+
+def _advisory(rt, app_config: AppConfig, rules, clock) -> str:
+    from jobpipe.apply.audit import AdvisoryAuditor
+    from jobpipe.audit.ollama import OllamaClient, OllamaError
+    from jobpipe.db.apply_audit_store import advisory_scope
+
+    ollama = app_config.settings.ollama
+    capped = ollama.model_copy(update={"context_limit": min(ollama.context_limit, app_config.settings.apply.llm_context_limit)})
+    client = OllamaClient(capped, rt.http, rt.logger)
+    try:
+        model = client.resolve_model(capped.model)
+    except OllamaError as exc:
+        return f"skipped ({exc})"
+    auditor = AdvisoryAuditor(client, model, rules, clock, rt.logger)
+    with advisory_scope(rt.store.connection) as writer:
+        result = auditor.run(writer, app_config.settings.apply.max_plans_per_run * 5)
+    return f"{result.suggestions} suggestions, {result.findings} findings, {result.unusable} unusable"
 
 
 @apply_app.command("report")
