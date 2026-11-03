@@ -177,6 +177,7 @@ class Claim(_Strict):
 
 class CvTitle(_Strict):
     title_id: str
+    tags: tuple[str, ...] = ()
     fr: str | None = None
     en: str | None = None
 

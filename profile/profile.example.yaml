@@ -213,8 +213,8 @@ claims_bank:
     en: "Text to be written by the profile owner."
 
 cv_titles:
-  - { title_id: title.ai, fr: "Ingénieur IA / GenAI (junior)", en: "AI / GenAI Engineer (junior)" }
-  - { title_id: title.data, fr: "Ingénieur data — profil junior", en: "Data Engineer — junior" }
+  - { title_id: title.ai, tags: [rag, llm, nlp, machine_learning, scikit_learn, langchain], fr: "Ingénieur IA / GenAI (junior)", en: "AI / GenAI Engineer (junior)" }
+  - { title_id: title.data, tags: [sql, etl, airflow, dbt, spark, kafka], fr: "Ingénieur data — profil junior", en: "Data Engineer — junior" }
 
 never_claim:
   - { pattern_kind: degree, note: "no completed higher-education credential" }
