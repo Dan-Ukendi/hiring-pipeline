@@ -1,0 +1,207 @@
+{
+  "generated_at": "2026-11-03T09:51:04Z",
+  "probes": {
+    "1_greenhouse_questions_without_key": [
+      {
+        "url": "https://boards-api.greenhouse.io/v1/boards/adyen/jobs/8049101?questions=true",
+        "status": 404,
+        "server": "istio-envoy",
+        "cf_mitigated": null,
+        "cf_ray": false,
+        "content_type": "application/json",
+        "markers": []
+      },
+      {
+        "url": "https://sumup.com/careers/positions/8773691002?gh_jid=8773691002",
+        "note": "no board token/job id in url"
+      },
+      {
+        "url": "https://boards-api.greenhouse.io/v1/boards/adyen/jobs/8245370?questions=true",
+        "status": 404,
+        "server": "istio-envoy",
+        "cf_mitigated": null,
+        "cf_ray": false,
+        "content_type": "application/json",
+        "markers": []
+      },
+      {
+        "url": "https://boards-api.greenhouse.io/v1/boards/adyen/jobs/8220257?questions=true",
+        "status": 404,
+        "server": "istio-envoy",
+        "cf_mitigated": null,
+        "cf_ray": false,
+        "content_type": "application/json",
+        "markers": []
+      }
+    ],
+    "3_ashby_posting_api_without_key": [
+      {
+        "url": "https://api.ashbyhq.com/posting-api/job-board/alan",
+        "status": 200,
+        "server": "cloudflare",
+        "cf_mitigated": null,
+        "cf_ray": true,
+        "content_type": "application/json; charset=utf-8",
+        "markers": [],
+        "jobs": 134
+      }
+    ],
+    "2_shield_on_hosted_forms": {
+      "greenhouse": [
+        {
+          "url": "https://job-boards.greenhouse.io/adyen/jobs/8220257",
+          "status": 200,
+          "title": "Jobs at Adyen",
+          "cf_mitigated": null,
+          "markers_in_dom": [
+            "recaptcha"
+          ],
+          "challenge_hosts_requested": [
+            "fonts.gstatic.com"
+          ],
+          "form_inputs": 1
+        },
+        {
+          "url": "https://job-boards.greenhouse.io/adyen/jobs/8049101",
+          "status": 200,
+          "title": "Jobs at Adyen",
+          "cf_mitigated": null,
+          "markers_in_dom": [
+            "recaptcha"
+          ],
+          "challenge_hosts_requested": [
+            "fonts.gstatic.com"
+          ],
+          "form_inputs": 1
+        }
+      ],
+      "lever": [
+        {
+          "url": "https://jobs.lever.co/kpler/47fa1ed6-a4fd-41c6-9ae1-f1f3750f1fb7/apply",
+          "status": 200,
+          "title": "Kpler - Account Manager, Maritime (SME, APAC)",
+          "cf_mitigated": null,
+          "markers_in_dom": [
+            "hcaptcha",
+            "recaptcha"
+          ],
+          "challenge_hosts_requested": [
+            "149c9249d918.w.hcaptcha.com",
+            "6377edf3a179.w.hcaptcha.com",
+            "api.hcaptcha.com",
+            "b2aa4c218b0d.w.hcaptcha.com",
+            "f84617fb6ac7.w.hcaptcha.com",
+            "js.hcaptcha.com",
+            "newassets.hcaptcha.com"
+          ],
+          "form_inputs": 23
+        },
+        {
+          "url": "https://jobs.lever.co/kpler/a35396e8-6cec-4095-83ab-5384353728c2/apply",
+          "status": 200,
+          "title": "Kpler - Commercial Development Manager - Physicals - Europe",
+          "cf_mitigated": null,
+          "markers_in_dom": [
+            "hcaptcha",
+            "recaptcha"
+          ],
+          "challenge_hosts_requested": [
+            "5c4899af0574.w.hcaptcha.com",
+            "8e7b78998a2a.w.hcaptcha.com",
+            "js.hcaptcha.com",
+            "newassets.hcaptcha.com"
+          ],
+          "form_inputs": 23
+        }
+      ],
+      "ashby": [
+        {
+          "url": "https://jobs.ashbyhq.com/alan/7b8b145e-4064-474b-8ffa-c687a1c76d7a/application",
+          "status": 200,
+          "title": "Senior Growth Marketer @ Alan",
+          "cf_mitigated": null,
+          "markers_in_dom": [
+            "recaptcha"
+          ],
+          "challenge_hosts_requested": [],
+          "form_inputs": 0
+        },
+        {
+          "url": "https://jobs.ashbyhq.com/keyrock/d8f0c7ad-a6e5-45b3-913a-430eb4a21f4f/application",
+          "status": 404,
+          "title": "Jobs",
+          "cf_mitigated": null,
+          "markers_in_dom": [
+            "recaptcha"
+          ],
+          "challenge_hosts_requested": [],
+          "form_inputs": 0
+        }
+      ],
+      "workable": [
+        {
+          "url": "https://apply.workable.com/gitlab/",
+          "status": 200,
+          "title": "GitLab - Current Openings",
+          "cf_mitigated": null,
+          "markers_in_dom": [
+            "turnstile",
+            "recaptcha"
+          ],
+          "challenge_hosts_requested": [
+            "fonts.gstatic.com"
+          ],
+          "form_inputs": 0
+        },
+        {
+          "url": "https://apply.workable.com/typeform/",
+          "status": 200,
+          "title": "Typeform - Current Openings",
+          "cf_mitigated": null,
+          "markers_in_dom": [
+            "turnstile",
+            "recaptcha"
+          ],
+          "challenge_hosts_requested": [],
+          "form_inputs": 0
+        }
+      ]
+    },
+    "4_teamtailor_docs": [
+      {
+        "url": "https://docs.teamtailor.com/",
+        "status": 200,
+        "server": "cloudflare",
+        "cf_mitigated": null,
+        "cf_ray": true,
+        "content_type": "text/html; charset=utf-8",
+        "markers": []
+      },
+      {
+        "url": "https://support.teamtailor.com/hc/en-us",
+        "status": 404,
+        "server": "nginx",
+        "cf_mitigated": null,
+        "cf_ray": false,
+        "content_type": "text/html; charset=utf-8",
+        "markers": []
+      }
+    ],
+    "5_recruitee_info": [
+      {
+        "url": "https://docs.recruitee.com/reference/intro-to-careers-site-api",
+        "status": 200,
+        "server": "cloudflare",
+        "cf_mitigated": null,
+        "cf_ray": true,
+        "content_type": "text/html; charset=utf-8",
+        "markers": [
+          "recaptcha"
+        ]
+      }
+    ],
+    "1b_greenhouse_crosscheck": {
+      "note": "The 404s in probe 1 are stale job ids (jobs closed since discovery). On live Adyen jobs (7586281, 7436701) GET /v1/boards/adyen/jobs/{id}?questions=true answers 200 without any key and returns questions (14 and 12), compliance, demographic_questions, location_questions, data_compliance. Verified 2026-11-03."
+    }
+  }
+}
