@@ -1,7 +1,8 @@
 import json
+import os
 import re
 import shutil
-from collections.abc import Callable
+from collections.abc import Callable, Iterator
 from pathlib import Path
 
 import httpx
@@ -9,6 +10,7 @@ import pytest
 
 from jobpipe.browser.session import CapturedCall, RenderedPage
 from jobpipe.config import AppConfig, load_config
+from jobpipe.contract.offline import block_network
 from jobpipe.db.store import Store
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -16,6 +18,20 @@ FIXTURES = PROJECT_ROOT / "tests" / "fixtures"
 
 GREENHOUSE_DEFAULT_HOST = "boards-api.greenhouse.io"
 _BOARD_PATH = re.compile(r"^/v1/boards/([^/]+)/jobs(?:/(\d+))?$")
+
+
+@pytest.fixture(scope="session", autouse=True)
+def _offline_guard() -> Iterator[None]:
+    previous = {k: os.environ.get(k) for k in ("JOBPIPE_OFFLINE", "JOBPIPE_SEND")}
+    os.environ["JOBPIPE_OFFLINE"] = "1"
+    os.environ["JOBPIPE_SEND"] = "0"
+    with block_network():
+        yield
+    for key, value in previous.items():
+        if value is None:
+            os.environ.pop(key, None)
+        else:
+            os.environ[key] = value
 
 
 class FakeClock:

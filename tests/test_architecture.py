@@ -55,9 +55,14 @@ def test_no_other_http_library_is_used() -> None:
     assert [p for p in _source_files() if pattern.search(p.read_text(encoding="utf-8"))] == []
 
 
-def test_sql_lives_only_in_the_store() -> None:
+def test_sql_lives_only_in_the_data_access_package() -> None:
     store = SRC / "db" / "store.py"
-    offenders = [p for p in _source_files() if p != store and _SQL_STATEMENT.search(p.read_text(encoding="utf-8"))]
+    data_access = SRC / "db"
+    offenders = [
+        p
+        for p in _source_files()
+        if data_access not in p.parents and _SQL_STATEMENT.search(p.read_text(encoding="utf-8"))
+    ]
     assert offenders == []
     assert _SQL_STATEMENT.search(store.read_text(encoding="utf-8"))
 

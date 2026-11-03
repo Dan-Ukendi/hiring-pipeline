@@ -178,6 +178,10 @@ class Store:
         connection.execute("PRAGMA foreign_keys=ON")
         return cls(connection)
 
+    @property
+    def connection(self) -> sqlite3.Connection:
+        return self._conn
+
     def close(self) -> None:
         self._conn.close()
 
