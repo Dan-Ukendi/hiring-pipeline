@@ -1,0 +1,224 @@
+# FICTIONAL EXAMPLE PROFILE. Every name, employer, client, figure and date below is invented
+# for tests and demonstrations. Copy to profile.yaml and replace all of it with real facts.
+schema_version: 1
+
+identity:
+  given_name: Alex
+  family_name: Exemple
+  city: Bruxelles
+  country_code: BE
+  email: alex.exemple@example.org
+  phone_e164: "+3220000000"
+  links:
+    - { kind: linkedin, url: "https://www.linkedin.com/in/alex-exemple-demo", show_in: [cv] }
+    - { kind: github, url: "https://github.com/alex-exemple-demo", show_in: [cv] }
+
+languages:
+  - code: fr
+    name: { fr: Français, en: French }
+    cefr: { comprehension: C2, speaking: C2, writing: C2 }
+    is_native: true
+  - code: en
+    name: { fr: Anglais, en: English }
+    cefr: { comprehension: C1, speaking: C1, writing: C1 }
+  - code: nl
+    name: { fr: Néerlandais, en: Dutch }
+    cefr: { comprehension: B2, speaking: A2, writing: A2 }
+    can_author_documents: false
+
+education:
+  - entry_id: edu.polytech
+    institution: Université Démo de Bruxelles
+    programme: Ingénieur civil
+    level: bachelor
+    completed: false
+    credential: null
+    start_year: 2016
+    end_year: 2019
+    interruption_stage: BA3
+    disclosure_policy: state_without_credential
+    phrasings:
+      fr: "Université Démo de Bruxelles — cursus d'ingénieur civil, interrompu en BA3"
+      en: "Université Démo de Bruxelles — civil engineering programme, discontinued in third year"
+  - entry_id: edu.bootcamp
+    institution: Bootcamp Démo
+    programme: AI & Data
+    level: bootcamp
+    completed: false
+    in_progress_until: "2026-12"
+    credential: null
+    phrasings:
+      fr: "Bootcamp Démo — formation AI & Data, en cours"
+      en: "Bootcamp Démo — AI & Data programme, in progress"
+
+experience:
+  - entry_id: exp.startup
+    organisation: Startup Démo
+    role_fr: Co-fondateur
+    role_en: Co-founder
+    sector: saas
+    start: "2023-01"
+    end: null
+    is_current: true
+    engagement_kind: founder
+    context_phrasings:
+      fr: "Logiciel de réservation pour cafés en Belgique"
+      en: "Booking software for Belgian cafés"
+    bullets:
+      - bullet_id: exp.startup.b1
+        depends_on: [exp.startup]
+        tags: [product, python, sql]
+        droppable: false
+        fr: "Conception et développement du produit, de la base de données à l'interface"
+        en: "Designed and built the product, from the database to the interface"
+      - bullet_id: exp.startup.b2
+        depends_on: [exp.startup]
+        tags: [stakeholders, business]
+        droppable: true
+        fr: "Interlocuteur direct des clients pour recueillir les besoins et prioriser les évolutions"
+        en: "Direct contact with customers to gather needs and prioritise changes"
+  - entry_id: exp.hospitality
+    organisation_kind: multiple_employers
+    role_fr: Postes opérationnels en restauration
+    role_en: Operational roles in hospitality
+    start: "2019-06"
+    end: "2022-12"
+    engagement_kind: employment_other
+    bullets:
+      - bullet_id: exp.hospitality.b1
+        depends_on: [exp.hospitality]
+        tags: [teamwork]
+        droppable: true
+        fr: "Travail en équipe sous pression dans plusieurs établissements"
+        en: "Teamwork under pressure across several venues"
+
+projects:
+  - entry_id: proj.radar
+    name: Radar Démo
+    client: Client Démo A
+    engagement_kind: client_brief_delivered_to_production
+    role_fr: Développement d'un pipeline de classification
+    role_en: Built a classification pipeline
+    stack: [python, scikit_learn]
+    tags: [genai, classification, pipeline, client, python, nlp]
+    metrics: [metric.radar.axes]
+    start: "2025-03"
+    end: "2025-06"
+    bullets:
+      - bullet_id: proj.radar.b1
+        depends_on: [proj.radar, metric.radar.axes]
+        tags: [classification, nlp, python]
+        droppable: false
+        fr: "Pipeline de classification de texte livré en production pour un client, sur 5 axes d'analyse"
+        en: "Text classification pipeline delivered to production for a client, across 5 analysis axes"
+      - bullet_id: proj.radar.b2
+        depends_on: [proj.radar]
+        tags: [pipeline, python]
+        droppable: true
+        fr: "Orchestration des étapes de traitement et gestion des erreurs"
+        en: "Orchestration of processing steps and error handling"
+  - entry_id: proj.poc
+    name: Proof of concept Démo
+    client: Client Démo B
+    engagement_kind: team_proof_of_concept
+    team_size: 4
+    stack: [python, docker]
+    tags: [testing, ci, docker, python, team]
+    metrics: [metric.poc.tests]
+    start: "2025-07"
+    end: "2025-09"
+    bullets:
+      - bullet_id: proj.poc.b1
+        depends_on: [proj.poc, metric.poc.tests]
+        tags: [testing, ci]
+        droppable: false
+        fr: "Preuve de concept en équipe, avec 120 tests automatisés et une intégration continue"
+        en: "Team proof of concept with 120 automated tests and continuous integration"
+      - bullet_id: proj.poc.b2
+        depends_on: [proj.poc]
+        tags: [docker, python]
+        droppable: true
+        fr: "Conteneurisation de l'application pour un déploiement reproductible"
+        en: "Containerised the application for reproducible deployment"
+  - entry_id: proj.rag
+    name: Évaluation RAG
+    engagement_kind: personal
+    stack: [python, rag]
+    tags: [rag, llm, evaluation, python, genai]
+    metrics: [metric.rag.questions]
+    start: "2025-10"
+    end: "2025-12"
+    bullets:
+      - bullet_id: proj.rag.b1
+        depends_on: [proj.rag, metric.rag.questions]
+        tags: [rag, llm, evaluation]
+        droppable: false
+        fr: "Système de questions-réponses sur documents évalué sur 40 questions vérifiées à la main"
+        en: "Document question-answering system evaluated on 40 hand-verified questions"
+      - bullet_id: proj.rag.b2
+        depends_on: [proj.rag]
+        tags: [evaluation, python]
+        droppable: true
+        fr: "Harnais d'évaluation écrit avant le code de production"
+        en: "Evaluation harness written before the production code"
+
+metrics:
+  - metric_id: metric.radar.axes
+    value: 5
+    unit: axes
+    scope: "client deliverable"
+    phrasings: { fr: "5 axes d'analyse", en: "5 analysis axes" }
+  - metric_id: metric.poc.tests
+    value: 120
+    unit: tests
+    scope: "team-built proof of concept"
+    verified_by: repository
+    phrasings: { fr: "120 tests automatisés", en: "120 automated tests" }
+  - metric_id: metric.rag.questions
+    value: 40
+    unit: questions
+    scope: "hand-verified evaluation set"
+    phrasings: { fr: "40 questions vérifiées à la main", en: "40 hand-verified questions" }
+
+skills:
+  - { skill_id: skill.python, label: Python, category: language, evidence_refs: [proj.radar, proj.poc, proj.rag] }
+  - { skill_id: skill.sql, label: SQL, category: data, evidence_refs: [exp.startup] }
+  - { skill_id: skill.docker, label: Docker, category: tooling, evidence_refs: [proj.poc] }
+  - { skill_id: skill.rag, label: RAG, category: genai, evidence_refs: [proj.rag], aliases: [LLMOps] }
+  - { skill_id: skill.llm, label: LLM, category: genai, evidence_refs: [proj.rag] }
+  - { skill_id: skill.nlp, label: NLP, category: ml, evidence_refs: [proj.radar] }
+  - { skill_id: skill.scikit_learn, label: scikit-learn, category: ml, evidence_refs: [proj.radar] }
+
+claims_bank:
+  - claim_id: claim.eval_first
+    depends_on: [proj.rag, metric.rag.questions]
+    kind: positioning
+    fr: "J'écris le harnais d'évaluation avant le code de production."
+    en: "I write the evaluation harness before the production code."
+  - claim_id: claim.founder_angle
+    depends_on: [exp.startup]
+    kind: positioning
+    fr: "Fondateur d'un produit logiciel, je suis habitué à relier le besoin du client au code."
+    en: "As the founder of a software product, I am used to linking customer needs to code."
+  - claim_id: claim.nl_comprehension
+    depends_on: []
+    kind: positioning
+    fr: "Je comprends le néerlandais à l'écrit comme à l'oral et je suis disponible pour progresser."
+    en: "I follow Dutch in writing and speech and I am keen to keep improving."
+  - claim_id: claim.degree_context
+    depends_on: [edu.polytech, edu.bootcamp]
+    kind: sensitive
+    requires_human_review: true
+    fr: "Texte à écrire par le propriétaire du profil."
+    en: "Text to be written by the profile owner."
+
+cv_titles:
+  - { title_id: title.ai, fr: "Ingénieur IA / GenAI (junior)", en: "AI / GenAI Engineer (junior)" }
+  - { title_id: title.data, fr: "Ingénieur data — profil junior", en: "Data Engineer — junior" }
+
+never_claim:
+  - { pattern_kind: degree, note: "no completed higher-education credential" }
+  - { pattern_kind: certification, note: "no certification obtained" }
+  - { pattern_kind: years_of_professional_software_experience }
+  - { pattern_kind: employment_at_client, note: "client briefs and proofs of concept, not employment" }
+  - { pattern_kind: dutch_authoring }

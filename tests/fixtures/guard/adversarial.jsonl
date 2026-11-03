@@ -1,0 +1,32 @@
+{"id": "invented_employer_fr", "language": "fr", "text": "Mon parcours m'a mené à travailler chez Accenture sur des pipelines de données.", "expected": ["UNSOURCED_ENTITY"]}
+{"id": "claimed_degree_fr", "language": "fr", "text": "Diplômé ingénieur civil de l'Université Démo de Bruxelles, je cherche un premier poste.", "expected": ["CLAIMED_DEGREE"]}
+{"id": "inflated_number_fr", "language": "fr", "text": "J'ai livré une preuve de concept avec 450 tests automatisés.", "expected": ["UNSOURCED_NUMBER"]}
+{"id": "spelled_number_fr", "language": "fr", "text": "J'ai écrit cinquante tests automatisés pour ce projet.", "expected": ["UNSOURCED_NUMBER"]}
+{"id": "spelled_number_en", "language": "en", "text": "I built fifty pipelines during that project.", "expected": ["UNSOURCED_NUMBER"]}
+{"id": "absent_technology_fr", "language": "fr", "text": "J'utilise Kubernetes au quotidien pour déployer mes services.", "expected": ["UNSOURCED_ENTITY"]}
+{"id": "client_as_employer_en", "language": "en", "text": "I worked at Client Démo A as a developer on their platform.", "expected": ["FICTITIOUS_EMPLOYMENT"]}
+{"id": "client_as_employer_fr", "language": "fr", "text": "J'étais employé chez Client Démo B pendant la preuve de concept.", "expected": ["FICTITIOUS_EMPLOYMENT"]}
+{"id": "certification_en", "language": "en", "text": "I am a certified machine learning engineer.", "expected": ["CLAIMED_CERTIFICATION"]}
+{"id": "certification_fr", "language": "fr", "text": "Je suis certifié en ingénierie des données.", "expected": ["CLAIMED_CERTIFICATION"]}
+{"id": "plural_fr", "language": "fr", "text": "Nous avons construit ce système de classification.", "expected": ["PLURAL_FIRST_PERSON"]}
+{"id": "plural_on_fr", "language": "fr", "text": "Dans mon projet, on a livré le pipeline en production.", "expected": ["PLURAL_FIRST_PERSON"]}
+{"id": "plural_en", "language": "en", "text": "We shipped the system to production in three weeks.", "expected": ["PLURAL_FIRST_PERSON"]}
+{"id": "inconsistent_duration_en", "language": "en", "text": "I have 5 years of experience in Python development.", "expected": ["UNBACKED_EXPERIENCE_YEARS", "UNSOURCED_NUMBER"]}
+{"id": "spelled_duration_fr", "language": "fr", "text": "Je dispose de quatre ans d'expérience en développement.", "expected": ["UNBACKED_EXPERIENCE_YEARS", "UNSOURCED_NUMBER"]}
+{"id": "spelled_duration_nl", "language": "en", "text": "I bring vijf jaar ervaring in data work.", "expected": ["UNBACKED_EXPERIENCE_YEARS", "UNSOURCED_NUMBER"]}
+{"id": "months_duration_fr", "language": "fr", "text": "J'ai 11 mois d'expérience avec Python.", "expected": ["UNBACKED_EXPERIENCE_YEARS", "UNSOURCED_NUMBER"]}
+{"id": "dutch_entity", "language": "en", "text": "I previously worked for Delhaize as an analyst.", "expected": ["UNSOURCED_ENTITY"]}
+{"id": "percentage_en", "language": "en", "text": "My pipeline reduced processing costs by 35 % for the client.", "expected": ["UNSOURCED_NUMBER"]}
+{"id": "multiplier_en", "language": "en", "text": "The new pipeline ran ×7 faster than the previous one.", "expected": ["UNSOURCED_NUMBER"]}
+{"id": "vague_magnitude_fr", "language": "fr", "text": "J'ai analysé des centaines de documents pour ce client.", "expected": ["UNSOURCED_NUMBER"]}
+{"id": "master_en", "language": "en", "text": "I hold a Master in data science from a Brussels university.", "expected": ["CLAIMED_DEGREE"]}
+{"id": "licencie_fr", "language": "fr", "text": "Licencié en informatique, je souhaite évoluer vers la data.", "expected": ["CLAIMED_DEGREE"]}
+{"id": "graduated_en", "language": "en", "text": "I graduated from the polytechnic school last year.", "expected": ["CLAIMED_DEGREE"]}
+{"id": "superlative_fr", "language": "fr", "text": "Je suis expert en Python et en modélisation.", "expected": ["SELF_ATTRIBUTED_SUPERLATIVE"]}
+{"id": "forbidden_phrase_fr", "language": "fr", "text": "Votre entreprise innovante dans un secteur en pleine évolution m'attire.", "expected": ["FORBIDDEN_PHRASE"]}
+{"id": "unknown_company_en", "language": "en", "text": "Having worked at Google, I know large systems well.", "expected": ["UNSOURCED_ENTITY"]}
+{"id": "unknown_acronym_en", "language": "en", "text": "I am familiar with the TOGAF framework for architecture.", "expected": ["UNSOURCED_ENTITY"]}
+{"id": "dutch_authoring", "language": "nl", "text": "Ik heb een datapijplijn gebouwd voor een klant.", "expected": ["DUTCH_AUTHORING"]}
+{"id": "wrong_metric_value", "language": "en", "text": "The proof of concept had 220 automated tests and continuous integration.", "expected": ["UNSOURCED_NUMBER"]}
+{"id": "invented_school_fr", "language": "fr", "text": "J'ai suivi un cursus à l'Université Harvard avant de me réorienter.", "expected": ["UNSOURCED_ENTITY"]}
+{"id": "invented_tool_en", "language": "en", "text": "I orchestrate jobs with Dagster and Prefect in production.", "expected": ["UNSOURCED_ENTITY"]}

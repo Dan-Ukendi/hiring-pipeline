@@ -1,0 +1,21 @@
+# FICTIONAL EXAMPLE DECLARATIONS. Replace every value with your own before use.
+schema_version: 1
+work_authorization_be: true
+sponsorship_needed: false
+notice_period_days: 14
+availability_text:
+  fr: "Disponible sous deux semaines."
+  en: "Available within two weeks."
+driving_licence: true
+relocation: false
+remote_preference: hybrid
+highest_completed_level: secondary_education
+salary_expectation:
+  minimum: 38000
+  maximum: 46000
+  currency: EUR
+  period: year
+hard_filter_years_policy:
+  a: held
+  b: held
+  c: held

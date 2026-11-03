@@ -1,0 +1,12 @@
+{"id": "clean_fr_1", "language": "fr", "text": "Madame, Monsieur,\nJe candidate au poste de Junior Data Engineer chez Acme Data. Mon projet Radar Démo, livré en production pour un client, couvre 5 axes d'analyse et repose sur Python."}
+{"id": "clean_fr_2", "language": "fr", "text": "Au sein de Startup Démo, j'ai conçu un produit de réservation, de la base de données à l'interface. J'y apprends à relier le besoin du client au code."}
+{"id": "clean_fr_3", "language": "fr", "text": "J'ai écrit le harnais d'évaluation avant le code de production et vérifié 40 questions à la main. Je cumule 3 ans d'expérience en développement logiciel."}
+{"id": "clean_fr_4", "language": "fr", "text": "Votre offre mentionne Airflow et SQL pour des pipelines de données. Je suis disponible sous 14 jours à Bruxelles."}
+{"id": "clean_en_1", "language": "en", "text": "Dear Sir or Madam,\nI am applying for the Junior Data Engineer position at Acme Data. In the proof of concept, I worked with a team on 120 automated tests and continuous integration."}
+{"id": "clean_en_2", "language": "en", "text": "My Evaluation RAG project uses Python and LLM tooling. I follow Dutch in writing and speech and I am keen to keep improving."}
+{"id": "clean_en_3", "language": "en", "text": "The team of 12 people in Brussels works on pipelines with Python, SQL and Airflow, which matches the stack I use."}
+{"id": "clean_en_4", "language": "en", "text": "I containerised the application with Docker for reproducible deployment. I am available within two weeks."}
+{"id": "clean_cv_education", "language": "fr", "text": "Université Démo de Bruxelles — cursus d'ingénieur civil, interrompu en BA3"}
+{"id": "clean_en_education", "language": "en", "text": "Université Démo de Bruxelles — civil engineering programme, discontinued in third year"}
+{"id": "clean_dates", "language": "en", "text": "Since 2023, I have built and run a booking product for Belgian cafés. In 2025 I delivered a client project."}
+{"id": "clean_hybrid", "language": "en", "text": "Yours sincerely,\nAlex Exemple"}

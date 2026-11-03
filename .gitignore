@@ -14,3 +14,10 @@ eval/unlabeled-*.jsonl
 # local tooling
 CLAUDE.md
 .claude/
+
+# personal profile (the .example files are versioned)
+profile/profile.yaml
+profile/declarations.yaml
+/documents/
+/artifacts/
+/backups/
