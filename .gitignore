@@ -1,0 +1,23 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# local state: database, raw archive, reports and the probe samples
+data/
+
+# generated annotation exports contain scraped postings
+eval/unlabeled-*.jsonl
+
+
+# personal profile (the .example files are versioned)
+profile/profile.yaml
+profile/declarations.yaml
+/documents/
+/artifacts/
+/backups/
+
+# your own overrides of config/*.yaml (see local.example/)
+/local/

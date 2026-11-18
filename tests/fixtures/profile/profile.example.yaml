@@ -1,0 +1,225 @@
+# FICTIONAL TEST PROFILE. Every name, school, employer, client, figure and date below is invented
+# for the automated tests; it describes nobody. The profile shipped to users is profile/profile.example.yaml.
+schema_version: 1
+
+identity:
+  given_name: Lou
+  family_name: Fictif
+  city: Bruxelles
+  country_code: BE
+  email: lou.fictif@example.org
+  phone_e164: "+3220000000"
+  links:
+    - { kind: linkedin, url: "https://www.linkedin.com/in/lou-fictif-demo", show_in: [cv] }
+    - { kind: github, url: "https://github.com/lou-fictif-demo", show_in: [cv] }
+
+languages:
+  - code: fr
+    name: { fr: Français, en: French }
+    cefr: { comprehension: C2, speaking: C2, writing: C2 }
+    is_native: true
+  - code: en
+    name: { fr: Anglais, en: English }
+    cefr: { comprehension: B2, speaking: B2, writing: B2 }
+  - code: nl
+    name: { fr: Néerlandais, en: Dutch }
+    cefr: { comprehension: B1, speaking: A2, writing: A2 }
+    can_author_documents: false
+
+education:
+  - entry_id: edu.accounting
+    institution: Haute École Fictive de Namur
+    programme: Bachelier en comptabilité
+    level: bachelor
+    completed: false
+    credential: null
+    start_year: 2012
+    end_year: 2013
+    interruption_stage: BA1
+    disclosure_policy: state_without_credential
+    phrasings:
+      fr: "Haute École Fictive de Namur — bachelier en comptabilité, arrêté après la première année"
+      en: "Haute École Fictive de Namur — accounting bachelor programme, left after the first year"
+  - entry_id: edu.online
+    institution: Académie Fictive en ligne
+    programme: Statistiques et machine learning
+    level: online_course
+    completed: false
+    in_progress_until: "2027-03"
+    credential: null
+    phrasings:
+      fr: "Académie Fictive en ligne — statistiques et machine learning, en cours"
+      en: "Académie Fictive en ligne — statistics and machine learning course, in progress"
+
+experience:
+  - entry_id: exp.hospital
+    organisation: Hôpital Fictif
+    role_fr: Technicien support informatique
+    role_en: IT support technician
+    sector: healthcare
+    start: "2022-09"
+    end: null
+    is_current: true
+    engagement_kind: employment
+    context_phrasings:
+      fr: "Service informatique d'un hôpital régional"
+      en: "IT department of a regional hospital"
+    bullets:
+      - bullet_id: exp.hospital.b1
+        depends_on: [exp.hospital]
+        tags: [automation, python, sql]
+        droppable: false
+        fr: "Automatisation des rapports hebdomadaires du service avec des scripts Python et des requêtes SQL"
+        en: "Automated the department's weekly reports with Python scripts and SQL queries"
+      - bullet_id: exp.hospital.b2
+        depends_on: [exp.hospital]
+        tags: [support, documentation]
+        droppable: true
+        fr: "Support aux utilisateurs et documentation des procédures internes"
+        en: "User support and documentation of internal procedures"
+  - entry_id: exp.logistics
+    organisation_kind: multiple_employers
+    role_fr: Postes saisonniers en logistique
+    role_en: Seasonal roles in logistics
+    start: "2014-03"
+    end: "2022-06"
+    engagement_kind: employment_other
+    bullets:
+      - bullet_id: exp.logistics.b1
+        depends_on: [exp.logistics]
+        tags: [organisation]
+        droppable: true
+        fr: "Préparation de commandes et gestion des stocks dans plusieurs entrepôts"
+        en: "Order picking and stock handling across several warehouses"
+
+projects:
+  - entry_id: proj.forecast
+    name: Prévision Fictive
+    client: Client Fictif Alpha
+    engagement_kind: client_brief_delivered_to_production
+    role_fr: Modèle de prévision de la demande
+    role_en: Built a demand forecasting model
+    stack: [python, pandas, scikit_learn]
+    tags: [forecasting, time_series, client, python, pandas, machine_learning]
+    metrics: [metric.forecast.sites]
+    start: "2024-02"
+    end: "2024-06"
+    bullets:
+      - bullet_id: proj.forecast.b1
+        depends_on: [proj.forecast, metric.forecast.sites]
+        tags: [machine_learning, python, pandas]
+        droppable: false
+        fr: "Prévision de la demande livrée en production pour un client, sur 8 entrepôts"
+        en: "Demand forecast delivered to production for a client, covering 8 warehouses"
+      - bullet_id: proj.forecast.b2
+        depends_on: [proj.forecast]
+        tags: [pandas, python]
+        droppable: true
+        fr: "Préparation des historiques de ventes et validation sur une période de test"
+        en: "Prepared the sales history and validated the model on a hold-out period"
+  - entry_id: proj.hackathon
+    name: Hackathon Mobilité Fictif
+    client: Client Fictif Beta
+    engagement_kind: team_proof_of_concept
+    team_size: 5
+    stack: [python, docker]
+    tags: [prototype, ci_cd, docker, python, team]
+    metrics: [metric.hackathon.hours]
+    start: "2024-10"
+    end: "2024-10"
+    bullets:
+      - bullet_id: proj.hackathon.b1
+        depends_on: [proj.hackathon, metric.hackathon.hours]
+        tags: [prototype, ci_cd]
+        droppable: false
+        fr: "Prototype d'application de covoiturage construit en équipe en 48 heures"
+        en: "Car-sharing app prototype built as a team in 48 hours"
+      - bullet_id: proj.hackathon.b2
+        depends_on: [proj.hackathon]
+        tags: [docker, python]
+        droppable: true
+        fr: "Conteneurisation de l'application pour une démonstration reproductible"
+        en: "Containerised the application for a reproducible demo"
+  - entry_id: proj.rag
+    name: NoticeBot
+    engagement_kind: personal
+    stack: [python, rag]
+    tags: [rag, llm, evaluation, python, genai]
+    metrics: [metric.rag.leaflets]
+    start: "2025-11"
+    end: null
+    bullets:
+      - bullet_id: proj.rag.b1
+        depends_on: [proj.rag, metric.rag.leaflets]
+        tags: [rag, llm, evaluation]
+        droppable: false
+        fr: "Assistant de questions-réponses sur 250 notices publiques de médicaments, chaque réponse renvoyant à sa source"
+        en: "Question-answering assistant over 250 public medicine leaflets that links each answer to its source"
+      - bullet_id: proj.rag.b2
+        depends_on: [proj.rag]
+        tags: [evaluation, python]
+        droppable: true
+        fr: "Mesure de la qualité des réponses avant chaque nouvelle fonctionnalité"
+        en: "Measured answer quality before each new feature"
+
+metrics:
+  - metric_id: metric.forecast.sites
+    value: 8
+    unit: warehouses
+    scope: "client deliverable"
+    phrasings: { fr: "8 entrepôts", en: "8 warehouses" }
+  - metric_id: metric.hackathon.hours
+    value: 48
+    unit: hours
+    scope: "team hackathon"
+    verified_by: event_page
+    phrasings: { fr: "48 heures", en: "48 hours" }
+  - metric_id: metric.rag.leaflets
+    value: 250
+    unit: leaflets
+    scope: "indexed public documents"
+    phrasings: { fr: "250 notices publiques", en: "250 public leaflets" }
+
+skills:
+  - { skill_id: skill.python, label: Python, category: language, evidence_refs: [proj.forecast, proj.hackathon, proj.rag] }
+  - { skill_id: skill.sql, label: SQL, category: data, evidence_refs: [exp.hospital] }
+  - { skill_id: skill.pandas, label: pandas, category: data, evidence_refs: [proj.forecast] }
+  - { skill_id: skill.docker, label: Docker, category: tooling, evidence_refs: [proj.hackathon] }
+  - { skill_id: skill.rag, label: RAG, category: genai, evidence_refs: [proj.rag], aliases: [LLMOps] }
+  - { skill_id: skill.llm, label: LLM, category: genai, evidence_refs: [proj.rag] }
+  - { skill_id: skill.nlp, label: NLP, category: ml, evidence_refs: [proj.rag] }
+  - { skill_id: skill.scikit_learn, label: scikit-learn, category: ml, evidence_refs: [proj.forecast] }
+
+claims_bank:
+  - claim_id: claim.measure_first
+    depends_on: [proj.rag, metric.rag.leaflets]
+    kind: positioning
+    fr: "Je mesure la qualité des réponses avant d'ajouter une fonctionnalité."
+    en: "I measure answer quality before adding a feature."
+  - claim_id: claim.support_angle
+    depends_on: [exp.hospital]
+    kind: positioning
+    fr: "Le support informatique m'a appris à partir des questions concrètes des utilisateurs."
+    en: "IT support taught me to start from the concrete questions of users."
+  - claim_id: claim.nl_comprehension
+    depends_on: []
+    kind: positioning
+    fr: "Je comprends le néerlandais à l'écrit comme à l'oral et je suis disponible pour progresser."
+    en: "I follow Dutch in writing and speech and I am keen to keep improving."
+  - claim_id: claim.studies_context
+    depends_on: [edu.accounting, edu.online]
+    kind: sensitive
+    requires_human_review: true
+    fr: "Texte à écrire par le propriétaire du profil."
+    en: "Text to be written by the profile owner."
+
+cv_titles:
+  - { title_id: title.ai, tags: [rag, llm, nlp, machine_learning, scikit_learn, langchain], fr: "Profil junior en IA appliquée", en: "Junior applied AI profile" }
+  - { title_id: title.data, tags: [sql, etl, airflow, dbt, spark, kafka], fr: "Profil junior en data", en: "Junior data profile" }
+
+never_claim:
+  - { pattern_kind: degree, note: "no completed higher-education credential" }
+  - { pattern_kind: certification, note: "no certification obtained" }
+  - { pattern_kind: years_of_professional_software_experience }
+  - { pattern_kind: employment_at_client, note: "client briefs and hackathons, not employment" }
+  - { pattern_kind: dutch_authoring }

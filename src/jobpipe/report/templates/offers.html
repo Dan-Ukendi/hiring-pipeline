@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Offers kept</title>
+<style>
+:root { --bg: #f6f7f9; --card: #ffffff; --text: #1c2430; --muted: #5d6b7e; --line: #dde2ea; --warn: #a86a00; --accent: #3b6fd4; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #12161c; --card: #1b212b; --text: #e6e9ee; --muted: #9aa6b6; --line: #2c3544; --warn: #e0a33b; --accent: #6c99f0; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px 16px 64px; background: var(--bg); color: var(--text);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 1040px; margin: 0 auto; }
+h1 { font-size: 22px; margin: 0 0 4px; }
+.meta { color: var(--muted); margin: 0 0 16px; }
+article { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; }
+h2 { font-size: 16px; margin: 0 0 4px; }
+.kv { color: var(--muted); font-size: 13px; }
+.note { color: var(--warn); font-size: 13px; }
+code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 13px; }
+a { color: var(--accent); word-break: break-all; }
+</style>
+</head>
+<body>
+<main>
+<h1>{{ offers | length }} offer{{ '' if offers | length == 1 else 's' }} kept</h1>
+<p class="meta">Every posting that passed the filters in any run, newest first. Updated {{ generated_at }}.
+To make a CV for one of them: <code>jobpipe cv --job-id ID</code>; for all of them: <code>jobpipe cv</code>.</p>
+{% for item in offers %}
+{% set p = item.job %}
+<article>
+  <h2><a href="{{ p.url }}">{{ p.title }}</a></h2>
+  <div class="kv">{{ p.company_name or "employer not stated" }} · {{ p.location_raw or p.city or "location not stated" }} · {{ p.source }}
+    · first seen {{ p.first_seen_at.strftime("%Y-%m-%d") if p.first_seen_at else "-" }}
+    {% if p.posted_at %} · posted {{ p.posted_at.strftime("%Y-%m-%d") }}{% endif %}</div>
+  {% if item.borderline %}<div class="note">To check: {{ item.seniority_reason or ("auditor verdict " ~ item.audit_verdict) }}</div>{% endif %}
+  <div class="kv">ID <code>{{ p.job_id }}</code>{% if p.apply_url and p.apply_url != p.url %} · <a href="{{ p.apply_url }}">apply</a>{% endif %}</div>
+</article>
+{% else %}
+<p>No offer has passed the filters yet. Run <code>jobpipe run --no-audit</code>; Actiris and the company boards change every day.</p>
+{% endfor %}
+</main>
+</body>
+</html>

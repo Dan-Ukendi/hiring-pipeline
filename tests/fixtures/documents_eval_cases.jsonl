@@ -1,0 +1,3 @@
+{"case_id": "genai_1", "phase": "documents", "input": {"language": "en", "requirements": [["python", "required"], ["rag", "required"], ["llm", "preferred"], ["kubernetes", "required"]]}}
+{"case_id": "data_1", "phase": "documents", "input": {"language": "en", "requirements": [["sql", "required"], ["python", "required"], ["airflow", "preferred"], ["docker", "preferred"]]}}
+{"case_id": "ml_1", "phase": "documents", "input": {"language": "fr", "requirements": [["nlp", "required"], ["scikit_learn", "required"], ["python", "required"]]}}

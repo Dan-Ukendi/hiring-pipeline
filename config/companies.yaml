@@ -1,0 +1,55 @@
+# Employers with an office in Brussels-Capital that publish AI, data or tech roles on a public
+# job board. Each board was checked by a live call on 2026-11-18 (open roles located in Brussels).
+# Add your own in local/companies.yaml (see local.example/companies.yaml): git ignores it, so
+# 'git pull' never conflicts with your list.
+companies:
+  - slug: collibra
+    name: Collibra
+    ats: greenhouse
+    ats_slug: collibra
+    discovered_by: manual
+  - slug: artefact
+    name: Artefact
+    ats: greenhouse
+    ats_slug: artefact
+    discovered_by: manual
+  - slug: keyrock
+    name: Keyrock
+    ats: ashby
+    ats_slug: keyrock
+    discovered_by: manual
+  - slug: alan
+    name: Alan
+    ats: ashby
+    ats_slug: alan
+    discovered_by: manual
+  - slug: kpler
+    name: Kpler
+    ats: lever
+    ats_slug: kpler
+    discovered_by: manual
+  - slug: keyes
+    name: KEYES
+    ats: recruitee
+    ats_slug: keyes
+    discovered_by: manual
+  - slug: agilytic
+    name: Agilytic
+    ats: workable
+    ats_slug: agilytic
+    discovered_by: manual
+  - slug: talan
+    name: Talan
+    ats: smartrecruiters
+    ats_slug: Talan
+    discovered_by: manual
+  - slug: eurofins
+    name: Eurofins
+    ats: smartrecruiters
+    ats_slug: Eurofins
+    discovered_by: manual
+  - slug: bosch
+    name: Bosch
+    ats: smartrecruiters
+    ats_slug: BoschGroup
+    discovered_by: manual

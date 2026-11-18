@@ -1,0 +1,18 @@
+# OPTIONAL, FICTIONAL EXAMPLE. The CV does not need this file: 'jobpipe cv' works without it.
+# It only holds answers to application-form questions (advanced features). Every key is
+# optional; leave out whatever you do not want to state. Copy to profile/declarations.yaml.
+schema_version: 1
+work_authorization_be: true
+sponsorship_needed: false
+notice_period_days: 14
+availability_text:
+  fr: "Disponible pour un stage à partir de février."
+  en: "Available for an internship from February."
+driving_licence: false
+remote_preference: hybrid
+highest_completed_level: secondary_education
+# salary_expectation:
+#   minimum: 30000
+#   maximum: 36000
+#   currency: EUR
+#   period: year

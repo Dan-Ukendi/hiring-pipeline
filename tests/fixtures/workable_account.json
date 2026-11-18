@@ -1,0 +1,60 @@
+{
+ "name": "Example Analytics",
+ "description": "<p>We build data products.</p>",
+ "jobs": [
+  {
+   "title": "Junior Data Engineer",
+   "shortcode": "ABC123DEF4",
+   "code": "",
+   "employment_type": "Full-time",
+   "telecommuting": false,
+   "department": "Data",
+   "url": "https://apply.workable.com/j/ABC123DEF4",
+   "shortlink": "https://apply.workable.com/j/ABC123DEF4",
+   "application_url": "https://apply.workable.com/j/ABC123DEF4/apply",
+   "published_on": "2026-10-01",
+   "created_at": "2026-09-30",
+   "country": "Belgium",
+   "city": "Brussels",
+   "state": "Brussels-Capital Region",
+   "description": "<p>Build and operate data pipelines.</p><ul><li>SQL</li><li>Python</li></ul>",
+   "locations": [{"country": "Belgium", "countryCode": "BE", "region": "Brussels-Capital Region", "city": "Brussels", "hidden": false}]
+  },
+  {
+   "title": "Junior Data Engineer",
+   "shortcode": "ABC123DEF4",
+   "code": "",
+   "employment_type": "Full-time",
+   "telecommuting": false,
+   "department": "Data",
+   "url": "https://apply.workable.com/j/ABC123DEF4",
+   "shortlink": "https://apply.workable.com/j/ABC123DEF4",
+   "application_url": "https://apply.workable.com/j/ABC123DEF4/apply",
+   "published_on": "2026-10-01",
+   "created_at": "2026-09-30",
+   "country": "Netherlands",
+   "city": "Amsterdam",
+   "state": "North Holland",
+   "description": "<p>Build and operate data pipelines.</p><ul><li>SQL</li><li>Python</li></ul>",
+   "locations": [{"country": "Netherlands", "countryCode": "NL", "region": "North Holland", "city": "Amsterdam", "hidden": false}]
+  },
+  {
+   "title": "Account Executive",
+   "shortcode": "ZZZ999AAA1",
+   "code": "",
+   "employment_type": "Full-time",
+   "telecommuting": true,
+   "department": "Sales",
+   "url": "https://apply.workable.com/j/ZZZ999AAA1",
+   "shortlink": "https://apply.workable.com/j/ZZZ999AAA1",
+   "application_url": "https://apply.workable.com/j/ZZZ999AAA1/apply",
+   "published_on": "2026-10-02",
+   "created_at": "2026-10-02",
+   "country": "Germany",
+   "city": "Berlin",
+   "state": "Berlin",
+   "description": "<p>Sell things.</p>",
+   "locations": [{"country": "Germany", "countryCode": "DE", "region": "Berlin", "city": "Berlin", "hidden": false}]
+  }
+ ]
+}

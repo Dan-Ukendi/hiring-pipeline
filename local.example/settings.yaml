@@ -1,0 +1,12 @@
+# Copy this folder to local/ (git ignores local/) and keep only the keys you want to change.
+# Every file in local/ is merged over the file of the same name in config/: mappings merge key
+# by key, and a list you write here replaces the shipped list.
+
+http:
+  contact: you@example.org   # or JOBPIPE_CONTACT in .env
+
+pipeline:
+  daily_cap: 20              # postings audited by the local model per day (only with Ollama)
+
+documents:
+  profile_path: profile/profile.yaml

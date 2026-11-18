@@ -1,0 +1,16 @@
+# jobpipe with Docker, from the folder of the project:
+#
+#   docker compose build                                         (once, and after each git pull)
+#   docker compose run --rm jobpipe init --contact you@example.org
+#   docker compose run --rm jobpipe run --no-audit               (find offers)
+#   docker compose run --rm jobpipe cv                           (make the CVs)
+#
+# The project folder is mounted at /work: .env, local/, profile/, data/ and documents/ are the
+# files of your PC, so data/reports/offers.html and the CVs open from your PC as usual.
+services:
+  jobpipe:
+    build: .
+    image: jobpipe:latest
+    working_dir: /work
+    volumes:
+      - .:/work

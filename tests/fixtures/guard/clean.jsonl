@@ -1,0 +1,12 @@
+{"id": "clean_fr_1", "language": "fr", "text": "Madame, Monsieur,\nJe candidate au poste de Junior Data Engineer chez Acme Data. Ma prévision de la demande, livrée en production pour un client, couvre 8 entrepôts et repose sur Python."}
+{"id": "clean_fr_2", "language": "fr", "text": "À l'Hôpital Fictif, j'automatise les rapports du service avec Python et SQL. J'y apprends à partir des questions concrètes des utilisateurs."}
+{"id": "clean_fr_3", "language": "fr", "text": "J'ai mesuré la qualité des réponses sur 250 notices publiques. Je cumule 4 ans d'expérience en développement logiciel."}
+{"id": "clean_fr_4", "language": "fr", "text": "Votre offre mentionne Airflow et SQL pour des pipelines de données. Je suis disponible sous 14 jours à Bruxelles."}
+{"id": "clean_en_1", "language": "en", "text": "Dear Sir or Madam,\nI am applying for the Junior Data Engineer position at Acme Data. During the hackathon, I worked with a team on a prototype built in 48 hours."}
+{"id": "clean_en_2", "language": "en", "text": "My NoticeBot project uses Python and LLM tooling. I follow Dutch in writing and speech and I am keen to keep improving."}
+{"id": "clean_en_3", "language": "en", "text": "The team of 12 people in Brussels works on pipelines with Python, SQL and Airflow, which matches the stack I use."}
+{"id": "clean_en_4", "language": "en", "text": "I containerised the application with Docker for reproducible deployment. I am available within two weeks."}
+{"id": "clean_cv_education", "language": "fr", "text": "Haute École Fictive de Namur — bachelier en comptabilité, arrêté après la première année"}
+{"id": "clean_en_education", "language": "en", "text": "Haute École Fictive de Namur — accounting bachelor programme, left after the first year"}
+{"id": "clean_dates", "language": "en", "text": "Since 2022, I have automated reports for a hospital IT department. In 2024 I delivered a client project."}
+{"id": "clean_hybrid", "language": "en", "text": "Yours sincerely,\nLou Fictif"}

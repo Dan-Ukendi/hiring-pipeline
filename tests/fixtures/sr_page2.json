@@ -1,0 +1,148 @@
+{
+ "offset": 2,
+ "limit": 2,
+ "totalFound": 3,
+ "content": [
+  {
+   "id": "744000155002879",
+   "name": "Internship Data Analytics",
+   "uuid": "6191405f-db88-4934-b0db-f68f6fbde61e",
+   "jobAdId": "142dbe62-9917-467d-88c0-58ad36634d1d",
+   "defaultJobAd": true,
+   "refNumber": "REF298274D",
+   "company": {
+    "identifier": "BoschGroup",
+    "name": "Bosch Group"
+   },
+   "releasedDate": "2026-10-12T12:23:18.225Z",
+   "location": {
+    "city": "Mechelen",
+    "region": "Vlaanderen",
+    "country": "be",
+    "address": "Zandvoortstraat 47",
+    "postalCode": "2800",
+    "remote": false,
+    "hybrid": false,
+    "latitude": "51.054517",
+    "longitude": "4.445179899999999",
+    "fullLocation": "Mechelen, Vlaanderen, Belgium"
+   },
+   "industry": {
+    "id": "wholesale",
+    "label": "Wholesale"
+   },
+   "department": {},
+   "function": {
+    "id": "analyst",
+    "label": "Analyst"
+   },
+   "typeOfEmployment": {
+    "id": "permanent",
+    "label": "Full-time"
+   },
+   "experienceLevel": {
+    "id": "internship",
+    "label": "Internship"
+   },
+   "customField": [
+    {
+     "fieldId": "5abe2a4ab60a5e486a2d9b1d",
+     "fieldLabel": "Contract type",
+     "valueId": "98487475-2a49-44f5-a615-408b525b3821",
+     "valueLabel": "Limited"
+    },
+    {
+     "fieldId": "5abe28e96d8bc56863dd9746",
+     "fieldLabel": "Tariff Area",
+     "valueId": "b8339437-df9b-4ff9-bbf6-5581b0624947",
+     "valueLabel": "Belgium Local Grades"
+    },
+    {
+     "fieldId": "586a997ee4b05fd937b86098",
+     "fieldLabel": "Legal Entity(acronym)",
+     "valueId": "c480dfe6-7ca7-4362-b2c0-86a6b0f2ece0",
+     "valueLabel": "TTBE"
+    },
+    {
+     "fieldId": "586a99b5e4b0daa006ae1079",
+     "fieldLabel": "Working Location",
+     "valueId": "69944e0d-7814-4f39-a84a-d1be6888a09c",
+     "valueLabel": "Mechelen"
+    },
+    {
+     "fieldId": "5abe295a6d8bc56863dd9747",
+     "fieldLabel": "Global Salary Level",
+     "valueId": "80ae06a1-4738-48e8-8aea-4613f58ecd57",
+     "valueLabel": "Others"
+    },
+    {
+     "fieldId": "69ca83a2489188782a1e9f87",
+     "fieldLabel": "Direct Or Indirect",
+     "valueId": "0d8b2ae9-fc67-447b-9165-201f59f71e90",
+     "valueLabel": "Direct"
+    },
+    {
+     "fieldId": "5abe29f9b60a5e486a2d9b1c",
+     "fieldLabel": "Working hours",
+     "valueId": "60756b3e-dbab-4353-ac3a-0064d2bb27d8",
+     "valueLabel": "Full-time"
+    },
+    {
+     "fieldId": "586a9995e4b0daa006ae1078",
+     "fieldLabel": "Legal Entity",
+     "valueId": "e9994e80-b2c2-40d0-9662-73d40e261d22",
+     "valueLabel": "Bosch Thermotechnology NV/SA"
+    },
+    {
+     "fieldId": "691cf1c93001c782b9560ab7",
+     "fieldLabel": "Division full name",
+     "valueId": "65a82db8-6dd3-40f0-a812-01522dc95503",
+     "valueLabel": "Home Comfort"
+    },
+    {
+     "fieldId": "5abe27936d8bc56863dd9745",
+     "fieldLabel": "Position type",
+     "valueId": "f524b939-fe55-407b-a0b0-e8f4eec28997",
+     "valueLabel": "Intern"
+    },
+    {
+     "fieldId": "COUNTRY",
+     "fieldLabel": "Country/Region",
+     "valueId": "be",
+     "valueLabel": "Belgium"
+    },
+    {
+     "fieldId": "586a971ee4b0daa006ae1077",
+     "fieldLabel": "Brands",
+     "valueId": "default",
+     "valueLabel": "Bosch Group"
+    },
+    {
+     "fieldId": "586a996ce4b05fd937b86097",
+     "fieldLabel": "Working Country",
+     "valueId": "7dce6d14-4822-43d3-a529-6b3d535cd0ee",
+     "valueLabel": "Belgium"
+    },
+    {
+     "fieldId": "586a9b22e4b05fd937b8609a",
+     "fieldLabel": "Local Grade",
+     "valueId": "d832b4bd-a05e-4635-967a-6a2a2cd1a0c0",
+     "valueLabel": "BE_Apprentice"
+    },
+    {
+     "fieldId": "586a99a5e4b05fd937b86099",
+     "fieldLabel": "Division",
+     "valueId": "TT",
+     "valueLabel": "HC"
+    }
+   ],
+   "visibility": "PUBLIC",
+   "ref": "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000155002879",
+   "language": {
+    "code": "en",
+    "label": "English",
+    "labelNative": "English (US)"
+   }
+  }
+ ]
+}

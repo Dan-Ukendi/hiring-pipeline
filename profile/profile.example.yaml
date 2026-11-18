@@ -1,0 +1,194 @@
+# FICTIONAL EXAMPLE PROFILE: every name, school, employer, figure and date below is invented.
+#
+# 1. Copy this file to profile/profile.yaml (git ignores profile.yaml, so it stays on your PC).
+# 2. Replace every value with your own facts. The CV only reuses sentences written here:
+#    nothing is invented, so write each bullet the way you want it printed.
+# 3. Run: jobpipe cv        (it makes one CV per offer; run it again after each edit)
+#
+# Rules the checker enforces (the error message names the line to fix):
+# - dates are months between quotes: "2025-09"; end: null means "ongoing";
+# - phone_e164 is the international format without spaces: "+32470123456";
+# - language levels are A1 A2 B1 B2 C1 C2 in capitals;
+# - every identifier (entry_id, bullet_id, skill_id, title_id...) is unique;
+# - each bullet has a French (fr) and an English (en) sentence; a bullet without one of them is
+#   left out of the CVs in that language;
+# - droppable: false keeps a bullet on every CV; droppable: true lets jobpipe drop it when the
+#   page is full. Keep at most 3 or 4 bullets per entry: the CV must fit on one A4 page.
+#
+# Tags decide which entries, bullets, skills and CV title come first for each offer. Use the keys
+# of config/apply/skills.toml, the words jobpipe recognises in offers:
+#   python sql spark airflow dbt docker kubernetes aws azure gcp pytorch tensorflow scikit_learn
+#   pandas numpy llm rag langchain hugging_face nlp computer_vision machine_learning deep_learning
+#   mlops etl kafka git ci_cd terraform java scala typescript snowflake databricks tableau power_bi
+#   looker excel statistics data_visualization fastapi flask
+# Other tags are allowed but never match an offer.
+#
+# engagement_kind (how much an entry weighs): employment, client_brief_delivered_to_production,
+# founder, team_proof_of_concept, personal; any other value (for example student_job) weighs least.
+schema_version: 1
+
+identity:
+  given_name: Sam
+  family_name: Exemple
+  city: Bruxelles
+  country_code: BE
+  email: sam.exemple@example.org
+  phone_e164: "+32470000000"
+  links:
+    - { kind: linkedin, url: "https://www.linkedin.com/in/sam-exemple-demo", show_in: [cv] }
+    - { kind: github, url: "https://github.com/sam-exemple-demo", show_in: [cv] }
+
+languages:
+  - code: fr
+    name: { fr: Français, en: French }
+    cefr: { comprehension: C2, speaking: C2, writing: C2 }
+    is_native: true
+  - code: en
+    name: { fr: Anglais, en: English }
+    cefr: { comprehension: B2, speaking: B2, writing: B2 }
+  - code: nl
+    name: { fr: Néerlandais, en: Dutch }
+    cefr: { comprehension: A2, speaking: A2, writing: A1 }
+    can_author_documents: false   # no CV is written in a language you cannot write well
+
+education:
+  - entry_id: edu.bachelor
+    institution: Haute École Démo de Bruxelles
+    programme: Bachelier en informatique
+    level: bachelor
+    completed: false              # in progress: never presented as a diploma obtained
+    credential: null
+    start_year: 2024
+    in_progress_until: "2027-06"
+    disclosure_policy: state_without_credential
+    phrasings:
+      fr: "Haute École Démo de Bruxelles — Bachelier en informatique, 3e année en cours"
+      en: "Haute École Démo de Bruxelles — Bachelor in computer science, third year in progress"
+  - entry_id: edu.secondary
+    institution: Athénée Démo
+    programme: Enseignement secondaire général
+    level: secondary
+    completed: true
+    credential: CESS
+    end_year: 2024
+    disclosure_policy: state_with_credential
+    phrasings:
+      fr: "Athénée Démo — CESS, option sciences-mathématiques"
+      en: "Athénée Démo — secondary school diploma, science and mathematics"
+
+experience:
+  - entry_id: exp.student_job
+    organisation: Supermarché Démo
+    role_fr: Job étudiant, caisse et réassort
+    role_en: Student job, checkout and restocking
+    start: "2024-07"
+    end: null
+    is_current: true
+    engagement_kind: student_job
+    bullets:
+      - bullet_id: exp.student_job.b1
+        depends_on: [exp.student_job]
+        tags: [teamwork]
+        droppable: true
+        fr: "Accueil des clients et travail en équipe le week-end, en parallèle des études"
+        en: "Served customers and worked in a team at weekends alongside my studies"
+
+projects:
+  - entry_id: proj.tickets
+    name: TicketSort
+    engagement_kind: team_proof_of_concept
+    team_size: 3
+    role_fr: Projet de cours en équipe
+    role_en: Team course project
+    stack: [python, scikit_learn, pandas]
+    tags: [machine_learning, nlp, python, scikit_learn, pandas, statistics]
+    metrics: [metric.tickets.count]
+    start: "2025-02"
+    end: "2025-05"
+    bullets:
+      - bullet_id: proj.tickets.b1
+        depends_on: [proj.tickets, metric.tickets.count]
+        tags: [machine_learning, nlp, python, scikit_learn]
+        droppable: false
+        fr: "Modèle de classification de 3 000 tickets de support par thème, entraîné avec scikit-learn"
+        en: "Classification model sorting 3,000 support tickets by topic, trained with scikit-learn"
+      - bullet_id: proj.tickets.b2
+        depends_on: [proj.tickets]
+        tags: [pandas, statistics, data_visualization]
+        droppable: true
+        fr: "Nettoyage des données avec pandas et comparaison des modèles sur un jeu de test séparé"
+        en: "Cleaned the data with pandas and compared models on a held-out test set"
+  - entry_id: proj.pipeline
+    name: Brussels Mobility Data
+    engagement_kind: personal
+    stack: [python, sql, airflow, docker]
+    tags: [etl, sql, airflow, docker, python]
+    start: "2025-07"
+    end: "2025-09"
+    bullets:
+      - bullet_id: proj.pipeline.b1
+        depends_on: [proj.pipeline]
+        tags: [etl, sql, airflow]
+        droppable: false
+        fr: "Pipeline quotidien qui charge des données ouvertes de mobilité bruxelloise dans PostgreSQL avec Airflow"
+        en: "Daily pipeline loading open Brussels mobility data into PostgreSQL with Airflow"
+      - bullet_id: proj.pipeline.b2
+        depends_on: [proj.pipeline]
+        tags: [docker, git]
+        droppable: true
+        fr: "Projet conteneurisé avec Docker et versionné sur GitHub"
+        en: "Containerised with Docker and versioned on GitHub"
+  - entry_id: proj.chatbot
+    name: CourseBot (RAG)
+    engagement_kind: personal
+    stack: [python, langchain]
+    tags: [llm, rag, langchain, python, nlp]
+    start: "2025-10"
+    end: null
+    bullets:
+      - bullet_id: proj.chatbot.b1
+        depends_on: [proj.chatbot]
+        tags: [llm, rag, langchain]
+        droppable: false
+        fr: "Assistant qui répond aux questions sur mes notes de cours, avec citation des passages utilisés"
+        en: "Assistant answering questions about my course notes, citing the passages it used"
+      - bullet_id: proj.chatbot.b2
+        depends_on: [proj.chatbot]
+        tags: [python]
+        droppable: true
+        fr: "Jeu de questions de test écrit avant le code pour mesurer la qualité des réponses"
+        en: "Test question set written before the code to measure answer quality"
+
+metrics:
+  - metric_id: metric.tickets.count
+    value: 3000
+    unit: tickets
+    scope: "course project dataset"
+    phrasings: { fr: "3 000 tickets", en: "3,000 tickets" }
+
+# evidence_refs: the entries that show you used the skill (at least one).
+skills:
+  - { skill_id: skill.python, label: Python, category: language, evidence_refs: [proj.tickets, proj.pipeline, proj.chatbot] }
+  - { skill_id: skill.sql, label: SQL, category: data, evidence_refs: [proj.pipeline] }
+  - { skill_id: skill.pandas, label: pandas, category: data, evidence_refs: [proj.tickets] }
+  - { skill_id: skill.scikit_learn, label: scikit-learn, category: ml, evidence_refs: [proj.tickets] }
+  - { skill_id: skill.machine_learning, label: Machine learning, category: ml, evidence_refs: [proj.tickets] }
+  - { skill_id: skill.airflow, label: Airflow, category: data, evidence_refs: [proj.pipeline] }
+  - { skill_id: skill.docker, label: Docker, category: tooling, evidence_refs: [proj.pipeline] }
+  - { skill_id: skill.git, label: Git, category: tooling, evidence_refs: [proj.pipeline] }
+  - { skill_id: skill.llm, label: LLM, category: genai, evidence_refs: [proj.chatbot] }
+  - { skill_id: skill.rag, label: RAG, category: genai, evidence_refs: [proj.chatbot], aliases: [langchain] }
+
+# Optional sentences for the cover letter feature; the CV does not use them.
+claims_bank: []
+
+# One title per kind of role; the title whose tags best match the offer is printed under your name.
+cv_titles:
+  - { title_id: title.ai, tags: [machine_learning, deep_learning, nlp, llm, rag, langchain, scikit_learn, computer_vision], fr: "Étudiant en informatique — IA et machine learning", en: "Computer science student — AI and machine learning" }
+  - { title_id: title.data, tags: [sql, etl, airflow, dbt, spark, pandas, power_bi, statistics], fr: "Étudiant en informatique — data engineering et analyse de données", en: "Computer science student — data engineering and analytics" }
+
+# What a CV must never claim. degree: no diploma before it is obtained.
+never_claim:
+  - { pattern_kind: degree, note: "bachelor in progress, not obtained" }
+  - { pattern_kind: certification, note: "no certification obtained" }
+  - { pattern_kind: years_of_professional_software_experience }

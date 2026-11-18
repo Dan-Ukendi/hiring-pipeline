@@ -1,0 +1,174 @@
+{
+ "id": "744000156330364",
+ "name": "Internship Quality Coordination Support",
+ "uuid": "1b5512b5-b3fc-4ab9-8753-06663a376f5a",
+ "jobId": "60ea9290-4cfa-4332-80bf-27c3e8dae52a",
+ "jobAdId": "e974b2e4-1cec-46d9-8d6f-21a4ee5af711",
+ "defaultJobAd": true,
+ "refNumber": "REF298918B",
+ "company": {
+  "name": "Bosch Group",
+  "identifier": "BoschGroup"
+ },
+ "location": {
+  "city": "Anderlecht",
+  "region": "Bruxelles",
+  "country": "be",
+  "address": "Rue Henri-Joseph Genesse",
+  "postalCode": "1070",
+  "remote": false,
+  "hybrid": false,
+  "latitude": "50.8223647",
+  "longitude": "4.3112463",
+  "fullLocation": "Anderlecht, Bruxelles, Belgium"
+ },
+ "customField": [
+  {
+   "fieldId": "5abe2a4ab60a5e486a2d9b1d",
+   "fieldLabel": "Contract type",
+   "valueId": "98487475-2a49-44f5-a615-408b525b3821",
+   "valueLabel": "Limited"
+  },
+  {
+   "fieldId": "5abe28e96d8bc56863dd9746",
+   "fieldLabel": "Tariff Area",
+   "valueId": "b8339437-df9b-4ff9-bbf6-5581b0624947",
+   "valueLabel": "Belgium Local Grades"
+  },
+  {
+   "fieldId": "586a997ee4b05fd937b86098",
+   "fieldLabel": "Legal Entity(acronym)",
+   "valueId": "aa047b35-d539-44d7-8275-683a77bdd76a",
+   "valueLabel": "RBVB"
+  },
+  {
+   "fieldId": "586a99b5e4b0daa006ae1079",
+   "fieldLabel": "Working Location",
+   "valueId": "af1b6601-175d-42d0-bb5c-2943de44880f",
+   "valueLabel": "Brussels"
+  },
+  {
+   "fieldId": "5abe295a6d8bc56863dd9747",
+   "fieldLabel": "Global Salary Level",
+   "valueId": "80ae06a1-4738-48e8-8aea-4613f58ecd57",
+   "valueLabel": "Others"
+  },
+  {
+   "fieldId": "69ca83a2489188782a1e9f87",
+   "fieldLabel": "Direct Or Indirect",
+   "valueId": "0d8b2ae9-fc67-447b-9165-201f59f71e90",
+   "valueLabel": "Direct"
+  },
+  {
+   "fieldId": "5abe29f9b60a5e486a2d9b1c",
+   "fieldLabel": "Working hours",
+   "valueId": "60756b3e-dbab-4353-ac3a-0064d2bb27d8",
+   "valueLabel": "Full-time"
+  },
+  {
+   "fieldId": "586a9995e4b0daa006ae1078",
+   "fieldLabel": "Legal Entity",
+   "valueId": "2f1931d5-3d0f-42a7-adb5-8e529c386beb",
+   "valueLabel": "Robert Bosch SA/NV"
+  },
+  {
+   "fieldId": "691cf1c93001c782b9560ab7",
+   "fieldLabel": "Division full name",
+   "valueId": "44824fcd-5cdc-406b-85ce-9d41e3ca1626",
+   "valueLabel": "Mobility Company"
+  },
+  {
+   "fieldId": "5abe27936d8bc56863dd9745",
+   "fieldLabel": "Position type",
+   "valueId": "f524b939-fe55-407b-a0b0-e8f4eec28997",
+   "valueLabel": "Intern"
+  },
+  {
+   "fieldId": "COUNTRY",
+   "fieldLabel": "Country/Region",
+   "valueId": "be",
+   "valueLabel": "Belgium"
+  },
+  {
+   "fieldId": "586a971ee4b0daa006ae1077",
+   "fieldLabel": "Brands",
+   "valueId": "default",
+   "valueLabel": "Bosch Group"
+  },
+  {
+   "fieldId": "586a996ce4b05fd937b86097",
+   "fieldLabel": "Working Country",
+   "valueId": "7dce6d14-4822-43d3-a529-6b3d535cd0ee",
+   "valueLabel": "Belgium"
+  },
+  {
+   "fieldId": "586a9b22e4b05fd937b8609a",
+   "fieldLabel": "Local Grade",
+   "valueId": "d832b4bd-a05e-4635-967a-6a2a2cd1a0c0",
+   "valueLabel": "BE_Apprentice"
+  },
+  {
+   "fieldId": "586a99a5e4b05fd937b86099",
+   "fieldLabel": "Division",
+   "valueId": "bf8a836f-5328-44b2-a6dc-068c25b53e71",
+   "valueLabel": "M"
+  }
+ ],
+ "releasedDate": "2026-10-19T13:53:43.934Z",
+ "creator": {
+  "name": "",
+  "avatarUrl": ""
+ },
+ "postingUrl": "https://jobs.smartrecruiters.com/BoschGroup/744000156330364-internship-quality-coordination-support",
+ "applyUrl": "https://jobs.smartrecruiters.com/BoschGroup/744000156330364-internship-quality-coordination-support?oga=true",
+ "referralUrl": "https://jobs.smartrecruiters.com/external-referrals/company/BoschGroup/publication/1b5512b5-b3fc-4ab9-8753-06663a376f5a?dcr_ci=BoschGroup",
+ "jobAd": {
+  "sections": {
+   "companyDescription": {
+    "title": "Company Description",
+    "text": "<p>The Bosch Group is a leading global supplier of technology and services. It employs approximately 429,400 associates worldwide and generates sales of roughly 91.6 billion euro. Its operations are divided into four business sectors: Mobility Solutions, Industrial Technology, Consumer Goods, and Energy and Building Technology. As a leading IoT company, Bosch offers innovative solutions for smart homes, smart cities, connected mobility, and connected manufacturing. It uses its expertise in sensor technology, software, and services, as well as its own IoT cloud, to offer its customers connected, cross-domain solutions from a single source. Bosch improves quality of life worldwide with products and services that are innovative and spark enthusiasm. In short, Bosch creates technology that is ‘Invented for life’.</p>"
+   },
+   "jobDescription": {
+    "title": "Job Description",
+    "text": "<p>Support to “Quality Manager-Europe” in daily business:</p><p>&#xa0;</p><ul><li>Coordinate the development of monthly and weekly Quality report</li><li>Support meeting preparation and presentation development</li><li>Follow up on Logistics</li><li>Liaise with the regional Project &amp; Sales Team in Brussels</li><li>Coordination with Bosch Residents and with the Quality representatives from all Bosch Business Units delivering one of major automobile manufacturer</li><li>New Projects Monitoring &amp; Review follow-up</li><li>Field Parts recovery and follow-up</li><li>Daily Part Recovery observation</li></ul>"
+   },
+   "qualifications": {
+    "title": "Qualifications",
+    "text": "<p>You are currently an engineering or international management student with very good computer skills (MS Excel, MS Word, MS PowerPoint).</p><p>Basic knowledge in SAP R/3 is appreciated. You have very good analytical and communication skills and the ability to work independently, using own initiation as well as a pro-active approach to the issues.</p><p>&#xa0;</p><p>You are fluent in <strong>English</strong>.</p>"
+   },
+   "additionalInformation": {
+    "title": "Additional Information",
+    "text": "<p><strong>If you are a student enrolled in a University/College</strong> (or if you are available for a voluntary internship outside a university curriculum) you will be granted an allowance of <strong>€ 1116.90/month.</strong></p><p>- If you want to apply for a <strong><u>voluntary internship</u></strong>, you must be a <strong>citizen of the EU</strong> or have a work permit in Belgium.</p><p>- In case you need to do a <strong><u>mandatory internship</u></strong>, your University/College must be located in a<strong> member state of the EU</strong>.</p><p>We are looking forward to receiving your application by email in English (please mention the exact title of the position). Do not hesitate to contact us if you have any further questions.</p><p><strong>Ready to Take the Next Step?</strong><br>\nIf you're eager to make a difference and gain hands-on experience, we want to hear from you! Apply now and embark on an exciting journey with Robert Bosch in Brussels!</p><p><strong>Join us and be part of a team that values innovation, collaboration, and growth!</strong></p><p><strong>Starting date</strong>: January 2027</p><p><strong>Duration</strong>: 6 months</p>"
+   },
+   "videos": {
+    "title": "Videos To Watch",
+    "urls": [
+     "https://youtu.be/g7VI9TTlU2w?si=cJErvPCfnLmR6dZl"
+    ]
+   }
+  }
+ },
+ "active": true,
+ "visibility": "PUBLIC",
+ "industry": {
+  "id": "automotive",
+  "label": "Automotive"
+ },
+ "function": {
+  "id": "quality_assurance",
+  "label": "Quality Assurance"
+ },
+ "experienceLevel": {
+  "id": "internship",
+  "label": "Internship"
+ },
+ "typeOfEmployment": {
+  "id": "permanent",
+  "label": "Full-time"
+ },
+ "language": {
+  "code": "en",
+  "label": "English",
+  "labelNative": "English (US)"
+ }
+}

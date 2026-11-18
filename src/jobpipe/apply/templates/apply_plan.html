@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Application plans</title>
+<style>
+:root { --bg: #f6f7f9; --card: #fff; --text: #1c2430; --muted: #5d6b7e; --line: #dde2ea; --ok: #1b7f4b; --warn: #a86a00; --bad: #b3261e; --tint: #eef3fc; }
+@media (prefers-color-scheme: dark) { :root { --bg: #12161c; --card: #1b212b; --text: #e6e9ee; --muted: #9aa6b6; --line: #2c3544; --ok: #4cc38a; --warn: #e0a33b; --bad: #f07167; --tint: #222b3a; } }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px 16px 64px; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, sans-serif; }
+main { max-width: 1040px; margin: 0 auto; }
+h1 { font-size: 22px; } h2 { font-size: 18px; margin: 28px 0 10px; }
+section { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); } td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.bar { display: inline-block; height: 10px; background: var(--ok); border-radius: 3px; vertical-align: middle; }
+.headline { font-size: 28px; font-weight: 700; } .warn { color: var(--warn); } .bad { color: var(--bad); }
+details { margin: 6px 0; } summary { cursor: pointer; }
+.scroll { overflow-x: auto; }
+</style>
+</head>
+<body>
+<main>
+<h1>Application plans</h1>
+<p>Generated {{ data.generated_at }}. Every figure comes from SQL over the factual tables.</p>
+<section>
+  <div class="headline">
+    {{ data.automatable }} of {{ data.total }} plans can be submitted by the pipeline
+    {% if data.automatable_rate is not none %}({{ "%.1f"|format(data.automatable_rate * 100) }}%){% endif %}
+  </div>
+  {% if data.low_automation %}
+  <p class="bad">Below 10%: the submission phase should be limited to the email route and to prepared dossiers.</p>
+  {% endif %}
+</section>
+<h2>Routes</h2>
+<section><table>
+{% for name, count in data.routes %}
+<tr><td>{{ name }}</td><td class="num">{{ count }}</td><td><span class="bar" style="width: {{ (count * 240 / data.total)|round|int }}px"></span></td></tr>
+{% endfor %}
+</table></section>
+<h2>Feasibility</h2>
+<section><table>
+{% for name, count in data.feasibility %}
+<tr><td>{{ name }}</td><td class="num">{{ count }}</td></tr>
+{% endfor %}
+</table></section>
+<h2>Vendor by route</h2>
+<section class="scroll"><table>
+<tr><th>Vendor</th>{% for route in data.matrix_routes %}<th class="num">{{ route }}</th>{% endfor %}</tr>
+{% for vendor, row in data.vendor_matrix.items() %}
+<tr><td>{{ vendor }}</td>{% for route in data.matrix_routes %}<td class="num">{{ row.get(route, 0) }}</td>{% endfor %}</tr>
+{% endfor %}
+</table></section>
+<h2>Reason codes</h2>
+<section><table>
+{% for code, count in data.reasons %}<tr><td>{{ code }}</td><td class="num">{{ count }}</td></tr>{% endfor %}
+</table></section>
+<h2>Obstacles</h2>
+<section><table>
+<tr><th>Kind</th><th>Detector</th><th class="num">Plans</th></tr>
+{% for kind, detector, count in data.obstacles %}<tr><td>{{ kind }}</td><td>{{ detector }}</td><td class="num">{{ count }}</td></tr>{% endfor %}
+</table></section>
+<h2>Most frequent unresolved required labels</h2>
+<section><table>
+<tr><th>Label</th><th class="num">Plans</th></tr>
+{% for label, count in data.unresolved %}<tr><td>{{ label }}</td><td class="num">{{ count }}</td></tr>{% endfor %}
+</table>
+<p>Adding a frequent label to <code>config/apply/field_synonyms.toml</code> moves plans from manual to assisted.</p></section>
+<h2>Staleness</h2>
+<section><p>{{ data.stale }} plans were probed more than {{ data.stale_days }} days ago; rebuild them with <code>jobpipe apply-plan build --refresh</code>.</p></section>
+<h2>Plans</h2>
+{% for b in data.bundles %}
+<details><summary>{{ b.plan.job_id }} · {{ b.plan.route.value }} · {{ b.plan.feasibility.value }} ({{ b.plan.feasibility_reason_code.value }})</summary>
+<p>Evidence: {{ b.plan.route_evidence }} ({{ b.plan.route_confidence.value }}), renderer {{ b.plan.renderer_used }}, revision {{ b.plan.plan_revision }}</p>
+<p>Chain: {% for hop in b.plan.redirect_chain %}{{ hop.status }} {{ hop.url }} → {% endfor %}{{ b.plan.apply_url_final }}</p>
+{% if b.obstacles %}<p>Obstacles: {% for o in b.obstacles %}{{ o.kind.value }} ({{ o.severity.value }}: {{ o.signal }}){% if not loop.last %}, {% endif %}{% endfor %}</p>{% endif %}
+<table><tr><th>Key</th><th>Label</th><th>Class</th><th>Profile key</th><th>Tag</th></tr>
+{% for f in b.fields %}<tr><td>{{ f.field_key }}</td><td>{{ f.label or "" }}</td><td>{{ f.field_class.value }}</td><td>{{ f.profile_key or "" }}</td><td>{{ f.semantic_tag.value if f.semantic_tag else "" }}</td></tr>{% endfor %}
+</table></details>
+{% endfor %}
+</main>
+</body>
+</html>

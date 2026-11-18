@@ -1,0 +1,34 @@
+[exact]
+first_name = "first_name"
+firstname = "first_name"
+last_name = "last_name"
+lastname = "last_name"
+email = "email"
+phone = "phone"
+resume = "resume"
+cover_letter = "cover_letter"
+linkedin = "linkedin_url"
+linkedin_url = "linkedin_url"
+github = "github_url"
+website = "portfolio_url"
+portfolio = "portfolio_url"
+city = "city"
+country = "country"
+
+[labels]
+first_name = ["first name", "given name", "prenom", "voornaam"]
+last_name = ["last name", "family name", "surname", "nom de famille", "nom", "achternaam", "familienaam"]
+email = ["email", "e mail", "email address", "adresse e mail", "adresse email", "e mailadres"]
+phone = ["phone", "phone number", "mobile", "mobile phone", "telephone", "numero de telephone", "gsm", "telefoon", "telefoonnummer"]
+city = ["city", "ville", "stad", "current city", "location city"]
+country = ["country", "pays", "land", "country of residence"]
+linkedin_url = ["linkedin", "linkedin profile", "linkedin url", "profil linkedin"]
+github_url = ["github", "github profile", "github url"]
+portfolio_url = ["website", "portfolio", "personal website", "site web", "personal site"]
+work_authorization_be = ["are you legally authorized to work in belgium", "authorized to work in belgium", "right to work in belgium", "permis de travail", "werkvergunning", "legally authorised to work"]
+requires_sponsorship = ["require sponsorship", "visa sponsorship", "need sponsorship", "sponsorship"]
+notice_period_days = ["notice period", "preavis", "opzegtermijn", "availability", "when can you start", "start date", "disponibilite"]
+salary_expectation_eur = ["salary expectation", "expected salary", "desired salary", "salary expectations", "pretentions salariales", "salaris verwachting", "salary range"]
+languages = ["languages", "langues", "talen", "language skills"]
+education_level = ["highest level of education", "education level", "niveau d etudes", "diploma", "degree"]
+years_experience = ["years of experience", "annees d experience", "jaren ervaring", "years experience"]

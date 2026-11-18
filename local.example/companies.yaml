@@ -1,0 +1,20 @@
+# Your own employers, added to config/companies.yaml (git ignores local/).
+#
+# - an entry with a new slug is added; an entry with the slug of a shipped company replaces it;
+# - remove: drops shipped companies by slug;
+# - replace_defaults: true ignores the shipped list entirely.
+#
+# ats is one of: greenhouse, lever, ashby, recruitee, smartrecruiters, personio, workable.
+# ats_slug is the board name in the public URL, for example:
+#   https://boards.greenhouse.io/<ats_slug>   https://jobs.lever.co/<ats_slug>
+#   https://jobs.ashbyhq.com/<ats_slug>       https://<ats_slug>.recruitee.com
+# If you only know the careers page:  jobpipe company add "Name" --careers-url https://...
+# then:                               jobpipe company resolve --slug <slug>
+
+companies: []
+#  - slug: example-company
+#    name: Example Company
+#    ats: greenhouse
+#    ats_slug: examplecompany
+
+remove: []

@@ -1,0 +1,12 @@
+# Search vocabulary overrides, merged over config/taxonomy.yaml (git ignores local/).
+# A list written here replaces the shipped list, so copy the shipped one and edit it.
+
+# Keyword searches sent to Actiris (and Adzuna when you have a key), per language.
+# queries:
+#   en: [data engineer, data scientist, data analyst, machine learning, ai engineer]
+#   fr: [ingénieur data, data scientist, intelligence artificielle]
+
+# Languages a posting may be written in to be kept. Add nl if you apply in Dutch.
+# filters:
+#   language:
+#     accepted: [fr, en, nl]

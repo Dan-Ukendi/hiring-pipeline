@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Run report {{ data.run.id }}</title>
+<style>
+:root {
+  --bg: #f6f7f9; --card: #ffffff; --text: #1c2430; --muted: #5d6b7e; --line: #dde2ea;
+  --ok: #1b7f4b; --warn: #a86a00; --bad: #b3261e; --accent: #3b6fd4; --tint: #eef3fc; --flag: #fdecea;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12161c; --card: #1b212b; --text: #e6e9ee; --muted: #9aa6b6; --line: #2c3544;
+    --ok: #4cc38a; --warn: #e0a33b; --bad: #f07167; --accent: #6c99f0; --tint: #222b3a; --flag: #3a2224;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px 16px 64px; background: var(--bg); color: var(--text);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 1040px; margin: 0 auto; }
+h1 { font-size: 22px; margin: 0 0 4px; }
+h2 { font-size: 18px; margin: 32px 0 12px; }
+h3 { font-size: 16px; margin: 0; }
+.meta { color: var(--muted); margin: 0 0 16px; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-weight: 600; font-size: 13px;
+  border: 1px solid currentColor; text-transform: uppercase; letter-spacing: .04em; }
+.ok, .keep, .pass { color: var(--ok); } .partial, .borderline, .warn { color: var(--warn); }
+.failed, .drop, .fail, .error { color: var(--bad); } .unknown { color: var(--muted); }
+.tiles { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0; }
+.tile { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 16px; min-width: 130px; }
+.tile b { display: block; font-size: 24px; font-variant-numeric: tabular-nums; }
+.tile span { color: var(--muted); font-size: 13px; }
+section.panel, article.card, details.group { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.scroll { overflow-x: auto; }
+tr.silent td { background: var(--flag); }
+.card-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; justify-content: space-between; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.chip { font-size: 12px; border: 1px solid var(--line); border-radius: 6px; padding: 1px 8px; background: var(--tint); }
+.chip.fail { border-color: var(--bad); } .chip.borderline { border-color: var(--warn); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin: 12px 0; }
+.verdict { border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; background: var(--tint); }
+.verdict.diverge { border-color: var(--bad); border-width: 2px; }
+.fields td:first-child { color: var(--muted); width: 160px; }
+tr.flagged td { background: var(--flag); }
+tr.flagged td:first-child::after { content: " (flagged by the auditor)"; color: var(--bad); font-size: 12px; }
+.missing { color: var(--muted); font-style: italic; }
+.kv { color: var(--muted); font-size: 13px; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 13px; }
+pre { white-space: pre-wrap; background: var(--tint); padding: 10px; border-radius: 6px; max-height: 320px; overflow: auto; }
+details > summary { cursor: pointer; font-weight: 600; }
+a { color: var(--accent); word-break: break-all; }
+.empty { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+{% macro verdict_box(audit, diverge) %}
+<div class="verdict{{ ' diverge' if diverge else '' }}">
+  <div><span class="badge {{ audit.verdict }}">{{ audit.verdict }}</span>
+    {% if audit.confidence is not none %}<span class="kv">confidence {{ "%.2f"|format(audit.confidence) }}</span>{% endif %}
+    <span class="kv">{{ audit.model }}{% if audit.role == 'second_opinion' %} (second opinion){% endif %}</span></div>
+  <p>{{ audit.reason or "-" }}</p>
+  <div class="kv">Application route: <b>{{ audit.apply_path }}</b></div>
+  <div class="kv">Missing or implausible fields:
+    {% if audit.missing_fields is none %}unknown{% elif audit.missing_fields %}{{ audit.missing_fields | join(", ") }}{% else %}none{% endif %}</div>
+  <div class="kv">{{ audit.latency_ms }} ms, {{ audit.retries }} schema retries{% if audit.truncated %}, description truncated{% endif %}{% if audit.invalid_tasks %}, invalid after retries: {{ audit.invalid_tasks | join(", ") }}{% endif %}</div>
+</div>
+{% endmacro %}
+
+{% macro posting_card(c, show_audit) %}
+{% set p = c.posting %}
+<article class="card">
+  <div class="card-head">
+    <h3>{{ p.title }}</h3>
+    <span class="kv">{{ p.source }} / {{ p.native_id }} / extraction path: <b>{{ p.extraction_path }}</b></span>
+  </div>
+  {% if c.why_borderline %}<div class="kv">Why it is here: {{ c.why_borderline | join("; ") }}</div>{% endif %}
+  <div class="chips">
+    {% for name, f in c.filters.items() %}<span class="chip {{ f.outcome }}" title="{{ f.reason }}">{{ name }}: {{ f.outcome }}</span>{% endfor %}
+  </div>
+  {% if show_audit and c.primary %}
+  <div class="grid">
+    {{ verdict_box(c.primary, c.divergent) }}
+    {% if c.second %}{{ verdict_box(c.second, c.divergent) }}{% endif %}
+  </div>
+  {% if c.divergent %}<div class="kv"><span class="badge fail">models diverge</span></div>{% endif %}
+  {% endif %}
+  <div class="scroll"><table class="fields"><tbody>
+    {% for name, label in field_rows %}
+    {% set value = p[name] %}
+    <tr class="{{ 'flagged' if name in c.flagged else '' }}">
+      <td>{{ label }}</td>
+      <td>{% if value is none or value == "" %}<span class="missing">not extracted</span>
+        {% elif name in ("apply_url", "url") and (value | string).startswith("http") %}<a href="{{ value }}">{{ value }}</a>
+        {% elif name == "salary_raw" %}{{ value }}{% if p.salary_predicted %} <span class="kv">(predicted by the source, not stated by the employer)</span>{% endif %}
+        {% else %}{{ value }}{% endif %}</td>
+    </tr>
+    {% endfor %}
+    <tr><td>Canonical key</td><td><code>{{ p.canonical_key or "-" }}</code></td></tr>
+    <tr class="{{ 'flagged' if 'description_text' in c.flagged else '' }}"><td>Description</td><td>
+      {% if p.description_text %}<details><summary>{{ p.description_text | length }} characters</summary><pre>{{ p.description_text }}</pre></details>
+      {% else %}<span class="missing">not extracted</span>{% endif %}</td></tr>
+    <tr><td>Raw artifact</td><td>{% if c.link %}<a href="{{ c.link }}">archived source document</a>{% else %}<span class="missing">no archived artifact linked</span>{% endif %}</td></tr>
+  </tbody></table></div>
+</article>
+{% endmacro %}
+
+<h1>Run report {{ data.run.id }}</h1>
+<p class="meta">Started {{ data.run.started_at.strftime("%Y-%m-%d %H:%M") }} UTC &middot; duration {{ data.duration }} &middot;
+  model {{ data.models | join(", ") if data.models else "none" }} &middot; configuration {{ config_hash }} &middot; generated {{ generated_at }}</p>
+<p><span class="badge {{ data.run.status }}">{{ data.run.status }}</span></p>
+
+<div class="tiles">
+  <div class="tile"><b>{{ data.seen }}</b><span>postings seen</span></div>
+  <div class="tile"><b>{{ data.new }}</b><span>new</span></div>
+  <div class="tile"><b>{{ data.survivors }}</b><span>passed the filters</span></div>
+  <div class="tile"><b>{{ data.audited }}</b><span>audited</span></div>
+</div>
+<p>{{ data.retained | length + data.borderline | length }} posting{{ "" if (data.retained | length + data.borderline | length) == 1 else "s" }} reached your review in this run
+  ({{ data.retained | length }} retained, {{ data.borderline | length }} borderline). The daily ceiling of {{ data.cap }} is a limit on audits, not a target.</p>
+
+<h2>Sources</h2>
+<section class="panel"><div class="scroll">
+{% if data.sources %}
+<table>
+  <thead><tr><th>Source</th><th>Target</th><th class="num">Seen</th><th class="num">New</th><th class="num">Duplicates</th><th class="num">Extraction failures</th><th class="num">Duration ms</th><th>Error</th></tr></thead>
+  <tbody>
+  {% for s in data.sources %}
+    <tr class="{{ 'silent' if s.items_seen == 0 else '' }}">
+      <td>{{ s.source }}</td><td><code>{{ s.target or "-" }}</code></td>
+      <td class="num">{{ s.items_seen }}{% if s.items_seen == 0 %} &#9888;{% endif %}</td><td class="num">{{ s.items_new }}</td>
+      <td class="num">{{ s.duplicates }}</td><td class="num">{{ s.extraction_failures }}</td>
+      <td class="num">{{ s.duration_ms if s.duration_ms is not none else "-" }}</td>
+      <td>{% if s.error %}<span class="error">{{ s.error }}</span>{% elif s.items_seen == 0 %}<span class="warn">returned nothing</span>{% endif %}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}<p class="empty">No source was polled in this run.</p>{% endif %}
+</div></section>
+
+<h2>Retained postings ({{ data.retained | length }})</h2>
+{% for c in data.retained %}{{ posting_card(c, true) }}{% else %}
+<p class="empty">No posting was retained by the auditor in this run.</p>
+{% endfor %}
+
+<h2>Borderline ({{ data.borderline | length }})</h2>
+{% for c in data.borderline %}{{ posting_card(c, true) }}{% else %}
+<p class="empty">Nothing borderline in this run.</p>
+{% endfor %}
+
+{% if data.awaiting %}
+<h2>Passed the filters, not audited ({{ data.awaiting | length }})</h2>
+<p class="kv">These postings survived every deterministic filter. They were not audited in this run, either because the audit was switched off or because the daily ceiling was reached.</p>
+{% for c in data.awaiting %}{{ posting_card(c, false) }}{% endfor %}
+{% endif %}
+
+<h2>Rejected ({{ data.rejected.values() | map("length") | sum }})</h2>
+<p class="kv">Every posting rejected in this run is listed, grouped by the first filter that rejected it. Nothing is deleted from the database.</p>
+{% for name, rows in data.rejected.items() %}
+<details class="group">
+  <summary>{{ name }} &mdash; {{ rows | length }} posting{{ "" if (rows | length) == 1 else "s" }}</summary>
+  <div class="scroll"><table>
+    <thead><tr><th>Title</th><th>Company</th><th>Location</th><th>Reasons</th></tr></thead>
+    <tbody>
+    {% for r in rows %}
+      <tr>
+        <td>{% if r.posting.url.startswith("http") %}<a href="{{ r.posting.url }}">{{ r.posting.title }}</a>{% else %}{{ r.posting.title }}{% endif %}
+          <div class="kv">{{ r.posting.source }}{% if r.link %} &middot; <a href="{{ r.link }}">raw</a>{% endif %}</div></td>
+        <td>{{ r.posting.company_name or r.posting.company_slug or "-" }}</td>
+        <td>{{ r.posting.location_raw or "-" }}</td>
+        <td>{% for filter_name, reason in r.failures %}<div><b>{{ filter_name }}</b>: {{ reason }}</div>{% endfor %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+</details>
+{% else %}
+<p class="empty">No posting was rejected in this run.</p>
+{% endfor %}
+
+<h2>Incidents ({{ data.incidents | length }})</h2>
+<section class="panel">
+{% if data.incidents %}
+<div class="scroll"><table>
+  <thead><tr><th>Kind</th><th>Source</th><th>Target</th><th>Detail</th></tr></thead>
+  <tbody>
+  {% for i in data.incidents %}
+    <tr><td>{{ i.kind }}</td><td>{{ i.source or "-" }}</td><td>{{ i.target or "-" }}</td><td>{{ i.detail }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table></div>
+{% else %}<p class="empty">No incident was recorded in this run.</p>{% endif %}
+{% if data.notes %}<p class="kv">Run notes: {{ data.notes }}</p>{% endif %}
+</section>
+</main>
+</body>
+</html>

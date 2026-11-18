@@ -1,0 +1,289 @@
+{
+ "offset": 0,
+ "limit": 2,
+ "totalFound": 3,
+ "content": [
+  {
+   "id": "744000156330364",
+   "name": "Internship Quality Coordination Support",
+   "uuid": "1b5512b5-b3fc-4ab9-8753-06663a376f5a",
+   "jobAdId": "e974b2e4-1cec-46d9-8d6f-21a4ee5af711",
+   "defaultJobAd": true,
+   "refNumber": "REF298918B",
+   "company": {
+    "identifier": "BoschGroup",
+    "name": "Bosch Group"
+   },
+   "releasedDate": "2026-10-19T13:53:43.934Z",
+   "location": {
+    "city": "Anderlecht",
+    "region": "Bruxelles",
+    "country": "be",
+    "address": "Rue Henri-Joseph Genesse",
+    "postalCode": "1070",
+    "remote": false,
+    "hybrid": false,
+    "latitude": "50.8223647",
+    "longitude": "4.3112463",
+    "fullLocation": "Anderlecht, Bruxelles, Belgium"
+   },
+   "industry": {
+    "id": "automotive",
+    "label": "Automotive"
+   },
+   "department": {},
+   "function": {
+    "id": "quality_assurance",
+    "label": "Quality Assurance"
+   },
+   "typeOfEmployment": {
+    "id": "permanent",
+    "label": "Full-time"
+   },
+   "experienceLevel": {
+    "id": "internship",
+    "label": "Internship"
+   },
+   "customField": [
+    {
+     "fieldId": "5abe2a4ab60a5e486a2d9b1d",
+     "fieldLabel": "Contract type",
+     "valueId": "98487475-2a49-44f5-a615-408b525b3821",
+     "valueLabel": "Limited"
+    },
+    {
+     "fieldId": "5abe28e96d8bc56863dd9746",
+     "fieldLabel": "Tariff Area",
+     "valueId": "b8339437-df9b-4ff9-bbf6-5581b0624947",
+     "valueLabel": "Belgium Local Grades"
+    },
+    {
+     "fieldId": "586a997ee4b05fd937b86098",
+     "fieldLabel": "Legal Entity(acronym)",
+     "valueId": "aa047b35-d539-44d7-8275-683a77bdd76a",
+     "valueLabel": "RBVB"
+    },
+    {
+     "fieldId": "586a99b5e4b0daa006ae1079",
+     "fieldLabel": "Working Location",
+     "valueId": "af1b6601-175d-42d0-bb5c-2943de44880f",
+     "valueLabel": "Brussels"
+    },
+    {
+     "fieldId": "5abe295a6d8bc56863dd9747",
+     "fieldLabel": "Global Salary Level",
+     "valueId": "80ae06a1-4738-48e8-8aea-4613f58ecd57",
+     "valueLabel": "Others"
+    },
+    {
+     "fieldId": "69ca83a2489188782a1e9f87",
+     "fieldLabel": "Direct Or Indirect",
+     "valueId": "0d8b2ae9-fc67-447b-9165-201f59f71e90",
+     "valueLabel": "Direct"
+    },
+    {
+     "fieldId": "5abe29f9b60a5e486a2d9b1c",
+     "fieldLabel": "Working hours",
+     "valueId": "60756b3e-dbab-4353-ac3a-0064d2bb27d8",
+     "valueLabel": "Full-time"
+    },
+    {
+     "fieldId": "586a9995e4b0daa006ae1078",
+     "fieldLabel": "Legal Entity",
+     "valueId": "2f1931d5-3d0f-42a7-adb5-8e529c386beb",
+     "valueLabel": "Robert Bosch SA/NV"
+    },
+    {
+     "fieldId": "691cf1c93001c782b9560ab7",
+     "fieldLabel": "Division full name",
+     "valueId": "44824fcd-5cdc-406b-85ce-9d41e3ca1626",
+     "valueLabel": "Mobility Company"
+    },
+    {
+     "fieldId": "5abe27936d8bc56863dd9745",
+     "fieldLabel": "Position type",
+     "valueId": "f524b939-fe55-407b-a0b0-e8f4eec28997",
+     "valueLabel": "Intern"
+    },
+    {
+     "fieldId": "COUNTRY",
+     "fieldLabel": "Country/Region",
+     "valueId": "be",
+     "valueLabel": "Belgium"
+    },
+    {
+     "fieldId": "586a971ee4b0daa006ae1077",
+     "fieldLabel": "Brands",
+     "valueId": "default",
+     "valueLabel": "Bosch Group"
+    },
+    {
+     "fieldId": "586a996ce4b05fd937b86097",
+     "fieldLabel": "Working Country",
+     "valueId": "7dce6d14-4822-43d3-a529-6b3d535cd0ee",
+     "valueLabel": "Belgium"
+    },
+    {
+     "fieldId": "586a9b22e4b05fd937b8609a",
+     "fieldLabel": "Local Grade",
+     "valueId": "d832b4bd-a05e-4635-967a-6a2a2cd1a0c0",
+     "valueLabel": "BE_Apprentice"
+    },
+    {
+     "fieldId": "586a99a5e4b05fd937b86099",
+     "fieldLabel": "Division",
+     "valueId": "bf8a836f-5328-44b2-a6dc-068c25b53e71",
+     "valueLabel": "M"
+    }
+   ],
+   "visibility": "PUBLIC",
+   "ref": "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000156330364",
+   "language": {
+    "code": "en",
+    "label": "English",
+    "labelNative": "English (US)"
+   }
+  },
+  {
+   "id": "744000155193669",
+   "name": "Intern Human Resources",
+   "uuid": "db3eb488-e904-4532-9bf7-2848f83cfa97",
+   "jobAdId": "c42fbed5-4055-405c-85b7-67b03878812f",
+   "defaultJobAd": true,
+   "refNumber": "REF298365P",
+   "company": {
+    "identifier": "BoschGroup",
+    "name": "Bosch Group"
+   },
+   "releasedDate": "2026-10-13T08:21:28.972Z",
+   "location": {
+    "city": "Bruxelles",
+    "region": "Bruxelles",
+    "country": "be",
+    "address": "Rue Henri-Joseph Genesse 1",
+    "postalCode": "1070",
+    "remote": false,
+    "hybrid": false,
+    "latitude": "50.8223433",
+    "longitude": "4.309794",
+    "fullLocation": "Bruxelles, Bruxelles, Belgium"
+   },
+   "industry": {
+    "id": "human_resources",
+    "label": "Human Resources"
+   },
+   "department": {},
+   "function": {
+    "id": "human_resources",
+    "label": "Human Resources"
+   },
+   "typeOfEmployment": {
+    "id": "permanent",
+    "label": "Full-time"
+   },
+   "experienceLevel": {
+    "id": "internship",
+    "label": "Internship"
+   },
+   "customField": [
+    {
+     "fieldId": "5abe2a4ab60a5e486a2d9b1d",
+     "fieldLabel": "Contract type",
+     "valueId": "98487475-2a49-44f5-a615-408b525b3821",
+     "valueLabel": "Limited"
+    },
+    {
+     "fieldId": "5abe28e96d8bc56863dd9746",
+     "fieldLabel": "Tariff Area",
+     "valueId": "b8339437-df9b-4ff9-bbf6-5581b0624947",
+     "valueLabel": "Belgium Local Grades"
+    },
+    {
+     "fieldId": "586a997ee4b05fd937b86098",
+     "fieldLabel": "Legal Entity(acronym)",
+     "valueId": "aa047b35-d539-44d7-8275-683a77bdd76a",
+     "valueLabel": "RBVB"
+    },
+    {
+     "fieldId": "586a99b5e4b0daa006ae1079",
+     "fieldLabel": "Working Location",
+     "valueId": "af1b6601-175d-42d0-bb5c-2943de44880f",
+     "valueLabel": "Brussels"
+    },
+    {
+     "fieldId": "5abe295a6d8bc56863dd9747",
+     "fieldLabel": "Global Salary Level",
+     "valueId": "80ae06a1-4738-48e8-8aea-4613f58ecd57",
+     "valueLabel": "Others"
+    },
+    {
+     "fieldId": "69ca83a2489188782a1e9f87",
+     "fieldLabel": "Direct Or Indirect",
+     "valueId": "0d8b2ae9-fc67-447b-9165-201f59f71e90",
+     "valueLabel": "Direct"
+    },
+    {
+     "fieldId": "5abe29f9b60a5e486a2d9b1c",
+     "fieldLabel": "Working hours",
+     "valueId": "60756b3e-dbab-4353-ac3a-0064d2bb27d8",
+     "valueLabel": "Full-time"
+    },
+    {
+     "fieldId": "586a9995e4b0daa006ae1078",
+     "fieldLabel": "Legal Entity",
+     "valueId": "2f1931d5-3d0f-42a7-adb5-8e529c386beb",
+     "valueLabel": "Robert Bosch SA/NV"
+    },
+    {
+     "fieldId": "691cf1c93001c782b9560ab7",
+     "fieldLabel": "Division full name",
+     "valueId": "7604c44e-e2c4-42a3-b955-7a397fbcc641",
+     "valueLabel": "RBFB"
+    },
+    {
+     "fieldId": "5abe27936d8bc56863dd9745",
+     "fieldLabel": "Position type",
+     "valueId": "f524b939-fe55-407b-a0b0-e8f4eec28997",
+     "valueLabel": "Intern"
+    },
+    {
+     "fieldId": "COUNTRY",
+     "fieldLabel": "Country/Region",
+     "valueId": "be",
+     "valueLabel": "Belgium"
+    },
+    {
+     "fieldId": "586a971ee4b0daa006ae1077",
+     "fieldLabel": "Brands",
+     "valueId": "default",
+     "valueLabel": "Bosch Group"
+    },
+    {
+     "fieldId": "586a996ce4b05fd937b86097",
+     "fieldLabel": "Working Country",
+     "valueId": "7dce6d14-4822-43d3-a529-6b3d535cd0ee",
+     "valueLabel": "Belgium"
+    },
+    {
+     "fieldId": "586a9b22e4b05fd937b8609a",
+     "fieldLabel": "Local Grade",
+     "valueId": "d832b4bd-a05e-4635-967a-6a2a2cd1a0c0",
+     "valueLabel": "BE_Apprentice"
+    },
+    {
+     "fieldId": "586a99a5e4b05fd937b86099",
+     "fieldLabel": "Division",
+     "valueId": "fbd1e0e2-d2b2-431b-b366-2c43b0866b37",
+     "valueLabel": "RBFB"
+    }
+   ],
+   "visibility": "PUBLIC",
+   "ref": "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000155193669",
+   "language": {
+    "code": "en",
+    "label": "English",
+    "labelNative": "English (US)"
+   }
+  }
+ ]
+}

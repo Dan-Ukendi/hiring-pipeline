@@ -1,0 +1,31 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "posting": {
+      "additionalProperties": true,
+      "title": "Posting",
+      "type": "object"
+    },
+    "label": {
+      "enum": [
+        "keep",
+        "borderline",
+        "drop"
+      ],
+      "title": "Label",
+      "type": "string"
+    },
+    "reason": {
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "posting",
+    "label",
+    "reason"
+  ],
+  "title": "LabeledRecord",
+  "type": "object"
+}

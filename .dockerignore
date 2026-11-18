@@ -1,0 +1,7 @@
+# The image only needs the program: everything else (your .env, profile, data, CVs) stays on
+# your PC and is mounted at run time.
+*
+!pyproject.toml
+!src
+**/__pycache__
+**/*.pyc

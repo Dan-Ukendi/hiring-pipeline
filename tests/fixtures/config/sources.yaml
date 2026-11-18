@@ -1,0 +1,150 @@
+sources:
+  recruitee:
+    enabled: true
+    priority: 10
+    reenable_after_drop: false
+    options:
+      hosts:
+      - region: default
+        base_url: https://{token}.recruitee.com
+      probe_boards:
+      - dataroots
+      - keyes
+      - toreon
+  smartrecruiters:
+    enabled: true
+    priority: 20
+    reenable_after_drop: false
+    options:
+      country: be
+      page_size: 100
+      max_pages: 20
+      hosts:
+      - region: default
+        base_url: https://api.smartrecruiters.com
+      probe_boards:
+      - BoschGroup
+  greenhouse:
+    enabled: true
+    priority: 30
+    reenable_after_drop: false
+    options:
+      hosts:
+      - region: default
+        base_url: https://boards-api.greenhouse.io
+      - region: eu
+        base_url: https://boards.eu.greenhouse.io
+  lever:
+    enabled: true
+    priority: 40
+    reenable_after_drop: false
+    options:
+      hosts:
+      - region: default
+        base_url: https://api.lever.co
+      - region: eu
+        base_url: https://api.eu.lever.co
+      probe_boards:
+      - kpler
+  ashby:
+    enabled: true
+    priority: 50
+    reenable_after_drop: false
+    options:
+      hosts:
+      - region: default
+        base_url: https://api.ashbyhq.com
+      probe_boards:
+      - keyrock
+      - alan
+  personio:
+    enabled: true
+    priority: 60
+    reenable_after_drop: false
+    options:
+      hosts:
+      - region: de
+        base_url: https://{token}.jobs.personio.de
+      - region: com
+        base_url: https://{token}.jobs.personio.com
+      probe_boards:
+      - personio-gmbh
+      - mobimeo
+      - bonify
+  workable:
+    enabled: true
+    priority: 70
+    reenable_after_drop: false
+    options:
+      hosts:
+      - region: default
+        base_url: https://apply.workable.com
+      probe_boards:
+      - typeform
+      - gitlab
+      - dataiku
+  actiris:
+    enabled: true
+    priority: 100
+    reenable_after_drop: false
+    options:
+      queries_per_run: 3
+      page_size: 100
+      max_pages_per_query: 3
+      max_requests_per_run: 60
+      probe_terms: data engineer
+      probe_details: 8
+      endpoint:
+        url: https://www.actiris.brussels/api/Offer/GetAllOffers
+        method: POST
+        captured_at: '2026-10-27'
+        body_template:
+          pageOption:
+            page: 1
+            from: 0
+            pageSize: 10
+          offreFilter:
+            texte: ''
+            regimesTravail: []
+            dateDerniereModification: null
+            langue: null
+            codesPostal: []
+            codesContrat: []
+            domainesImt: []
+            secteursPanorama: []
+            references: []
+            localisation: Tout
+            keywordSearchType: Partout
+            isOffreActiris: false
+            isOffreVdabForem: false
+            isOfferPartner: false
+            isOffreHandicap: false
+            employerFilter: []
+        text_path: offreFilter.texte
+        page_path: pageOption.page
+        size_path: pageOption.pageSize
+        from_path: pageOption.from
+        postal_path: offreFilter.codesPostal
+        items_key: offers
+        total_key: total
+        id_key: reference
+  adzuna:
+    enabled: true
+    priority: 110
+    reenable_after_drop: false
+    options:
+      country: be
+      results_per_page: 50
+      max_pages: 2
+      sort_by: date
+      max_days_old: 30
+      where: Bruxelles
+      queries_per_run: 3
+      probe_terms: data engineer
+  arbeitnow:
+    enabled: true
+    priority: 120
+    reenable_after_drop: false
+    options:
+      max_pages: 3
+      queries_per_run: 1
