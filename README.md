@@ -8,6 +8,9 @@ offer, from a file where you describe your background once and for all.
 Everything runs on your PC, with no graphics card. jobpipe sends nothing to employers: it reads
 public job offers and writes files; you are the one who applies.
 
+Not looking for AI or data? jobpipe works **for any kind of job** (sales, accounting, marketing,
+logistics...): see [section 7](#7-use-it-for-any-kind-of-job).
+
 **Contents**
 
 1. [Requirements](#1-requirements)
@@ -16,8 +19,9 @@ public job offers and writes files; you are the one who applies.
 4. [Find offers](#4-find-offers)
 5. [Generate your CVs](#5-generate-your-cvs)
 6. [Customise the search](#6-customise-the-search)
-7. [Update jobpipe](#7-update-jobpipe)
-8. [Common problems](#8-common-problems)
+7. [Use it for any kind of job](#7-use-it-for-any-kind-of-job): [a CV for any offer](#a-cv-for-any-offer-by-its-address), [search another field](#search-another-field-automatically), [tags for your field](#tags-for-your-field)
+8. [Update jobpipe](#8-update-jobpipe)
+9. [Common problems](#9-common-problems)
 
 ---
 
@@ -315,6 +319,8 @@ Without Docker, the paths start with the location of your `jobpipe` folder, for 
   them).
 - **A CV for a single offer**: `jobpipe cv --job-id <id>`, with the identifier shown by
   `jobpipe offers`.
+- **A CV for any offer you found yourself, in any field**: `jobpipe cv --url "<address of the
+  offer>"` (see [section 7](#a-cv-for-any-offer-by-its-address)).
 - **`note:`** gives information about the offer (for example that it asks for Dutch), not a
   problem with the CV.
 - **`more offer(s) waiting`**: run `jobpipe cv` again to make the next CVs.
@@ -372,11 +378,165 @@ jobpipe company resolve --slug my-employer
 `local.example/taxonomy.yaml`). Remove the `#` in front of the lines you want to turn on. A list
 written there replaces the original list: copy it from `config/taxonomy.yaml` (the `queries`
 section), then add or remove keywords. To accept offers in Dutch, set
-`accepted: [fr, en, nl]`.
+`accepted: [fr, en, nl]`. To search a whole other field, see
+[section 7](#search-another-field-automatically).
 
 ---
 
-## 7. Update jobpipe
+## 7. Use it for any kind of job
+
+Out of the box, jobpipe looks for AI, data and machine-learning offers. For any other field
+(sales, accounting, marketing, logistics, HR...) you have two ways, which you can combine: give
+jobpipe the offers you found yourself, or change what `jobpipe run` looks for.
+
+### A CV for any offer, by its address
+
+You found an offer yourself (on a company site, a job board, Actiris...)? Open **the offer's own
+page** (not a list of search results), copy its address from the browser's address bar, and run:
+
+```
+jobpipe cv --url "https://jobs.lever.co/kpler/be4d309c-8f01-48cc-98d4-f02cfc7b469f"
+```
+
+(with Docker: `docker compose run --rm jobpipe cv --url "https://..."`)
+
+Keep the quotes around the address. jobpipe reads the offer, adds it to your list and writes the
+CV, exactly as for the offers of `jobpipe run`. The filters (field, junior level, Brussels) are
+skipped: you chose the offer. A real example, for a sales offer, with the fictional example
+profile (without Docker, on Windows):
+
+```
+added: Account Development Representative | Kpler
+reading the page of 1 offer(s) once, to learn the language and the skills asked...
+CV ready: Account Development Representative | Kpler
+    offer: https://jobs.lever.co/kpler/be4d309c-8f01-48cc-98d4-f02cfc7b469f
+    PDF:   C:\Users\sam\jobpipe\documents\7b13fe081a7da281\15\outbox\Exemple_Sam_CV_Kpler.pdf
+    Word:  C:\Users\sam\jobpipe\documents\7b13fe081a7da281\15\cv.docx  (editable copy)
+1 CV(s) ready, 0 to check, 0 failed
+```
+
+- **Several offers at once**: repeat `--url`:
+  `jobpipe cv --url "<address 1>" --url "<address 2>"`.
+- **Add an offer now, make the CV later**: `jobpipe add "<address>"` (with Docker:
+  `docker compose run --rm jobpipe add "<address>"`). It prints the offer's id; then
+  `jobpipe cv --job-id <id>` makes the CV when your profile is ready.
+- **`could not read a job posting at ...`**: the address is a list of offers, or a page that needs
+  a login. Open the offer itself and copy that address. The offer pages of the job boards used by
+  companies (Greenhouse, Lever, Ashby, Workable, Recruitee...) work best.
+
+### Search another field automatically
+
+`jobpipe run` decides what to look for with the file `config/taxonomy.yaml`. To look for another
+field, create `local/taxonomy.yaml` (see [section 6](#6-customise-the-search) for the `local/`
+folder): the lists you write there replace the AI/data lists. Start from the marketing example
+shipped with jobpipe:
+
+```
+mkdir local                                                         (if it does not exist yet)
+copy local.example\taxonomy-marketing.yaml local\taxonomy.yaml      (Windows)
+cp local.example/taxonomy-marketing.yaml local/taxonomy.yaml        (Mac, Linux)
+```
+
+Open `local/taxonomy.yaml` in your editor. It contains:
+
+```yaml
+queries:
+  en: [marketing, communication, social media, digital marketing, content]
+  fr: [marketing, communication, marketing digital, réseaux sociaux, community manager]
+
+domains:
+  marketing:
+    - marketing
+    - digital marketing
+    - marketing digital
+    - communication
+    - social media
+    - réseaux sociaux
+    - community manager
+    - content
+    - brand
+    - seo
+    - campaign
+    - campagne
+    - e-commerce
+
+filters:
+  domain:
+    adjacent_terms: [copywriting, google analytics, hubspot, crm, events, événementiel]
+    hard_exclude_title: ['\b(?:recruiter|talent acquisition)\b']
+    soft_exclude_title: []
+
+seniority:
+  exclude_patterns:
+    - '\bsenior\b'
+    - '\bsr\.?\s'
+    - '\blead\b'
+    - '\bhead of\b'
+    - '\bdirector\b'
+    - '\b(?:[5-9]|1\d)\s*\+?\s*(?:years|yrs|ans|jaar)\b'
+```
+
+| Part | What it does | What you change |
+|---|---|---|
+| `queries` | The words jobpipe types in the search box of Actiris (and Adzuna), in English (`en`) and French (`fr`). | A few short, broad words of your field. Write both languages: a language you leave out keeps its AI/data searches. |
+| `domains` | An offer is kept only if its **title** contains one of these words, or its **text** contains at least three of them. | The words of your field, in English and French. The group name (`marketing`) is free. |
+| `filters` → `domain` | `adjacent_terms`: more words that count in the text. `hard_exclude_title` and `soft_exclude_title`: titles that are always dropped (the AI/data lists drop sales, marketing, HR and accounting titles). | Keep the two exclude lists empty (`[]`) unless a kind of job you do not want keeps coming. |
+| `seniority` | Titles that mean "too senior for a junior". | The shipped list also drops every "manager"; the example keeps them, because junior "community manager" jobs exist. Leave this part out to keep the shipped list. |
+
+The same file for **accounting** would start like this (keep the rest of the example):
+
+```yaml
+queries:
+  en: [accountant, accounting, finance]
+  fr: [comptable, comptabilité, aide-comptable, finance]
+
+domains:
+  accounting: [accountant, accounting, comptable, comptabilité, bookkeeping, finance, audit, tax, fiscalité]
+```
+
+Then run the search again and look at the offers kept:
+
+```
+jobpipe run --no-audit
+jobpipe offers
+```
+
+(with Docker: `docker compose run --rm jobpipe run --no-audit`, then
+`docker compose run --rm jobpipe offers`)
+
+From now on, only the new searches run (the AI/data ones stop) and the new offers are judged with
+your words. The offers kept earlier stay in the list. The area stays Brussels and the level stays
+junior. To follow the employers of your field, add them in `local/companies.yaml`
+([section 6](#6-customise-the-search)). To go back to AI and data, delete `local/taxonomy.yaml`.
+
+### Tags for your field
+
+The `tags` of your profile decide what comes first on the CV ([Your profile](#your-profile)), but
+jobpipe only recognises the tags of its list, which are mostly technical. For another field, add
+your own tags in `local/skills.yaml` (a copy of `local.example/skills.yaml`, without the `#`):
+
+```yaml
+skills:
+  seo: [seo, search engine optimisation, search engine optimization, référencement]
+  social_media: [social media, réseaux sociaux, instagram, linkedin, tiktok]
+  copywriting: [copywriting, rédaction, content writing]
+  google_analytics: [google analytics, ga4]
+  crm: [crm, hubspot, salesforce]
+  event_planning: [events, événementiel, évènementiel]
+```
+
+Each line is a tag, then the words an offer may use for it. Then use these tags in
+`profile/profile.yaml`: a project tagged `[social_media, copywriting]` moves to the top for an
+offer that asks for social media; add a `cv_titles` entry for your field (for example
+"Marketing and communication", tagged `[social_media, seo]`) so that it is picked under your name.
+Write your bullets with the words of your field too: the CV only uses sentences from your profile.
+
+Set up your tags **before** making the CVs of these offers: jobpipe reads the skills an offer asks
+for once, the first time it makes its CV.
+
+---
+
+## 8. Update jobpipe
 
 From the `jobpipe` folder:
 
@@ -395,7 +555,7 @@ not changed the project files themselves (see the FAQ if `git pull` refuses).
 
 ---
 
-## 8. Common problems
+## 9. Common problems
 
 **`jobpipe` is not recognised** (without Docker): the environment is not activated. Go to the
 `jobpipe` folder and run `.venv\Scripts\Activate.ps1` (Windows) or `source .venv/bin/activate`

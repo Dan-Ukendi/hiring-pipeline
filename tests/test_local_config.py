@@ -103,3 +103,52 @@ def test_init_saves_the_contact_in_dotenv_and_keeps_other_lines(project: Path) -
     lines = (project / ".env").read_text(encoding="utf-8").splitlines()
     assert lines == ["ADZUNA_APP_ID=abc", "JOBPIPE_CONTACT=new@example.org"]
     assert load_config(project / "config").settings.http.contact == "new@example.org"
+
+
+def test_the_marketing_example_retargets_the_search_to_another_field(project: Path) -> None:
+    from jobpipe.filters.domain import DomainFilter
+    from jobpipe.filters.seniority import SeniorityFilter
+    from jobpipe.models import JobPosting
+
+    _write(project / "local" / "taxonomy.yaml",
+           (PROJECT_ROOT / "local.example" / "taxonomy-marketing.yaml").read_text(encoding="utf-8"))
+    taxonomy = load_config(project / "config").taxonomy
+    keywords = taxonomy.domains.all_keywords()
+    assert "marketing" in keywords and "machine learning" not in keywords, "local domains replace the shipped groups whole"
+    assert taxonomy.queries["en"][0] == "marketing" and "ingénieur data" not in taxonomy.queries["fr"]
+    domain, seniority = DomainFilter(taxonomy), SeniorityFilter(taxonomy)
+
+    def posting(title: str) -> JobPosting:
+        return JobPosting(source="greenhouse", native_id=title, title=title, url="https://example.test/job",
+                          location_raw="Brussels", description_text="A job in Brussels.", extraction_path="api")
+
+    for title in ("Junior Community Manager", "Marketing Assistant", "Stagiaire communication"):
+        assert domain(posting(title)).passed and seniority(posting(title)).passed, title
+    assert not domain(posting("Junior Data Engineer")).passed
+    assert not seniority(posting("Senior Brand Manager")).passed
+
+
+def test_local_domains_must_name_at_least_one_keyword(project: Path) -> None:
+    _write(project / "local" / "taxonomy.yaml", "domains:\n  accounting: []\n")
+    with pytest.raises(ConfigError, match="domains.accounting"):
+        load_config(project / "config")
+
+
+def test_local_skills_add_tags_that_offers_and_profiles_can_share(tmp_path: Path) -> None:
+    from jobpipe.apply.offer_analysis import RequirementExtractor
+    from jobpipe.apply.rules import RulesError, load_apply_rules
+
+    shutil.copytree(PROJECT_ROOT / "config", tmp_path / "config")
+    example = (PROJECT_ROOT / "local.example" / "skills.yaml").read_text(encoding="utf-8")
+    _write(tmp_path / "local" / "skills.yaml", example)
+    assert "seo" not in load_apply_rules(tmp_path / "config").skills.skills, "the template is all comments"
+    uncommented = [line.replace("# ", "", 1) if line.startswith(("# skills:", "#   ")) else line for line in example.splitlines()]
+    _write(tmp_path / "local" / "skills.yaml", "\n".join(uncommented) + "\n")
+    rules = load_apply_rules(tmp_path / "config")
+    assert "python" in rules.skills.skills, "the shipped skills stay"
+    text = "Your profile: you master SEO and social media, and Excel."
+    found = {span.skill for span in RequirementExtractor(rules).skills(text)}
+    assert {"seo", "social_media", "excel"} <= found
+    _write(tmp_path / "local" / "skills.yaml", "skils: {}\n")
+    with pytest.raises(RulesError, match="local/skills.yaml"):
+        load_apply_rules(tmp_path / "config")

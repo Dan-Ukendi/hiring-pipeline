@@ -1,0 +1,46 @@
+# Example: search junior marketing and communication jobs instead of AI/data.
+# Copy this file to local/taxonomy.yaml (git ignores local/), change the words for your field,
+# then run 'jobpipe run --no-audit' again. Delete local/taxonomy.yaml to go back to AI/data.
+
+# 1. What jobpipe types in the search box of Actiris (and Adzuna), per language.
+#    Write every language you want searched: these lists replace the shipped AI/data searches.
+queries:
+  en: [marketing, communication, social media, digital marketing, content]
+  fr: [marketing, communication, marketing digital, réseaux sociaux, community manager]
+
+# 2. The words that make an offer part of your field (in its title, or several times in its text).
+#    This replaces all the shipped AI/data words; the group name ("marketing") is free.
+domains:
+  marketing:
+    - marketing
+    - digital marketing
+    - marketing digital
+    - communication
+    - social media
+    - réseaux sociaux
+    - community manager
+    - content
+    - brand
+    - seo
+    - campaign
+    - campagne
+    - e-commerce
+
+# 3. The domain filter: extra words that also count, and job titles always dropped.
+#    The shipped lists drop sales, marketing, HR and accounting titles, so empty or rewrite them.
+filters:
+  domain:
+    adjacent_terms: [copywriting, google analytics, hubspot, crm, events, événementiel]
+    hard_exclude_title: ['\b(?:recruiter|talent acquisition)\b']
+    soft_exclude_title: []
+
+# 4. Titles that mean "too senior". The shipped list also drops every "manager", which would hide
+#    junior "community manager" offers, so this copy leaves it out.
+seniority:
+  exclude_patterns:
+    - '\bsenior\b'
+    - '\bsr\.?\s'
+    - '\blead\b'
+    - '\bhead of\b'
+    - '\bdirector\b'
+    - '\b(?:[5-9]|1\d)\s*\+?\s*(?:years|yrs|ans|jaar)\b'

@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any, Literal, TypeVar
 
 import yaml
-from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator, model_validator
+from pydantic import BaseModel, ConfigDict, Field, RootModel, ValidationError, field_validator, model_validator
 
 BRUSSELS_POSTAL_MIN = 1000
 BRUSSELS_POSTAL_MAX = 1212
@@ -233,13 +233,21 @@ class Commune(_Strict):
         return value
 
 
-class DomainsConfig(_Strict):
-    ai: list[str] = Field(min_length=1)
-    genai: list[str] = Field(min_length=1)
-    data_engineering: list[str] = Field(min_length=1)
+class DomainsConfig(RootModel[dict[str, list[str]]]):
+    """The vocabulary of the field searched, in named groups (the group names are free)."""
+
+    @field_validator("root")
+    @classmethod
+    def _keywords(cls, value: dict[str, list[str]]) -> dict[str, list[str]]:
+        if not value:
+            raise ValueError("domains needs at least one group of keywords")
+        for group, terms in value.items():
+            if not terms or any(not str(t).strip() for t in terms):
+                raise ValueError(f"domains.{group} must be a non-empty list of keywords")
+        return value
 
     def all_keywords(self) -> list[str]:
-        return [*self.ai, *self.genai, *self.data_engineering]
+        return [term for terms in self.root.values() for term in terms]
 
 
 class SeniorityConfig(_Strict):
@@ -441,8 +449,9 @@ def _mapping(path: Path) -> dict[str, Any]:
     return data
 
 
-# Mappings that only make sense whole (a captured Actiris endpoint): an override replaces them.
-_WHOLE_MAPPINGS = frozenset({"endpoint"})
+# Mappings that only make sense whole: an override replaces them. A captured Actiris endpoint,
+# and the domain vocabulary (searching another field means dropping the shipped AI/data groups).
+_WHOLE_MAPPINGS = frozenset({"endpoint", "domains"})
 
 
 def deep_merge(base: dict[str, Any], override: dict[str, Any]) -> dict[str, Any]:

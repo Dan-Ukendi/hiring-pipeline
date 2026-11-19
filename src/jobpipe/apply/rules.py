@@ -2,6 +2,7 @@ import re
 import tomllib
 from pathlib import Path
 
+import yaml
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from jobpipe.contract.enums import SubmissionPolicy
@@ -106,6 +107,23 @@ def _read(path: Path) -> dict:
         raise RulesError(f"{path.name} is not valid TOML: {exc}") from exc
 
 
+LOCAL_SKILLS = Path("local") / "skills.yaml"
+
+
+def _with_local_skills(skills: dict, root: Path) -> dict:
+    """Add the user's own skill words (local/skills.yaml, next to config/) to the shipped ones."""
+    path = root / LOCAL_SKILLS
+    if not path.is_file():
+        return skills
+    try:
+        overlay = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError as exc:
+        raise RulesError(f"{LOCAL_SKILLS.as_posix()} is not valid YAML: {exc}") from exc
+    if not isinstance(overlay, dict) or set(overlay) - {"skills"} or not isinstance(overlay.get("skills") or {}, dict):
+        raise RulesError(f"{LOCAL_SKILLS.as_posix()} must contain only a 'skills:' mapping of tag: [words]")
+    return {**skills, "skills": {**skills.get("skills", {}), **(overlay.get("skills") or {})}}
+
+
 def load_apply_rules(config_dir: Path) -> ApplyRules:
     directory = config_dir / "apply"
     try:
@@ -115,7 +133,7 @@ def load_apply_rules(config_dir: Path) -> ApplyRules:
             profile=_read(directory / "profile_schema.toml"),
             synonyms=_read(directory / "field_synonyms.toml"),
             semantics=_read(directory / "field_semantics.toml"),
-            skills=_read(directory / "skills.toml"),
+            skills=_with_local_skills(_read(directory / "skills.toml"), Path(config_dir).resolve().parent),
         )
     except ValueError as exc:
         raise RulesError(f"invalid apply rules: {exc}") from exc

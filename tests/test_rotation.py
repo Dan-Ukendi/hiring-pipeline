@@ -95,3 +95,19 @@ def test_a_dry_run_catalogue_falls_back_to_the_seed_without_a_database_row(confi
     pool = catalogue(store, config, "adzuna", "terms")
     assert len(pool) == len(config.taxonomy.query_terms()) and all(q.id == 0 for q in pool)
     assert [r[1] for r in seed_rows(config, "arbeitnow", "all")] == [ALL_TERMS]
+
+
+def test_searches_removed_from_the_taxonomy_stop_running_and_come_back_with_their_history(
+    config: AppConfig, store: Store
+) -> None:
+    seed_queries(store, config)
+    shipped = [q.terms for q in store.list_queries("adzuna")]
+    store.record_query_run(store.list_queries("adzuna")[0].id, 3)
+    retargeted = config.model_copy(update={"taxonomy": config.taxonomy.model_copy(update={"queries": {"en": ["accounting"]}})})
+    assert seed_queries(store, retargeted) == 2
+    assert [q.terms for q in store.list_queries("adzuna")] == ["accounting"]
+    assert [q.terms for q in catalogue(store, retargeted, "adzuna", "terms")] == ["accounting"]
+    assert [q.terms for q in store.list_queries("arbeitnow")] == [ALL_TERMS], "a source that takes no terms is untouched"
+    seed_queries(store, config)
+    restored = store.list_queries("adzuna")
+    assert [q.terms for q in restored] == shipped and restored[0].yield_total == 3

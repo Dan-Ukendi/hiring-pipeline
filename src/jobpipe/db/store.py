@@ -379,6 +379,15 @@ class Store:
                 added += cursor.rowcount
         return added
 
+    def keep_only_queries(self, source: str, terms: list[str]) -> None:
+        """Enable the searches of ``source`` listed in ``terms`` and disable the others (their history is kept)."""
+        wanted = set(terms)
+        rows = self._conn.execute("SELECT id, terms, enabled FROM query WHERE source = ?", (source,)).fetchall()
+        changes = [(int(row["terms"] in wanted), row["id"]) for row in rows if bool(row["enabled"]) != (row["terms"] in wanted)]
+        if changes:
+            with self._conn:
+                self._conn.executemany("UPDATE query SET enabled = ? WHERE id = ?", changes)
+
     def list_queries(self, source: str | None = None, enabled_only: bool = True) -> list[Query]:
         clauses: list[str] = []
         params: list[Any] = []

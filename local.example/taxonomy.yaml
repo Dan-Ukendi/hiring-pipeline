@@ -1,5 +1,7 @@
 # Search vocabulary overrides, merged over config/taxonomy.yaml (git ignores local/).
 # A list written here replaces the shipped list, so copy the shipped one and edit it.
+# To search a whole other field (marketing, accounting, sales...), start from
+# taxonomy-marketing.yaml instead: copy it to local/taxonomy.yaml.
 
 # Keyword searches sent to Actiris (and Adzuna when you have a key), per language.
 # queries:

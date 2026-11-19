@@ -50,7 +50,10 @@ def seed_queries(store: Store, config: AppConfig) -> int:
         factory = SOURCE_FACTORIES[name]
         if factory.kind != "query" or name not in config.sources.sources:
             continue
-        added += store.seed_queries(seed_rows(config, name, factory.query_mode))
+        rows = seed_rows(config, name, factory.query_mode)
+        added += store.seed_queries(rows)
+        # Searches removed from the taxonomy (for example after retargeting it in local/) stop running.
+        store.keep_only_queries(name, [row[1] for row in rows])
     return added
 
 

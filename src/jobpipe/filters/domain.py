@@ -34,7 +34,7 @@ class DomainFilter:
             match = pattern.search(title)
             if match:
                 return FilterVerdict(
-                    passed=False, reason=f"title '{title}' is a sales or recruiting function ('{match.group(0)}')"
+                    passed=False, reason=f"title '{title}' is an excluded function ('{match.group(0)}')"
                 )
         in_title = self.terms_in(title)
         if in_title:

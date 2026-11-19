@@ -1,0 +1,16 @@
+# Your own skill tags, added to the shipped list (config/apply/skills.toml) (git ignores local/).
+#
+# Each line is   tag: [words an offer may use for it]
+# When an offer contains one of the words, the projects, bullets, skills and CV titles of your
+# profile that carry the tag move up on the CV. Use the tag in profile/profile.yaml (tags: [seo]).
+# A tag that already exists in the shipped list is replaced by yours.
+#
+# Example for marketing and communication (remove the # in front of the lines you want):
+
+# skills:
+#   seo: [seo, search engine optimisation, search engine optimization, référencement]
+#   social_media: [social media, réseaux sociaux, instagram, linkedin, tiktok]
+#   copywriting: [copywriting, rédaction, content writing]
+#   google_analytics: [google analytics, ga4]
+#   crm: [crm, hubspot, salesforce]
+#   event_planning: [events, événementiel, évènementiel]

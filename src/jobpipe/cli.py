@@ -17,6 +17,7 @@ from jobpipe.observability.cli import (
 )
 from jobpipe.submission.cli import submit_app
 from jobpipe.browser.session import BrowserError
+from jobpipe.addjob import AddJobError, add_posting
 from jobpipe.canonical import CanonicalKeyer
 from jobpipe.companies import careers_url_for, resolve_company, slugify
 from jobpipe.config import (
@@ -58,6 +59,10 @@ Start here (details in README.md):
 2. jobpipe run --no-audit   (find offers)
 
 3. jobpipe cv   (one CV per offer, from profile/profile.yaml)
+
+To apply to any other job, in any field: jobpipe cv --url <address of the offer>
+
+To search another field automatically: local/taxonomy.yaml (see README.md)
 """
 
 app = typer.Typer(add_completion=False, no_args_is_help=True, help=HELP)
@@ -286,6 +291,25 @@ def extract(
         typer.echo(f"detected ATS: {detected.ats}/{detected.slug}{region}")
 
 
+@app.command("add")
+def add_command(
+    url: Annotated[str, typer.Argument(help="Address of the job offer's own page.")],
+    verbose: VerboseOption = False,
+    config: ConfigOption = Path("config"),
+) -> None:
+    """Add any job offer by its address, whatever its field, so you can make a CV for it."""
+    app_config = _load(config, online=True)
+    logger = _logger(verbose)
+    with open_runtime(app_config, logger) as rt:
+        try:
+            posting = add_posting(rt, app_config, url)
+        except AddJobError as exc:
+            _fail(str(exc))
+    typer.echo(f"added: {posting.title} | {posting.company_name or 'employer not stated'}")
+    typer.echo(f"  id: {posting.job_id}")
+    typer.echo(f"next: jobpipe cv --job-id {posting.job_id}")
+
+
 @app.command("backfill-canonical", hidden=True)
 def backfill_canonical(config: ConfigOption = Path("config")) -> None:
     """Recompute the canonical key of every stored posting."""
@@ -418,7 +442,8 @@ def run(
     verbose: VerboseOption = False,
     config: ConfigOption = Path("config"),
 ) -> None:
-    """Find offers: poll the sources, keep the junior AI/data postings in Brussels, and list them."""
+    """Find offers: poll the sources, keep the junior postings in Brussels that match the search
+    (AI/data by default, another field with local/taxonomy.yaml), and list them."""
     app_config = _load(config, online=True)
     logger = _logger(verbose)
     chosen = [s.strip() for s in sources.split(",") if s.strip()] if sources else None
