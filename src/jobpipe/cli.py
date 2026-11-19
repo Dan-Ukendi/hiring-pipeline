@@ -50,7 +50,7 @@ from jobpipe.sources.aggregators.actiris_endpoint import (
 from jobpipe.sources.base import SOURCE_FACTORIES
 from jobpipe.sources.registry import SourceDisabled, SourceRegistry, UnknownSource
 
-HELP = """Find junior AI / data / ML offers in Brussels-Capital and make a tailored CV for each.
+HELP = """Find junior job offers in Brussels-Capital (AI / data / ML by default) and make a tailored CV for each.
 
 Start here (details in README.md):
 

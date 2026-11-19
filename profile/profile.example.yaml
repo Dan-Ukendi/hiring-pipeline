@@ -21,7 +21,8 @@
 #   pandas numpy llm rag langchain hugging_face nlp computer_vision machine_learning deep_learning
 #   mlops etl kafka git ci_cd terraform java scala typescript snowflake databricks tableau power_bi
 #   looker excel statistics data_visualization fastapi flask
-# Other tags are allowed but never match an offer.
+# For another field, add your own tags in local/skills.yaml (see README section 7); any other
+# tag is allowed but never matches an offer.
 #
 # engagement_kind (how much an entry weighs): employment, client_brief_delivered_to_production,
 # founder, team_proof_of_concept, personal; any other value (for example student_job) weighs least.

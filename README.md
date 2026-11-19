@@ -185,7 +185,7 @@ Three writing rules apply to the whole file:
 | `projects` | Your projects (course, personal, hackathon...): name, technologies (`stack`), `tags`, dates and bullet points. This is often the most important section for a first job. |
 | `metrics` | Every number you quote in a bullet point ("3,000 tickets", "40 %"). A number that is not declared here makes the CV "to check". |
 | `skills` | Your skills, each one linked to the experiences or projects that prove it (`evidence_refs`). |
-| `cv_titles` | The possible titles under your name (for example "AI and machine learning", "data engineering"). jobpipe picks the one that best fits the offer. |
+| `cv_titles` | The possible titles under your name (for example "AI and machine learning", "data engineering", or "Marketing and communication" in another field). jobpipe picks the one that best fits the offer. |
 | `never_claim` | What the CV must never state (a diploma not yet obtained, a certification...). Keep the lines of the example if they apply to you. |
 | `claims_bank` | Leave `[]`: the CV does not use it. |
 
@@ -198,7 +198,8 @@ enough: the CV must fit on one A4 page. The identifiers (`entry_id`, `bullet_id`
 
 **The `tags`** decide what comes first: jobpipe spots the keywords of the offer (Python, SQL,
 machine learning...) and puts first the projects, bullets, skills and title that carry the same
-tags. Use the words from this list; they are the ones jobpipe recognises in offers:
+tags. Use the words from this list; they are the ones jobpipe recognises in offers out of the box
+(mostly AI and data):
 
 ```
 python sql spark airflow dbt docker kubernetes aws azure gcp pytorch tensorflow scikit_learn
@@ -209,7 +210,8 @@ looker excel statistics data_visualization fastapi flask
 
 Example: a project tagged `[machine_learning, python, pandas]` moves to the top for a data
 scientist offer that asks for Python and pandas. Any other word is accepted, but it will not match
-any offer.
+any offer. In another field (marketing, sales, accounting...), first add your own tags as shown in
+[Tags for your field](#tags-for-your-field), then use them here.
 
 If the profile contains a mistake, `jobpipe cv` tells you the exact place and the expected fix,
 for example:
@@ -226,6 +228,10 @@ Here, the phone number must be written `"+32470000000"`.
 
 ## 4. Find offers
 
+Out of the box, this step looks for AI and data offers. **Looking for another field?** Set it up
+first in [Search another field automatically](#search-another-field-automatically), then come back
+here: offers found with the AI/data search would otherwise stay in your list.
+
 ```
 jobpipe run --no-audit
 ```
@@ -236,9 +242,10 @@ The **first run takes about 5 to 15 minutes**: jobpipe queries Actiris (the main
 out of politeness towards the site. Later runs are shorter, because offers already seen are
 skipped. Run the command again every day or every other day: new offers arrive every day.
 
-An offer is kept if it is in Brussels (or remote for an employer based in Belgium), in AI, data
-or machine learning, open to a junior, written in French or English, and recent. A real first run
-(with Docker, without an Adzuna key; shortened list) looks like this:
+An offer is kept if it is in Brussels (or remote for an employer based in Belgium), in the field
+searched (AI, data or machine learning by default), open to a junior, written in French or
+English, and recent. A real first run of the default search (with Docker, without an Adzuna key;
+shortened) looks like this:
 
 ```
 polling the sources, one line per source as it finishes (the first run can take several minutes)
@@ -249,6 +256,7 @@ polling the sources, one line per source as it finishes (the first run can take 
   adzuna: skipped (no Adzuna key, which is optional; add ADZUNA_APP_ID and ADZUNA_APP_KEY to .env to include Adzuna)
 run 1: OK
 filtered 696 postings: 15 survivors, 681 rejected
+  rejections by filter: geography=..., seniority=..., domain=..., language=..., freshness=..., duplication=...
 audit: skipped (--no-audit)
 new offers that passed the filters (15):
   - AI & Data Engineer M/V/X | employer not stated | 1210 Saint-Josse-ten-Noode
@@ -340,7 +348,10 @@ sending it. The reason is shown under `why:`. The usual cases:
 
 **After changing your profile**, simply run `jobpipe cv` again (and again as long as
 `more offer(s) waiting` is shown): the CVs are made again with the new version, in a new numbered
-folder. `jobpipe cv --force` remakes all the CVs, even without changes.
+folder. `jobpipe cv --force` remakes all the CVs, even without changes. `jobpipe cv` alone only
+covers the offers found by `jobpipe run`: for an offer you added yourself
+([section 7](#a-cv-for-any-offer-by-its-address)), run `jobpipe cv --job-id <id>` again (or the
+same `jobpipe cv --url` command).
 
 ---
 
@@ -351,13 +362,14 @@ settings in a `local/` folder, which Git ignores. The `local.example/` folder co
 templates; copy the one you need:
 
 ```
-mkdir local
+mkdir local                                   (if it does not exist yet)
 copy local.example\companies.yaml local\      (Windows)
 cp local.example/companies.yaml local/        (Mac, Linux)
 ```
 
-Each file in `local/` adds to the file of the same name in `config/`: you only write in it what
-you change.
+The other templates are copied the same way (replace `companies.yaml` with the file's name). Each
+file in `local/` is applied on top of jobpipe's own settings: you only write in it what you
+change.
 
 **Add a company**: `local/companies.yaml`
 
@@ -405,10 +417,10 @@ jobpipe cv --url "https://jobs.lever.co/kpler/be4d309c-8f01-48cc-98d4-f02cfc7b46
 
 (with Docker: `docker compose run --rm jobpipe cv --url "https://..."`)
 
-Keep the quotes around the address. jobpipe reads the offer, adds it to your list and writes the
-CV, exactly as for the offers of `jobpipe run`. The filters (field, junior level, Brussels) are
-skipped: you chose the offer. A real example, for a sales offer, with the fictional example
-profile (without Docker, on Windows):
+Keep the quotes around the address. jobpipe reads the offer, saves it and writes the CV, exactly as
+for the offers of `jobpipe run`. The filters (field, junior level, Brussels) are skipped: you chose
+the offer. A real example, for a sales offer, with the fictional example profile (without Docker,
+on Windows):
 
 ```
 added: Account Development Representative | Kpler
@@ -425,9 +437,16 @@ CV ready: Account Development Representative | Kpler
 - **Add an offer now, make the CV later**: `jobpipe add "<address>"` (with Docker:
   `docker compose run --rm jobpipe add "<address>"`). It prints the offer's id; then
   `jobpipe cv --job-id <id>` makes the CV when your profile is ready.
+- **The offers you add yourself are not in `jobpipe offers` or `offers.html`** (those show the
+  offers found by `jobpipe run`), and `jobpipe cv` alone does not remake their CVs. Name them:
+  `jobpipe cv --job-id <id>`, or run the same `jobpipe cv --url` command again. The id is the
+  name of the offer's folder in `documents/` (`7b13fe081a7da281` in the example above).
 - **`could not read a job posting at ...`**: the address is a list of offers, or a page that needs
   a login. Open the offer itself and copy that address. The offer pages of the job boards used by
   companies (Greenhouse, Lever, Ashby, Workable, Recruitee...) work best.
+- **`could not fetch ...`**: the site did not answer or refused the request. Check that the
+  address opens in your browser; if it does, the site blocks tools like jobpipe: try another
+  address of the same offer (often the company's own careers page).
 
 ### Search another field automatically
 
@@ -442,7 +461,11 @@ copy local.example\taxonomy-marketing.yaml local\taxonomy.yaml      (Windows)
 cp local.example/taxonomy-marketing.yaml local/taxonomy.yaml        (Mac, Linux)
 ```
 
-Open `local/taxonomy.yaml` in your editor. It contains:
+This copy replaces any `local/taxonomy.yaml` you already have: if you made one in section 6 (for
+example to accept Dutch), copy its lines into the new file again.
+
+Open `local/taxonomy.yaml` in your editor. It contains (after a few `#` comment lines that
+explain each part):
 
 ```yaml
 queries:
@@ -485,10 +508,12 @@ seniority:
 |---|---|---|
 | `queries` | The words jobpipe types in the search box of Actiris (and Adzuna), in English (`en`) and French (`fr`). | A few short, broad words of your field. Write both languages: a language you leave out keeps its AI/data searches. |
 | `domains` | An offer is kept only if its **title** contains one of these words, or its **text** contains at least three of them. | The words of your field, in English and French. The group name (`marketing`) is free. |
-| `filters` → `domain` | `adjacent_terms`: more words that count in the text. `hard_exclude_title` and `soft_exclude_title`: titles that are always dropped (the AI/data lists drop sales, marketing, HR and accounting titles). | Keep the two exclude lists empty (`[]`) unless a kind of job you do not want keeps coming. |
+| `filters` → `domain` | `adjacent_terms`: more words of your field that count like those of `domains`. `hard_exclude_title`: titles that are always dropped. `soft_exclude_title`: titles that are dropped unless they also contain a word of your field. (The AI/data lists drop sales, marketing, HR and accounting titles, which is why the example rewrites them.) | Your own `adjacent_terms`. Keep the two exclude lists short or empty (`[]`) unless a kind of job you do not want keeps coming. |
 | `seniority` | Titles that mean "too senior for a junior". | The shipped list also drops every "manager"; the example keeps them, because junior "community manager" jobs exist. Leave this part out to keep the shipped list. |
 
-The same file for **accounting** would start like this (keep the rest of the example):
+The same file for **accounting** would start like this (keep the `filters` and `seniority` parts
+of the example, but replace the marketing words of `adjacent_terms` with words of your field, or
+`[]`):
 
 ```yaml
 queries:
@@ -518,7 +543,16 @@ junior. To follow the employers of your field, add them in `local/companies.yaml
 
 The `tags` of your profile decide what comes first on the CV ([Your profile](#your-profile)), but
 jobpipe only recognises the tags of its list, which are mostly technical. For another field, add
-your own tags in `local/skills.yaml` (a copy of `local.example/skills.yaml`, without the `#`):
+your own tags in `local/skills.yaml`. Copy the template:
+
+```
+mkdir local                                         (if it does not exist yet)
+copy local.example\skills.yaml local\               (Windows)
+cp local.example/skills.yaml local/                 (Mac, Linux)
+```
+
+Open `local/skills.yaml`, remove the `#` in front of the `skills:` line and of the tags you keep,
+and write your own. The marketing example looks like this:
 
 ```yaml
 skills:
@@ -556,7 +590,8 @@ then:
 
 Your personal files (`.env`, `profile/profile.yaml`, `local/`, `data/`, `documents/`) are not
 tracked by Git: `git pull` does not touch them and does not create conflicts, as long as you have
-not changed the project files themselves (see the FAQ if `git pull` refuses).
+not changed the project files themselves (see [Common problems](#9-common-problems) if `git pull`
+refuses).
 
 ---
 
@@ -582,16 +617,20 @@ is not running. Open it, wait for "Engine running", then run the command again.
 = the 1st bullet of the 2nd project, English sentence) and the expected format. Compare with
 `profile/profile.example.yaml`.
 
-**`no offer kept yet`**: first run `jobpipe run --no-audit`, then `jobpipe cv`.
+**`no offer kept yet`**: first run `jobpipe run --no-audit`, then `jobpipe cv`. For an offer you
+found yourself, use `jobpipe cv --url "<address>"` ([section 7](#a-cv-for-any-offer-by-its-address)).
 
 **No new offer kept**: this is normal on some days. Try again the next day, add an Adzuna key, or
-add companies and keywords (section 6).
+add companies and keywords ([section 6](#6-customise-the-search)). In another field than AI and
+data, check that `local/taxonomy.yaml` exists and lists the words of your field
+([section 7](#search-another-field-automatically)).
 
 **The CV does not update**: close the PDF if it is open in a viewer (Windows locks an open file),
 then run `jobpipe cv --force`.
 
 **`git pull` refuses because of local changes**: you changed a project file (often in
-`config/`). `git status` shows which one. Copy your changes into `local/` (section 6), then undo
+`config/`). `git status` shows which one. Copy your changes into `local/`
+([section 6](#6-customise-the-search)), then undo
 the change with `git checkout -- <file>` and run `git pull` again.
 
 **Linux with Docker: the files created belong to `root`**: add
