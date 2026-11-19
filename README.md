@@ -311,6 +311,12 @@ Without Docker, the paths start with the location of your `jobpipe` folder, for 
   them).
 - **A CV for a single offer**: `jobpipe cv --job-id <id>`, with the identifier shown by
   `jobpipe offers`.
+- **A CV for any job you choose, in any field** (not only AI and data): copy the address of the
+  offer's own page and run `jobpipe cv --url "<address>"` (repeat `--url` for several offers).
+  jobpipe reads the offer, skips the AI/data/junior/Brussels filters because you picked it
+  yourself, and writes the CV. `jobpipe add "<address>"` only adds the offer (it then gets an id
+  for `--job-id`). Your profile's tags decide what comes first, so add tags matching the job's
+  vocabulary to your projects and skills.
 - **`note:`** gives information about the offer (for example that it asks for Dutch), not a
   problem with the CV.
 - **`more offer(s) waiting`**: run `jobpipe cv` again to make the next CVs.

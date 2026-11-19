@@ -3,6 +3,7 @@ from typing import Annotated, NoReturn
 
 import typer
 
+from jobpipe.addjob import AddJobError, add_posting
 from jobpipe.config import AppConfig, ConfigError, load_config, require_contact
 from jobpipe.contract.clock import SystemClock
 from jobpipe.contract.enums import HoldReason, PackageStatus
@@ -126,6 +127,7 @@ def _print_item(item) -> None:
 
 def cv_command(
     job_id: Annotated[list[str] | None, typer.Option("--job-id", help="Only this offer (repeatable); ids come from 'jobpipe offers'.")] = None,
+    url: Annotated[list[str] | None, typer.Option("--url", help="Address of any job offer, in any field (repeatable); it is added and a CV is made for it.")] = None,
     limit: Annotated[int, typer.Option("--limit", min=1, help="Maximum CVs to make in one go.")] = 10,
     force: Annotated[bool, typer.Option("--force", help="Make the CV again even if nothing changed.")] = False,
     config: ConfigOption = Path("config"),
@@ -146,6 +148,19 @@ def cv_command(
     with open_runtime(app_config) as rt:
         store = rt.store
         documents_store = DocumentsStore(store.connection)
+        if url:
+            try:
+                require_contact(app_config)
+            except ConfigError as exc:
+                _fail(f"Configuration error: {exc}")
+            job_id = list(job_id or [])
+            for address in url:
+                try:
+                    posting = add_posting(rt, app_config, address)
+                except AddJobError as exc:
+                    _fail(str(exc))
+                typer.echo(f"added: {posting.title} | {posting.company_name or 'employer not stated'}")
+                job_id.append(posting.job_id)
         if job_id:
             unknown = [j for j in job_id if store.get_job(j) is None]
             if unknown:
