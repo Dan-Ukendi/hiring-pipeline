@@ -101,7 +101,7 @@ def _load_profile(app_config: AppConfig):
     try:
         return load_profile(app_config.resolve(settings.profile_path), app_config.resolve(settings.declarations_path))
     except ProfileError as exc:
-        _fail(f"Profile error: {exc}\nSee 'Ton profil' in README.md; the example is profile/profile.example.yaml.")
+        _fail(f"Profile error: {exc}\nSee 'Your profile' in README.md; the example is profile/profile.example.yaml.")
 
 
 def _print_item(item) -> None:

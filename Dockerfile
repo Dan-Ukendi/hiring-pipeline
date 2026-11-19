@@ -2,7 +2,7 @@
 #
 # The image holds the program only. Your folder (config/, local/, profile/, .env, data/,
 # documents/) is mounted at /work, so the reports and the CVs land in your folder on the host.
-# Usage: see "Avec Docker" in README.md, or docker-compose.yml.
+# Usage: see "Path A: with Docker" in README.md, or docker-compose.yml.
 FROM python:3.12-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
