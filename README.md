@@ -1,15 +1,20 @@
 # jobpipe
 
-jobpipe looks for **junior job offers in AI, data and machine learning in Brussels** (the
-Brussels-Capital Region) and gathers the ones that match you on a single page.
-Then, for each offer, it writes **a one-page CV, as a PDF and as a Word file**, tailored to the
-offer, from a file where you describe your background once and for all.
+jobpipe helps you apply to jobs **in any field** (data, marketing, sales, accounting,
+logistics...). It does two things:
+
+- it **finds junior job offers in Brussels** (the Brussels-Capital Region) in the field you choose
+  and gathers the ones that match you on a single page;
+- for each offer, it writes **a one-page CV, as a PDF and as a Word file**, tailored to the offer,
+  from a file where you describe your background once and for all. You can also give it the
+  address of any offer you found yourself.
 
 Everything runs on your PC, with no graphics card. jobpipe sends nothing to employers: it reads
 public job offers and writes files; you are the one who applies.
 
-Not looking for AI or data? jobpipe works **for any kind of job** (sales, accounting, marketing,
-logistics...): see [section 7](#7-use-it-for-any-kind-of-job).
+Out of the box, the search looks for AI, data and machine-learning offers. To search another
+field, or to make a CV for an offer you found yourself, see
+[section 7](#7-use-it-for-any-kind-of-job).
 
 **Contents**
 
