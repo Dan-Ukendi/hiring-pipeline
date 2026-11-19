@@ -12,10 +12,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     HOME=/tmp \
     TZ=Europe/Brussels
 
-# A TrueType font with accents for the built-in PDF renderer (LibreOffice is not needed).
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends fonts-liberation \
-    && rm -rf /var/lib/apt/lists/*
+# The built-in PDF renderer embeds the Carlito font shipped inside the package (LibreOffice and
+# system fonts are not needed).
 
 WORKDIR /opt/jobpipe
 COPY pyproject.toml ./

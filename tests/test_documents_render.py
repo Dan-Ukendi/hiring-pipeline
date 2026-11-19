@@ -128,4 +128,5 @@ def test_accents_survive_the_round_trip(loaded, tmp_path):
     plan, _, doc = make_doc(loaded, "fr")
     files = render.render_files(doc, tmp_path, "cv_fr")
     assert render.round_trip_violations(doc, files) == []
-    assert "Expérience professionnelle" in render.pdf_text(files.pdf)
+    assert "EXPÉRIENCE PROFESSIONNELLE" in render.pdf_text(files.pdf)
+

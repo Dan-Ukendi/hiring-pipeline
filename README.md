@@ -305,7 +305,11 @@ Without Docker, the paths start with the location of your `jobpipe` folder, for 
   `documents/<offer id>/<number>/outbox/` and its name contains your name and the employer's name
   (or the offer title). The easiest way is to copy the path shown after `PDF:`.
 - **The Word file** (`cv.docx`, in the `<number>` folder, just above `outbox`) is an editable
-  copy, if you want to touch up a detail by hand.
+  copy, if you want to touch up a detail by hand. It is set in Calibri, which Word and
+  LibreOffice (through the equivalent Carlito) have; the PDF made without LibreOffice embeds
+  Carlito, shipped with jobpipe (SIL Open Font License, see `src/jobpipe/documents/fonts/OFL.txt`),
+  so both look the same. The layout is a plain single column on purpose: no table, text box or
+  picture, so that the applicant-tracking systems read it correctly.
 - **The `<number>`** changes with each generation: when an offer has several numbered folders, the
   up-to-date CV is in the one with the **highest number** (the old ones stay; you can delete
   them).

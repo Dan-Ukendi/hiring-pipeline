@@ -21,7 +21,7 @@ def test_the_builtin_renderer_matches_the_docx_and_both_are_a4(tmp_path: Path, m
     files = render.render_files(doc, tmp_path, "cv")
     assert files.renderer == "builtin" and files.page_count == 1
     assert render.round_trip_violations(doc, files) == []
-    assert "Compétences" in render.pdf_text(files.pdf) and "Néerlandais" in render.pdf_text(files.pdf)
+    assert "COMPÉTENCES" in render.pdf_text(files.pdf) and "Néerlandais" in render.pdf_text(files.pdf)
     from docx import Document
 
     section = Document(str(files.docx)).sections[0]
